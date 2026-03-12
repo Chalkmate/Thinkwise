@@ -257,9 +257,10 @@ export default function HomePage() {
               <a
                 key={link.name}
                 href={link.href}
-                className="text-sm font-medium text-slate-300 hover:text-white transition-colors"
+                className="relative text-base font-semibold text-slate-300 hover:text-white transition-colors duration-200 group pb-0.5"
               >
                 {link.name}
+                <span className="absolute bottom-0 left-0 h-0.5 w-0 group-hover:w-full bg-gradient-to-r from-blue-400 to-emerald-400 transition-all duration-300 rounded-full" />
               </a>
             ))}
             <a
