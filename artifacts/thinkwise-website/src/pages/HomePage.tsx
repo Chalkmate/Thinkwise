@@ -234,7 +234,7 @@ export default function HomePage() {
             <img
               src="/bulb-icon.png"
               alt="ThinkWise Logo"
-              className="h-40 w-40 object-contain flex-shrink-0"
+              className="h-20 w-20 object-contain flex-shrink-0"
               style={{
                 filter: 'invert(1) drop-shadow(0 0 10px rgba(59,130,246,0.7))',
                 mixBlendMode: 'screen',
@@ -733,7 +733,7 @@ export default function HomePage() {
               <img
                 src="/bulb-icon.png"
                 alt="ThinkWise Logo"
-                className="h-40 w-40 object-contain flex-shrink-0"
+                className="h-20 w-20 object-contain flex-shrink-0"
                 style={{
                   filter: 'invert(1) drop-shadow(0 0 10px rgba(59,130,246,0.7))',
                   mixBlendMode: 'screen',
