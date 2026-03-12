@@ -230,7 +230,7 @@ export default function HomePage() {
         }`}
       >
         <div className="container mx-auto px-6 max-w-7xl flex items-center justify-between">
-          <a href="#home" className="flex items-center gap-1">
+          <a href="#home" className="flex items-center gap-0">
             <img
               src="/bulb-icon.png"
               alt="ThinkWise Logo"
@@ -729,7 +729,7 @@ export default function HomePage() {
       <footer className="bg-[#050812] py-12 border-t border-white/5">
         <div className="container mx-auto px-6 max-w-7xl">
           <div className="flex flex-col md:flex-row justify-between items-center gap-6">
-            <a href="#home" className="flex items-center gap-1">
+            <a href="#home" className="flex items-center gap-0">
               <img
                 src="/bulb-icon.png"
                 alt="ThinkWise Logo"
