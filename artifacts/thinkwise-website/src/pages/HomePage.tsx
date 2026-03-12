@@ -250,7 +250,7 @@ export default function HomePage() {
                 <span>Make</span><span>the</span><span>difference</span>
               </span>
               {/* Desktop: original style */}
-              <span className="hidden lg:block text-lg font-medium tracking-[0.2em] uppercase text-slate-400 pl-1">Make the difference</span>
+              <span className="hidden lg:block text-[20px] font-medium tracking-[0.2em] uppercase text-slate-400 pl-1">Make the difference</span>
             </div>
           </a>
 
