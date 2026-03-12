@@ -220,7 +220,7 @@ export default function HomePage() {
   };
 
   return (
-    <div className="min-h-screen bg-[#0A0F1E] text-slate-200 font-sans selection:bg-blue-500/30" style={{ scrollBehavior: 'smooth' }}>
+    <div className="min-h-screen bg-[#0A0F1E] text-slate-200 font-sans selection:bg-blue-500/30 overflow-x-hidden" style={{ scrollBehavior: 'smooth' }}>
 
       {/* Navigation */}
       <nav
@@ -314,7 +314,7 @@ export default function HomePage() {
             <img
               src={slide.image}
               alt={slide.title}
-              className="w-full h-full object-cover"
+              className="absolute inset-0 w-full h-full object-cover max-w-none"
             />
             {/* Dark gradient overlay — left side for text readability, right side lighter to show image */}
             <div className="absolute inset-0 bg-gradient-to-r from-[#0A0F1E]/95 via-[#0A0F1E]/70 to-[#0A0F1E]/30" />
