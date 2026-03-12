@@ -455,9 +455,9 @@ export default function HomePage() {
       </section>
 
       {/* Stats / Trust Bar */}
-      <section className="py-12 border-y border-white/5 bg-[#0a1020]/50 backdrop-blur-sm relative z-20">
+      <section className="py-12 border-y border-slate-100 bg-white relative z-20">
         <div className="container mx-auto px-6 max-w-7xl">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 divide-x divide-white/5">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 divide-x divide-slate-200">
             {[
               { label: 'Schools Worldwide', value: '500+' },
               { label: 'Active Students', value: '100K+' },
@@ -465,8 +465,8 @@ export default function HomePage() {
               { label: 'Client Satisfaction', value: '99%' },
             ].map((stat, i) => (
               <div key={i} className="text-center px-4">
-                <div className="text-3xl md:text-4xl font-bold text-white mb-2">{stat.value}</div>
-                <div className="text-sm font-medium text-slate-400 uppercase tracking-wider">{stat.label}</div>
+                <div className="text-3xl md:text-4xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-emerald-500 mb-2">{stat.value}</div>
+                <div className="text-sm font-medium text-slate-500 uppercase tracking-wider">{stat.label}</div>
               </div>
             ))}
           </div>
@@ -474,15 +474,15 @@ export default function HomePage() {
       </section>
 
       {/* About Section */}
-      <section id="about" className="py-24 bg-[#0d1425] relative">
+      <section id="about" className="py-24 bg-slate-50 relative">
         <div className="container mx-auto px-6 max-w-7xl">
           <div className="grid lg:grid-cols-2 gap-10 lg:gap-16 items-center">
             <div>
-              <div className="text-blue-500 font-semibold tracking-wider uppercase text-sm mb-4">About ThinkWise</div>
-              <h2 className="text-4xl md:text-5xl font-bold text-white mb-6 leading-tight">
+              <div className="text-blue-600 font-semibold tracking-wider uppercase text-sm mb-4">About ThinkWise</div>
+              <h2 className="text-4xl md:text-5xl font-bold text-slate-900 mb-6 leading-tight">
                 Progressive professionals delivering world-class solutions.
               </h2>
-              <p className="text-slate-400 text-lg leading-relaxed mb-8">
+              <p className="text-slate-600 text-lg leading-relaxed mb-8">
                 We are committed to catalyzing the competence and competitiveness of our clients through cutting-edge information technology. Our tech backbone for educational institutions enhances overall performance and operational efficiency.
               </p>
 
@@ -495,31 +495,31 @@ export default function HomePage() {
                   'Worldwide reach with personalized service',
                 ].map((item, i) => (
                   <li key={i} className="flex items-start gap-3">
-                    <CheckCircle className="w-6 h-6 text-emerald-400 shrink-0 mt-0.5" />
-                    <span className="text-slate-300">{item}</span>
+                    <CheckCircle className="w-6 h-6 text-emerald-500 shrink-0 mt-0.5" />
+                    <span className="text-slate-700">{item}</span>
                   </li>
                 ))}
               </ul>
             </div>
 
             <div className="relative">
-              <div className="absolute inset-0 bg-gradient-to-tr from-blue-600/20 to-emerald-500/20 rounded-3xl transform rotate-3 blur-xl"></div>
-              <div className="relative bg-[#131c31] border border-white/10 p-8 rounded-3xl shadow-2xl">
+              <div className="absolute inset-0 bg-gradient-to-tr from-blue-200/60 to-emerald-200/40 rounded-3xl transform rotate-3 blur-xl"></div>
+              <div className="relative bg-white border border-slate-200 p-8 rounded-3xl shadow-xl">
                 <div className="aspect-video rounded-xl mb-6 overflow-hidden relative group">
                   <img
                     src="/about/global-impact.png"
                     alt="Global Impact"
                     className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-[#131c31]/60 via-transparent to-transparent" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent" />
                 </div>
                 <div className="flex items-center gap-4">
-                  <div className="w-12 h-12 bg-blue-500/20 rounded-full flex items-center justify-center shrink-0">
-                    <Globe className="w-6 h-6 text-blue-400" />
+                  <div className="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center shrink-0">
+                    <Globe className="w-6 h-6 text-blue-600" />
                   </div>
                   <div>
-                    <h3 className="text-white font-semibold text-lg">Global Impact</h3>
-                    <p className="text-slate-400 text-sm">Empowering institutions worldwide with seamless digital infrastructure.</p>
+                    <h3 className="text-slate-900 font-semibold text-lg">Global Impact</h3>
+                    <p className="text-slate-500 text-sm">Empowering institutions worldwide with seamless digital infrastructure.</p>
                   </div>
                 </div>
               </div>
@@ -597,21 +597,21 @@ export default function HomePage() {
       </section>
 
       {/* Content Library Section */}
-      <section id="content" className="py-24 bg-[#0d1425] relative overflow-hidden">
-        <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-blue-600/10 rounded-full blur-[120px] pointer-events-none" />
-        <div className="absolute bottom-0 left-0 w-[400px] h-[400px] bg-emerald-500/8 rounded-full blur-[100px] pointer-events-none" />
+      <section id="content" className="py-24 bg-slate-50 relative overflow-hidden">
+        <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-blue-100/60 rounded-full blur-[120px] pointer-events-none" />
+        <div className="absolute bottom-0 left-0 w-[400px] h-[400px] bg-emerald-100/50 rounded-full blur-[100px] pointer-events-none" />
 
         <div className="container mx-auto px-6 max-w-7xl relative z-10">
           {/* Header */}
           <div className="text-center mb-16">
-            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 text-sm font-medium mb-6">
+            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-emerald-50 border border-emerald-200 text-emerald-600 text-sm font-medium mb-6">
               <BookOpen className="w-4 h-4" />
               World-Class Digital Content
             </div>
-            <h2 className="text-4xl md:text-5xl font-extrabold text-white mb-5 tracking-tight">
-              ThinkWise <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-emerald-400">Content Library</span>
+            <h2 className="text-4xl md:text-5xl font-extrabold text-slate-900 mb-5 tracking-tight">
+              ThinkWise <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-emerald-500">Content Library</span>
             </h2>
-            <p className="text-slate-400 text-lg max-w-2xl mx-auto leading-relaxed">
+            <p className="text-slate-600 text-lg max-w-2xl mx-auto leading-relaxed">
               A comprehensive repository of curriculum-aligned rich-media content for Grades K–12, mapped to 12+ education boards across India and available in 6 languages.
             </p>
           </div>
@@ -624,9 +624,9 @@ export default function HomePage() {
               { value: '6', label: 'Languages' },
               { value: '5000+', label: 'Learning Resources' },
             ].map((stat) => (
-              <div key={stat.label} className="bg-white/5 border border-white/10 rounded-2xl p-5 text-center backdrop-blur-sm">
-                <div className="text-3xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-emerald-400 mb-1">{stat.value}</div>
-                <div className="text-slate-400 text-sm">{stat.label}</div>
+              <div key={stat.label} className="bg-white border border-slate-200 rounded-2xl p-5 text-center shadow-sm">
+                <div className="text-3xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-emerald-500 mb-1">{stat.value}</div>
+                <div className="text-slate-500 text-sm">{stat.label}</div>
               </div>
             ))}
           </div>
@@ -728,8 +728,8 @@ export default function HomePage() {
             ].map((cat) => (
               <div
                 key={cat.title}
-                className="relative bg-white/5 border border-white/10 rounded-2xl hover:border-white/25 transition-all duration-300 hover:-translate-y-1 group overflow-hidden"
-                style={{ boxShadow: `0 0 40px ${cat.glow}` }}
+                className="relative bg-white border border-slate-200 rounded-2xl hover:border-slate-300 hover:shadow-lg transition-all duration-300 hover:-translate-y-1 group overflow-hidden"
+                style={{ boxShadow: `0 4px 24px ${cat.glow}` }}
               >
                 {/* Card Image */}
                 <div className="relative h-44 overflow-hidden rounded-t-2xl">
@@ -738,7 +738,7 @@ export default function HomePage() {
                     alt={cat.title}
                     className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-[#0d1424] via-[#0d142466] to-transparent" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-black/20 to-transparent" />
                   <div className="absolute bottom-3 left-4 text-2xl drop-shadow-lg">{cat.icon}</div>
                 </div>
                 {/* Card Content */}
@@ -748,8 +748,8 @@ export default function HomePage() {
                   <p className="relative text-slate-500 text-xs font-medium uppercase tracking-wider mb-4">{cat.subtitle}</p>
                   <ul className="relative space-y-2">
                     {cat.items.map((item) => (
-                      <li key={item} className="flex items-start gap-2 text-sm text-slate-300">
-                        <span className="text-emerald-400 mt-0.5 flex-shrink-0">✓</span>
+                      <li key={item} className="flex items-start gap-2 text-sm text-slate-600">
+                        <span className="text-emerald-500 mt-0.5 flex-shrink-0">✓</span>
                         {item}
                       </li>
                     ))}
@@ -760,11 +760,11 @@ export default function HomePage() {
           </div>
 
           {/* Subjects covered */}
-          <div className="bg-white/5 border border-white/10 rounded-2xl p-8">
-            <h3 className="text-white font-bold text-xl mb-6 text-center">Subjects Covered</h3>
+          <div className="bg-white border border-slate-200 rounded-2xl p-8 shadow-sm">
+            <h3 className="text-slate-900 font-bold text-xl mb-6 text-center">Subjects Covered</h3>
             <div className="flex flex-wrap justify-center gap-3">
               {['Mathematics', 'Physics', 'Chemistry', 'Biology', 'Environmental Studies', 'History', 'Geography', 'Civics', 'Commerce', 'Business Studies', 'Arts', 'English', 'Hindi'].map((sub) => (
-                <span key={sub} className="px-4 py-2 rounded-full bg-blue-600/15 border border-blue-500/25 text-blue-300 text-sm font-medium">
+                <span key={sub} className="px-4 py-2 rounded-full bg-blue-50 border border-blue-200 text-blue-700 text-sm font-medium">
                   {sub}
                 </span>
               ))}
