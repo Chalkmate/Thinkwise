@@ -240,9 +240,12 @@ export default function HomePage() {
                 mixBlendMode: 'screen',
               }}
             />
-            <span className="text-7xl font-bold tracking-tight leading-none">
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-emerald-400">Think</span><span className="text-white">Wise</span><sup className="text-blue-400 text-[28px] font-semibold align-super ml-1">™</sup>
-            </span>
+            <div className="flex flex-col gap-0.5">
+              <span className="text-7xl font-bold tracking-tight leading-none">
+                <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-emerald-400">Think</span><span className="text-white">Wise</span><sup className="text-blue-400 text-[28px] font-semibold align-super ml-1">™</sup>
+              </span>
+              <span className="text-sm font-medium tracking-[0.2em] uppercase text-slate-400 pl-1">Make the difference</span>
+            </div>
           </a>
 
           {/* Desktop Nav */}
@@ -736,9 +739,12 @@ export default function HomePage() {
                   mixBlendMode: 'screen',
                 }}
               />
-              <span className="text-7xl font-bold tracking-tight leading-none">
-                <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-emerald-400">Think</span><span className="text-white">Wise</span><sup className="text-blue-400 text-[28px] font-semibold align-super ml-1">™</sup>
-              </span>
+              <div className="flex flex-col gap-0.5">
+                <span className="text-7xl font-bold tracking-tight leading-none">
+                  <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-emerald-400">Think</span><span className="text-white">Wise</span><sup className="text-blue-400 text-[28px] font-semibold align-super ml-1">™</sup>
+                </span>
+                <span className="text-sm font-medium tracking-[0.2em] uppercase text-slate-400 pl-1">Make the difference</span>
+              </div>
             </a>
             <p className="text-slate-500 text-sm text-center md:text-left">
               Catalyzing competence through information technology.
