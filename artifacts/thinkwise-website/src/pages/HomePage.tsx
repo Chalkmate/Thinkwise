@@ -220,14 +220,14 @@ export default function HomePage() {
   };
 
   return (
-    <div className="min-h-screen bg-[#0A0F1E] text-slate-200 font-sans selection:bg-blue-500/30 overflow-x-hidden" style={{ scrollBehavior: 'smooth' }}>
+    <div className="min-h-screen bg-white text-slate-800 font-sans selection:bg-blue-500/30 overflow-x-hidden" style={{ scrollBehavior: 'smooth' }}>
 
       {/* Navigation */}
       <nav
         className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
           isScrolled
-            ? 'bg-[#0A0F1E]/80 backdrop-blur-md border-b border-white/10 shadow-lg py-3'
-            : 'bg-transparent py-5'
+            ? 'bg-white/95 backdrop-blur-md border-b border-slate-200 shadow-sm py-3'
+            : 'bg-white/80 backdrop-blur-sm py-5'
         }`}
       >
         <div className="container mx-auto px-4 sm:px-6 max-w-7xl flex items-center justify-between">
@@ -237,15 +237,14 @@ export default function HomePage() {
               alt="ThinkWise Logo"
               className="object-contain flex-shrink-0 w-12 h-12 lg:w-[92px] lg:h-[92px]"
               style={{
-                filter: 'invert(1) drop-shadow(0 0 10px rgba(59,130,246,0.7))',
-                mixBlendMode: 'screen',
+                filter: 'drop-shadow(0 0 8px rgba(59,130,246,0.5))',
               }}
             />
             <div className="flex flex-col gap-0.5 -ml-1.5 lg:-ml-[14px]">
               <span className="text-[29px] sm:text-2xl lg:text-5xl font-bold tracking-tight leading-none" style={{ fontFamily: "'Raleway', sans-serif", fontWeight: 700 }}>
-                <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-emerald-400">Think</span><span className="text-white">Wise</span><sup className="text-blue-400 text-[11px] sm:text-[13px] lg:text-[24px] font-semibold" style={{ verticalAlign: '0.2em' }}>™</sup>
+                <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-emerald-500">Think</span><span className="text-slate-900">Wise</span><sup className="text-blue-600 text-[11px] sm:text-[13px] lg:text-[24px] font-semibold" style={{ verticalAlign: '0.2em' }}>™</sup>
               </span>
-              <span className="text-[8.9px] sm:text-xs lg:text-[15px] font-medium tracking-[0.2em] uppercase text-slate-400 pl-1">Make the difference</span>
+              <span className="text-[8.9px] sm:text-xs lg:text-[15px] font-medium tracking-[0.2em] uppercase text-slate-500 pl-1">Make the difference</span>
             </div>
           </a>
 
@@ -255,7 +254,7 @@ export default function HomePage() {
               <a
                 key={link.name}
                 href={link.href}
-                className="text-lg font-semibold text-slate-300 hover:text-blue-400 transition-all duration-200 hover:scale-[1.2] active:scale-95 inline-block"
+                className="text-lg font-semibold text-slate-700 hover:text-blue-600 transition-all duration-200 hover:scale-[1.2] active:scale-95 inline-block"
               >
                 {link.name}
               </a>
@@ -270,7 +269,7 @@ export default function HomePage() {
 
           {/* Hamburger — mobile & tablet */}
           <button
-            className="lg:hidden text-slate-300 hover:text-white p-1"
+            className="lg:hidden text-slate-700 hover:text-blue-600 p-1"
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
             aria-label="Toggle menu"
           >
@@ -280,12 +279,12 @@ export default function HomePage() {
 
         {/* Mobile / Tablet Nav Drawer */}
         {mobileMenuOpen && (
-          <div className="lg:hidden absolute top-full left-0 right-0 bg-[#0A0F1E]/97 backdrop-blur-xl border-b border-white/10 px-6 py-6 flex flex-col space-y-5 shadow-2xl">
+          <div className="lg:hidden absolute top-full left-0 right-0 bg-white border-b border-slate-200 px-6 py-6 flex flex-col space-y-5 shadow-lg">
             {navLinks.map((link) => (
               <a
                 key={link.name}
                 href={link.href}
-                className="text-xl font-semibold text-slate-300 hover:text-white transition-colors"
+                className="text-xl font-semibold text-slate-700 hover:text-blue-600 transition-colors"
                 onClick={() => setMobileMenuOpen(false)}
               >
                 {link.name}
@@ -346,12 +345,12 @@ export default function HomePage() {
                 objectPosition: 'right top',
               }}
             />
-            {/* Strong top overlay — keeps navbar area solid dark */}
-            <div className="absolute top-0 left-0 right-0 h-36 bg-gradient-to-b from-[#0A0F1E] via-[#0A0F1E]/90 to-transparent" />
+            {/* Strong top overlay — keeps navbar area light */}
+            <div className="absolute top-0 left-0 right-0 h-36 bg-gradient-to-b from-white via-white/90 to-transparent" />
             {/* Heavy left overlay on mobile (full readability), lighter on desktop */}
-            <div className="absolute inset-0 bg-gradient-to-r from-[#0A0F1E] via-[#0A0F1E]/85 to-[#0A0F1E]/20 sm:from-[#0A0F1E]/95 sm:via-[#0A0F1E]/65 sm:to-[#0A0F1E]/20" />
+            <div className="absolute inset-0 bg-gradient-to-r from-white via-white/85 to-white/30 sm:from-white/95 sm:via-white/65 sm:to-white/20" />
             {/* Bottom fade */}
-            <div className="absolute bottom-0 left-0 right-0 h-48 bg-gradient-to-t from-[#0A0F1E]/95 to-transparent" />
+            <div className="absolute bottom-0 left-0 right-0 h-48 bg-gradient-to-t from-white/95 to-transparent" />
           </div>
         ))}
 
@@ -362,10 +361,10 @@ export default function HomePage() {
               {/* Tag badge */}
               <div
                 key={`tag-${activeSlide}`}
-                className="inline-flex items-center gap-2 px-3 py-1.5 sm:px-4 sm:py-2 rounded-full bg-white/5 border border-white/15 text-xs sm:text-sm text-emerald-400 font-medium mb-4 sm:mb-6 backdrop-blur-sm"
+                className="inline-flex items-center gap-2 px-3 py-1.5 sm:px-4 sm:py-2 rounded-full bg-emerald-50 border border-emerald-200 text-xs sm:text-sm text-emerald-600 font-medium mb-4 sm:mb-6"
                 style={{ animation: 'fadeSlideUp 0.5s ease forwards' }}
               >
-                <Star className="w-3 h-3 sm:w-4 sm:h-4 fill-emerald-400" />
+                <Star className="w-3 h-3 sm:w-4 sm:h-4 fill-emerald-500" />
                 {slides[activeSlide].tag}
               </div>
 
@@ -375,9 +374,9 @@ export default function HomePage() {
                 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-extrabold tracking-tight leading-tight mb-3 sm:mb-6"
                 style={{ animation: 'fadeSlideUp 0.5s ease 0.1s both' }}
               >
-                <span className="text-white">{slides[activeSlide].title}</span>
+                <span className="text-slate-900">{slides[activeSlide].title}</span>
                 <br />
-                <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-emerald-400">
+                <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-emerald-500">
                   {slides[activeSlide].titleAccent}
                 </span>
               </h1>
@@ -385,7 +384,7 @@ export default function HomePage() {
               {/* Subtitle */}
               <p
                 key={`sub-${activeSlide}`}
-                className="text-sm sm:text-base md:text-lg text-slate-300 mb-6 sm:mb-10 leading-relaxed max-w-xl"
+                className="text-sm sm:text-base md:text-lg text-slate-600 mb-6 sm:mb-10 leading-relaxed max-w-xl"
                 style={{ animation: 'fadeSlideUp 0.5s ease 0.2s both' }}
               >
                 {slides[activeSlide].subtitle}
@@ -406,7 +405,7 @@ export default function HomePage() {
                 </a>
                 <a
                   href="#contact"
-                  className="px-6 sm:px-8 py-3 sm:py-4 text-sm sm:text-base font-semibold text-white bg-white/5 hover:bg-white/10 border border-white/15 rounded-full transition-all backdrop-blur-sm"
+                  className="px-6 sm:px-8 py-3 sm:py-4 text-sm sm:text-base font-semibold text-slate-700 bg-white hover:bg-slate-50 border border-slate-300 rounded-full transition-all shadow-sm"
                 >
                   Get Started
                 </a>
@@ -419,17 +418,17 @@ export default function HomePage() {
         {/* Prev / Next arrows */}
         <button
           onClick={prevSlide}
-          className="absolute left-4 md:left-8 top-1/2 -translate-y-1/2 z-20 w-12 h-12 rounded-full bg-white/10 hover:bg-white/20 border border-white/15 backdrop-blur-sm flex items-center justify-center transition-all"
+          className="absolute left-4 md:left-8 top-1/2 -translate-y-1/2 z-20 w-12 h-12 rounded-full bg-white hover:bg-slate-50 border border-slate-200 shadow-md flex items-center justify-center transition-all"
           aria-label="Previous slide"
         >
-          <ChevronRight className="w-5 h-5 text-white rotate-180" />
+          <ChevronRight className="w-5 h-5 text-slate-700 rotate-180" />
         </button>
         <button
           onClick={nextSlide}
-          className="absolute right-4 md:right-8 top-1/2 -translate-y-1/2 z-20 w-12 h-12 rounded-full bg-white/10 hover:bg-white/20 border border-white/15 backdrop-blur-sm flex items-center justify-center transition-all"
+          className="absolute right-4 md:right-8 top-1/2 -translate-y-1/2 z-20 w-12 h-12 rounded-full bg-white hover:bg-slate-50 border border-slate-200 shadow-md flex items-center justify-center transition-all"
           aria-label="Next slide"
         >
-          <ChevronRight className="w-5 h-5 text-white" />
+          <ChevronRight className="w-5 h-5 text-slate-700" />
         </button>
 
         {/* Dot indicators */}
@@ -441,8 +440,8 @@ export default function HomePage() {
               aria-label={`Go to slide ${i + 1}`}
               className={`transition-all duration-300 rounded-full ${
                 activeSlide === i
-                  ? 'w-8 h-2.5 bg-blue-500 shadow-[0_0_8px_rgba(59,130,246,0.8)]'
-                  : 'w-2.5 h-2.5 bg-white/30 hover:bg-white/60'
+                  ? 'w-8 h-2.5 bg-blue-600 shadow-[0_0_8px_rgba(59,130,246,0.4)]'
+                  : 'w-2.5 h-2.5 bg-slate-300 hover:bg-slate-500'
               }`}
             />
           ))}
@@ -529,14 +528,14 @@ export default function HomePage() {
       </section>
 
       {/* Products Section */}
-      <section id="products" className="py-24 bg-[#0A0F1E] relative overflow-hidden">
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-[500px] bg-blue-900/10 rounded-full blur-[120px] pointer-events-none"></div>
+      <section id="products" className="py-24 bg-slate-50 relative overflow-hidden">
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-[500px] bg-blue-100/50 rounded-full blur-[120px] pointer-events-none"></div>
 
         <div className="container mx-auto px-6 max-w-7xl relative z-10">
           <div className="text-center max-w-3xl mx-auto mb-16">
-            <div className="text-blue-500 font-semibold tracking-wider uppercase text-sm mb-4">Our Ecosystem</div>
-            <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">Comprehensive EdTech Suite</h2>
-            <p className="text-slate-400 text-lg">
+            <div className="text-blue-600 font-semibold tracking-wider uppercase text-sm mb-4">Our Ecosystem</div>
+            <h2 className="text-4xl md:text-5xl font-bold text-slate-900 mb-6">Comprehensive EdTech Suite</h2>
+            <p className="text-slate-600 text-lg">
               Integrated platforms designed to modernize campus operations, enhance student outcomes, and streamline administration.
             </p>
           </div>
@@ -570,24 +569,24 @@ export default function HomePage() {
             ].map((product, i) => (
               <div
                 key={i}
-                className="group relative bg-[#131c31]/50 backdrop-blur-xl border border-white/5 rounded-3xl p-8 hover:bg-[#1a243d]/80 transition-all duration-300 overflow-hidden"
+                className="group relative bg-white border border-slate-200 rounded-3xl p-8 hover:shadow-lg hover:-translate-y-1 transition-all duration-300 overflow-hidden"
               >
                 <div className={`absolute top-0 right-0 w-32 h-32 bg-gradient-to-br ${product.color} opacity-10 blur-3xl group-hover:opacity-20 transition-opacity`}></div>
 
                 <div className={`w-16 h-16 rounded-2xl bg-gradient-to-br ${product.color} p-[1px] mb-6 inline-block shadow-lg`}>
-                  <div className="w-full h-full bg-[#0A0F1E] rounded-2xl flex items-center justify-center text-white group-hover:bg-transparent transition-colors duration-300">
+                  <div className="w-full h-full bg-white rounded-2xl flex items-center justify-center text-white group-hover:bg-transparent transition-colors duration-300">
                     {product.icon}
                   </div>
                 </div>
 
-                <h3 className="text-2xl font-bold text-white mb-4">
+                <h3 className="text-2xl font-bold text-slate-900 mb-4">
                   {product.title}
                 </h3>
-                <p className="text-slate-400 leading-relaxed mb-6">
+                <p className="text-slate-600 leading-relaxed mb-6">
                   {product.desc}
                 </p>
 
-                <a href="#contact" className="inline-flex items-center text-sm font-semibold text-blue-400 hover:text-blue-300 transition-colors group/link">
+                <a href="#contact" className="inline-flex items-center text-sm font-semibold text-blue-600 hover:text-blue-500 transition-colors group/link">
                   Learn more <ChevronRight className="w-4 h-4 ml-1 group-hover/link:translate-x-1 transition-transform" />
                 </a>
               </div>
@@ -774,27 +773,27 @@ export default function HomePage() {
       </section>
 
       {/* Why Choose Us */}
-      <section className="py-24 relative overflow-hidden" style={{ background: 'linear-gradient(135deg, #0d1f3c 0%, #0A0F1E 45%, #0d2318 100%)' }}>
+      <section className="py-24 relative overflow-hidden bg-white">
         {/* Decorative glows */}
-        <div className="absolute top-0 left-1/4 w-[600px] h-[600px] bg-blue-600/10 rounded-full blur-[140px] pointer-events-none" />
-        <div className="absolute bottom-0 right-1/4 w-[400px] h-[400px] bg-emerald-500/10 rounded-full blur-[120px] pointer-events-none" />
+        <div className="absolute top-0 left-1/4 w-[600px] h-[600px] bg-blue-100/60 rounded-full blur-[140px] pointer-events-none" />
+        <div className="absolute bottom-0 right-1/4 w-[400px] h-[400px] bg-emerald-100/50 rounded-full blur-[120px] pointer-events-none" />
         {/* Top border accent */}
-        <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-blue-500/40 to-transparent" />
+        <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-blue-300 to-transparent" />
         {/* Bottom border accent */}
-        <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-emerald-500/30 to-transparent" />
+        <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-emerald-300 to-transparent" />
 
         <div className="container mx-auto px-6 max-w-7xl relative z-10">
           <div className="text-center mb-16">
-            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-blue-500/10 border border-blue-500/25 text-blue-400 text-sm font-medium mb-6">
-              <Star className="w-4 h-4 fill-blue-400" />
+            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-blue-50 border border-blue-200 text-blue-600 text-sm font-medium mb-6">
+              <Star className="w-4 h-4 fill-blue-500" />
               Our Advantage
             </div>
             <h2 className="text-4xl md:text-5xl font-extrabold mb-5 tracking-tight">
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-cyan-300 to-emerald-400">
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 via-cyan-500 to-emerald-500">
                 Why Choose ThinkWise?
               </span>
             </h2>
-            <p className="text-slate-400 max-w-2xl mx-auto text-lg">We don't just provide software — we partner with you to transform your entire educational ecosystem.</p>
+            <p className="text-slate-600 max-w-2xl mx-auto text-lg">We don't just provide software — we partner with you to transform your entire educational ecosystem.</p>
           </div>
 
           <div className="grid md:grid-cols-3 gap-8">
@@ -829,16 +828,15 @@ export default function HomePage() {
             ].map((feature, i) => (
               <div
                 key={i}
-                className={`relative bg-gradient-to-br ${feature.accent} border ${feature.border} rounded-2xl p-10 text-center hover:-translate-y-2 transition-all duration-300 group overflow-hidden`}
-                style={{ backdropFilter: 'blur(8px)', backgroundColor: 'rgba(13,28,49,0.6)' }}
+                className={`relative bg-white border border-slate-200 rounded-2xl p-10 text-center hover:-translate-y-2 hover:shadow-xl transition-all duration-300 group overflow-hidden`}
               >
                 <div className={`absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity bg-gradient-to-br ${feature.accent} rounded-2xl`} />
                 <div className="relative z-10">
                   <div className={`w-20 h-20 mx-auto ${feature.glow} rounded-2xl flex items-center justify-center border ${feature.border} mb-6 group-hover:scale-110 transition-transform duration-300`}>
                     {feature.icon}
                   </div>
-                  <h3 className="text-xl font-bold text-white mb-3">{feature.title}</h3>
-                  <p className="text-slate-400 leading-relaxed">{feature.desc}</p>
+                  <h3 className="text-xl font-bold text-slate-900 mb-3">{feature.title}</h3>
+                  <p className="text-slate-600 leading-relaxed">{feature.desc}</p>
                 </div>
               </div>
             ))}
@@ -847,49 +845,49 @@ export default function HomePage() {
       </section>
 
       {/* Contact Section */}
-      <section id="contact" className="py-24 bg-[#06080f] relative">
+      <section id="contact" className="py-24 bg-slate-50 relative">
         <div className="container mx-auto px-6 max-w-7xl relative z-10">
-          <div className="bg-[#131c31] border border-white/10 rounded-3xl overflow-hidden shadow-2xl flex flex-col lg:flex-row">
+          <div className="bg-white border border-slate-200 rounded-3xl overflow-hidden shadow-xl flex flex-col lg:flex-row">
 
             {/* Contact Info */}
-            <div className="lg:w-2/5 p-6 sm:p-8 lg:p-12 bg-gradient-to-br from-blue-900/40 to-[#131c31] border-b lg:border-b-0 lg:border-r border-white/5 relative overflow-hidden">
-              <div className="absolute top-0 right-0 w-64 h-64 bg-blue-500/10 rounded-full blur-3xl"></div>
+            <div className="lg:w-2/5 p-6 sm:p-8 lg:p-12 bg-gradient-to-br from-blue-50 to-white border-b lg:border-b-0 lg:border-r border-slate-100 relative overflow-hidden">
+              <div className="absolute top-0 right-0 w-64 h-64 bg-blue-100/60 rounded-full blur-3xl"></div>
 
-              <h2 className="text-3xl font-bold text-white mb-6 relative z-10">Get in Touch</h2>
-              <p className="text-slate-400 mb-10 relative z-10">
+              <h2 className="text-3xl font-bold text-slate-900 mb-6 relative z-10">Get in Touch</h2>
+              <p className="text-slate-600 mb-10 relative z-10">
                 Ready to transform your institution? Fill out the form and our team will get back to you within 24 hours.
               </p>
 
               <div className="space-y-6 relative z-10">
                 <div className="flex items-start gap-4">
-                  <div className="w-10 h-10 bg-blue-500/20 rounded-full flex items-center justify-center shrink-0 text-blue-400">
+                  <div className="w-10 h-10 bg-blue-100 rounded-full flex items-center justify-center shrink-0 text-blue-600">
                     <Mail className="w-5 h-5" />
                   </div>
                   <div>
-                    <div className="text-sm text-slate-400 mb-1">Email Us</div>
-                    <a href="mailto:info@thinkwise.pro" className="text-white font-medium hover:text-blue-400 transition-colors">
+                    <div className="text-sm text-slate-500 mb-1">Email Us</div>
+                    <a href="mailto:info@thinkwise.pro" className="text-slate-900 font-medium hover:text-blue-600 transition-colors">
                       info@thinkwise.pro
                     </a>
                   </div>
                 </div>
                 <div className="flex items-start gap-4">
-                  <div className="w-10 h-10 bg-emerald-500/20 rounded-full flex items-center justify-center shrink-0 text-emerald-400">
+                  <div className="w-10 h-10 bg-emerald-100 rounded-full flex items-center justify-center shrink-0 text-emerald-600">
                     <Phone className="w-5 h-5" />
                   </div>
                   <div>
-                    <div className="text-sm text-slate-400 mb-1">Call Us</div>
-                    <a href="tel:+917825838383" className="text-white font-medium hover:text-emerald-400 transition-colors">
+                    <div className="text-sm text-slate-500 mb-1">Call Us</div>
+                    <a href="tel:+917825838383" className="text-slate-900 font-medium hover:text-emerald-600 transition-colors">
                       +91 78258 38383
                     </a>
                   </div>
                 </div>
                 <div className="flex items-start gap-4">
-                  <div className="w-10 h-10 bg-purple-500/20 rounded-full flex items-center justify-center shrink-0 text-purple-400">
+                  <div className="w-10 h-10 bg-purple-100 rounded-full flex items-center justify-center shrink-0 text-purple-600">
                     <MapPin className="w-5 h-5" />
                   </div>
                   <div>
-                    <div className="text-sm text-slate-400 mb-1">Location</div>
-                    <div className="text-white font-medium leading-relaxed">#299, 1st Floor, 4th Main Road,<br />Perungudi, OMR, Chennai,<br />Tamil Nadu – 600096</div>
+                    <div className="text-sm text-slate-500 mb-1">Location</div>
+                    <div className="text-slate-900 font-medium leading-relaxed">#299, 1st Floor, 4th Main Road,<br />Perungudi, OMR, Chennai,<br />Tamil Nadu – 600096</div>
                   </div>
                 </div>
               </div>
@@ -899,11 +897,11 @@ export default function HomePage() {
             <div className="lg:w-3/5 p-6 sm:p-8 lg:p-12">
               {formStatus === 'sent' ? (
                 <div className="h-full flex flex-col items-center justify-center text-center py-12">
-                  <div className="w-20 h-20 bg-emerald-500/20 rounded-full flex items-center justify-center mb-6">
-                    <CheckCircle className="w-10 h-10 text-emerald-400" />
+                  <div className="w-20 h-20 bg-emerald-100 rounded-full flex items-center justify-center mb-6">
+                    <CheckCircle className="w-10 h-10 text-emerald-500" />
                   </div>
-                  <h3 className="text-2xl font-bold text-white mb-3">Message Sent!</h3>
-                  <p className="text-slate-400 mb-8">Thank you for reaching out. Our team will contact you within 24 hours.</p>
+                  <h3 className="text-2xl font-bold text-slate-900 mb-3">Message Sent!</h3>
+                  <p className="text-slate-600 mb-8">Thank you for reaching out. Our team will contact you within 24 hours.</p>
                   <button
                     onClick={() => setFormStatus('idle')}
                     className="px-6 py-3 text-sm font-semibold text-white bg-blue-600 hover:bg-blue-500 rounded-xl transition-all"
@@ -915,7 +913,7 @@ export default function HomePage() {
                 <form className="space-y-6" onSubmit={handleFormSubmit}>
                   <div className="grid md:grid-cols-2 gap-6">
                     <div className="space-y-2">
-                      <label htmlFor="name" className="text-sm font-medium text-slate-300">Full Name</label>
+                      <label htmlFor="name" className="text-sm font-medium text-slate-700">Full Name</label>
                       <input
                         id="name"
                         name="name"
@@ -924,11 +922,11 @@ export default function HomePage() {
                         placeholder="John Doe"
                         value={formData.name}
                         onChange={handleFormChange}
-                        className="w-full bg-[#0A0F1E] border border-white/10 rounded-xl px-4 py-3 text-white placeholder-slate-500 focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500 transition-colors"
+                        className="w-full bg-white border border-slate-300 rounded-xl px-4 py-3 text-slate-900 placeholder-slate-400 focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500 transition-colors"
                       />
                     </div>
                     <div className="space-y-2">
-                      <label htmlFor="email" className="text-sm font-medium text-slate-300">Email Address</label>
+                      <label htmlFor="email" className="text-sm font-medium text-slate-700">Email Address</label>
                       <input
                         id="email"
                         name="email"
@@ -937,12 +935,12 @@ export default function HomePage() {
                         placeholder="john@example.com"
                         value={formData.email}
                         onChange={handleFormChange}
-                        className="w-full bg-[#0A0F1E] border border-white/10 rounded-xl px-4 py-3 text-white placeholder-slate-500 focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500 transition-colors"
+                        className="w-full bg-white border border-slate-300 rounded-xl px-4 py-3 text-slate-900 placeholder-slate-400 focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500 transition-colors"
                       />
                     </div>
                   </div>
                   <div className="space-y-2">
-                    <label htmlFor="institution" className="text-sm font-medium text-slate-300">Institution / School Name</label>
+                    <label htmlFor="institution" className="text-sm font-medium text-slate-700">Institution / School Name</label>
                     <input
                       id="institution"
                       name="institution"
@@ -951,11 +949,11 @@ export default function HomePage() {
                       placeholder="Global International School"
                       value={formData.institution}
                       onChange={handleFormChange}
-                      className="w-full bg-[#0A0F1E] border border-white/10 rounded-xl px-4 py-3 text-white placeholder-slate-500 focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500 transition-colors"
+                      className="w-full bg-white border border-slate-300 rounded-xl px-4 py-3 text-slate-900 placeholder-slate-400 focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500 transition-colors"
                     />
                   </div>
                   <div className="space-y-2">
-                    <label htmlFor="message" className="text-sm font-medium text-slate-300">Message</label>
+                    <label htmlFor="message" className="text-sm font-medium text-slate-700">Message</label>
                     <textarea
                       id="message"
                       name="message"
@@ -964,7 +962,7 @@ export default function HomePage() {
                       placeholder="How can we help you?"
                       value={formData.message}
                       onChange={handleFormChange}
-                      className="w-full bg-[#0A0F1E] border border-white/10 rounded-xl px-4 py-3 text-white placeholder-slate-500 focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500 transition-colors resize-none"
+                      className="w-full bg-white border border-slate-300 rounded-xl px-4 py-3 text-slate-900 placeholder-slate-400 focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500 transition-colors resize-none"
                     ></textarea>
                   </div>
                   <button
@@ -983,7 +981,7 @@ export default function HomePage() {
       </section>
 
       {/* Footer */}
-      <footer className="bg-[#050812] py-12 border-t border-white/5">
+      <footer className="bg-white py-12 border-t border-slate-200">
         <div className="container mx-auto px-6 max-w-7xl">
           <div className="flex flex-col md:flex-row justify-between items-center gap-6">
             <a href="#home" className="flex items-center gap-0">
@@ -994,13 +992,12 @@ export default function HomePage() {
                 style={{
                   width: '68px',
                   height: '68px',
-                  filter: 'invert(1) drop-shadow(0 0 10px rgba(59,130,246,0.7))',
-                  mixBlendMode: 'screen',
+                  filter: 'drop-shadow(0 0 10px rgba(37,99,235,0.35))',
                 }}
               />
               <div className="flex flex-col gap-0.5" style={{ marginLeft: '-9px' }}>
                 <span className="text-4xl font-bold tracking-tight leading-none" style={{ fontFamily: "'Raleway', sans-serif", fontWeight: 700 }}>
-                  <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-emerald-400">Think</span><span className="text-white">Wise</span><sup className="text-blue-400 text-[18px] font-semibold" style={{ verticalAlign: '0.2em' }}>™</sup>
+                  <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-emerald-500">Think</span><span className="text-slate-900">Wise</span><sup className="text-blue-600 text-[18px] font-semibold" style={{ verticalAlign: '0.2em' }}>™</sup>
                 </span>
                 <span className="text-[11px] font-medium tracking-[0.2em] uppercase text-slate-400 pl-1">Make the difference</span>
               </div>
