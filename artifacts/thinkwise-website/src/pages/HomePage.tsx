@@ -303,22 +303,40 @@ export default function HomePage() {
       </nav>
 
       {/* Hero Slider Section */}
-      <section id="home" className="relative overflow-hidden" style={{ minHeight: '100dvh' }}>
+      <section
+        id="home"
+        className="relative overflow-hidden"
+        style={{ minHeight: '100dvh', width: '100%', maxWidth: '100vw' }}
+      >
         {/* Slide backgrounds */}
         {slides.map((slide, i) => (
           <div
             key={i}
-            className="absolute inset-0 transition-opacity duration-700"
-            style={{ opacity: activeSlide === i && !isTransitioning ? 1 : 0 }}
+            className="transition-opacity duration-700"
+            style={{
+              position: 'absolute',
+              top: 0, left: 0, right: 0, bottom: 0,
+              opacity: activeSlide === i && !isTransitioning ? 1 : 0,
+              overflow: 'hidden',
+            }}
           >
             <img
               src={slide.image}
               alt={slide.title}
-              className="absolute inset-0 w-full h-full object-cover max-w-none"
+              style={{
+                display: 'block',
+                width: '100%',
+                height: '100%',
+                objectFit: 'cover',
+                objectPosition: 'center',
+              }}
             />
-            {/* Dark gradient overlay — left side for text readability, right side lighter to show image */}
-            <div className="absolute inset-0 bg-gradient-to-r from-[#0A0F1E]/95 via-[#0A0F1E]/70 to-[#0A0F1E]/30" />
-            <div className="absolute inset-0 bg-gradient-to-t from-[#0A0F1E]/80 via-transparent to-[#0A0F1E]/40" />
+            {/* Strong top overlay — keeps navbar area dark and readable */}
+            <div className="absolute top-0 left-0 right-0 h-32 bg-gradient-to-b from-[#0A0F1E] via-[#0A0F1E]/80 to-transparent" />
+            {/* Left overlay for text readability */}
+            <div className="absolute inset-0 bg-gradient-to-r from-[#0A0F1E]/95 via-[#0A0F1E]/65 to-[#0A0F1E]/40" />
+            {/* Bottom overlay */}
+            <div className="absolute bottom-0 left-0 right-0 h-40 bg-gradient-to-t from-[#0A0F1E]/90 to-transparent" />
           </div>
         ))}
 
