@@ -242,7 +242,7 @@ export default function HomePage() {
                 mixBlendMode: 'screen',
               }}
             />
-            <div className="flex flex-col gap-0.5">
+            <div className="flex flex-col gap-0.5" style={{ marginLeft: '-14px' }}>
               <span className="text-6xl font-bold tracking-tight leading-none" style={{ fontFamily: "'Raleway', sans-serif", fontWeight: 700 }}>
                 <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-emerald-400">Think</span><span className="text-white">Wise</span><sup className="text-blue-400 text-[28px] font-semibold align-super ml-1">™</sup>
               </span>
@@ -743,7 +743,7 @@ export default function HomePage() {
                   mixBlendMode: 'screen',
                 }}
               />
-              <div className="flex flex-col gap-0.5">
+              <div className="flex flex-col gap-0.5" style={{ marginLeft: '-14px' }}>
                 <span className="text-6xl font-bold tracking-tight leading-none" style={{ fontFamily: "'Raleway', sans-serif", fontWeight: 700 }}>
                   <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-emerald-400">Think</span><span className="text-white">Wise</span><sup className="text-blue-400 text-[28px] font-semibold align-super ml-1">™</sup>
                 </span>
