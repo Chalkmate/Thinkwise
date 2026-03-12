@@ -257,7 +257,7 @@ export default function HomePage() {
               <a
                 key={link.name}
                 href={link.href}
-                className="text-base font-semibold text-slate-300 hover:text-white transition-all duration-200 hover:scale-[1.2] active:scale-95 inline-block"
+                className="text-lg font-semibold text-slate-300 hover:text-white transition-all duration-200 hover:scale-[1.2] active:scale-95 inline-block"
               >
                 {link.name}
               </a>
