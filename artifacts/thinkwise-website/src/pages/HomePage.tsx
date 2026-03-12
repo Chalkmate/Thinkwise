@@ -627,69 +627,122 @@ export default function HomePage() {
             ))}
           </div>
 
-          {/* 5 Pedagogy Categories */}
+          {/* 6 Pedagogy Categories */}
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-16">
             {[
               {
                 icon: '🎬',
                 color: 'from-blue-500 to-blue-700',
-                glow: 'rgba(59,130,246,0.15)',
+                glow: 'rgba(59,130,246,0.18)',
+                image: '/content/engage.png',
                 title: 'Engage',
                 subtitle: 'Visual & Interactive Learning',
-                items: ['2D/3D Animated Video Lessons', 'Real-time Lab Experiment Videos', 'Step-by-step Diagram Makers', 'Interactive Geography Maps', 'Subject Simulations', 'Teacher Presentation Decks'],
+                items: [
+                  'Curriculum-Mapped Animated Video Lessons',
+                  'Virtual & Real-Lab Experiment Demonstrations',
+                  'Auto-guided Scientific Diagram Builder Tools',
+                  'Layered Interactive Geography Explorer Maps',
+                  'Physics, Chemistry & Biology Virtual Simulations',
+                  'Chapter-ready Teacher Presentation Slide Decks',
+                ],
               },
               {
                 icon: '📝',
                 color: 'from-violet-500 to-purple-700',
-                glow: 'rgba(139,92,246,0.15)',
+                glow: 'rgba(139,92,246,0.18)',
+                image: '/content/practice.png',
                 title: 'Practice',
                 subtitle: 'Reinforcement & Application',
-                items: ['Chapter-wise Worksheets', 'Interactive Exercises', 'Solved Textbook Solutions', 'Physics & Chemistry Numericals', 'Solved Board Exam Papers', 'Printable Home Assignments'],
+                items: [
+                  'Chapter-wise Skill-Building Worksheets',
+                  'Graded Interactive Problem Sets',
+                  'Step-by-step Solved Textbook Walkthrough',
+                  'Physics, Chemistry & Math Numerical Drills',
+                  'Previous Year Board Exam Question Banks',
+                  'Printable Homework & Assignment Sheets',
+                ],
               },
               {
                 icon: '📋',
                 color: 'from-emerald-500 to-teal-700',
-                glow: 'rgba(16,185,129,0.15)',
+                glow: 'rgba(16,185,129,0.18)',
+                image: '/content/summarize.png',
                 title: 'Summarize',
                 subtitle: 'Revision & Recall',
-                items: ['Topic Synopses for Quick Revision', 'Visual Concept Maps', 'Chapter Highlight Notes', 'Key Term Glossaries'],
+                items: [
+                  'Concise Topic Synopses for Last-minute Revision',
+                  'Visual Mind Maps & Concept Webs',
+                  'Key Highlight & Takeaway Chapter Notes',
+                  'Subject Glossaries with Definitions',
+                ],
               },
               {
                 icon: '✅',
                 color: 'from-orange-500 to-amber-600',
-                glow: 'rgba(249,115,22,0.15)',
+                glow: 'rgba(249,115,22,0.18)',
+                image: '/content/evaluate.png',
                 title: 'Evaluate',
                 subtitle: 'Assessment & Testing',
-                items: ['Instant-Feedback MCQ Tests', 'Solved Subjective Chapter Tests', 'CCE-Aligned Sample Papers', 'Summative Assessment Sets', 'Grade-wise Practice Exams'],
+                items: [
+                  'Auto-graded MCQ Tests with Instant Feedback',
+                  'Subjective Chapter Tests with Model Answers',
+                  'CCE & Competency-based Sample Papers',
+                  'Formative & Summative Assessment Packs',
+                  'Grade-wise Cumulative Exam Simulators',
+                ],
               },
               {
                 icon: '🔭',
                 color: 'from-pink-500 to-rose-700',
-                glow: 'rgba(236,72,153,0.15)',
+                glow: 'rgba(236,72,153,0.18)',
+                image: '/content/explore.png',
                 title: 'Explore',
                 subtitle: 'Extended & Deep Learning',
-                items: ['Curated Web Resource Library', 'Community Teacher Resources', 'Real-life Concept Applications', 'Innovative Teaching Ideas', 'Group-based Learning Activities'],
+                items: [
+                  'Curated Subject-specific Web Resource Links',
+                  'Peer & Community Teacher Resource Vault',
+                  'Real-world Concept Application Case Studies',
+                  'Creative & Innovative Pedagogical Ideas',
+                  'Collaborative Group Learning Activity Kits',
+                ],
               },
               {
                 icon: '🌐',
                 color: 'from-cyan-500 to-sky-700',
-                glow: 'rgba(6,182,212,0.15)',
+                glow: 'rgba(6,182,212,0.18)',
+                image: '/content/multilingual.png',
                 title: 'Multi-Board & Multilingual',
-                subtitle: 'Inclusive Education',
-                items: ['CBSE, ICSE & State Boards', 'English & Hindi Content', 'Marathi, Gujarati, Tamil, Kannada', 'Curriculum-mapped Modules', 'Localized Regional Learning'],
+                subtitle: 'Inclusive Education for Every Learner',
+                items: [
+                  'CBSE, ICSE & 10+ State Board Alignments',
+                  'English & Hindi Medium Content Modules',
+                  'Marathi, Gujarati, Tamil & Kannada Editions',
+                  'Board-specific Curriculum-mapped Resources',
+                  'Vernacular Language Regional Learning Packs',
+                ],
               },
             ].map((cat) => (
               <div
                 key={cat.title}
-                className="relative bg-white/5 border border-white/10 rounded-2xl p-6 hover:border-white/20 transition-all hover:-translate-y-1 group overflow-hidden"
+                className="relative bg-white/5 border border-white/10 rounded-2xl hover:border-white/25 transition-all duration-300 hover:-translate-y-1 group overflow-hidden"
                 style={{ boxShadow: `0 0 40px ${cat.glow}` }}
               >
-                <div className={`absolute inset-0 bg-gradient-to-br ${cat.color} opacity-5 group-hover:opacity-10 transition-opacity rounded-2xl`} />
-                <div className="relative z-10">
-                  <div className="text-3xl mb-3">{cat.icon}</div>
-                  <h3 className={`text-xl font-bold text-transparent bg-clip-text bg-gradient-to-r ${cat.color} mb-0.5`}>{cat.title}</h3>
-                  <p className="text-slate-500 text-xs font-medium uppercase tracking-wider mb-4">{cat.subtitle}</p>
-                  <ul className="space-y-2">
+                {/* Card Image */}
+                <div className="relative h-44 overflow-hidden rounded-t-2xl">
+                  <img
+                    src={cat.image}
+                    alt={cat.title}
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-[#0d1424] via-[#0d142466] to-transparent" />
+                  <div className="absolute bottom-3 left-4 text-2xl drop-shadow-lg">{cat.icon}</div>
+                </div>
+                {/* Card Content */}
+                <div className="relative p-6">
+                  <div className={`absolute inset-0 bg-gradient-to-br ${cat.color} opacity-5 group-hover:opacity-10 transition-opacity`} />
+                  <h3 className={`relative text-xl font-bold text-transparent bg-clip-text bg-gradient-to-r ${cat.color} mb-0.5`}>{cat.title}</h3>
+                  <p className="relative text-slate-500 text-xs font-medium uppercase tracking-wider mb-4">{cat.subtitle}</p>
+                  <ul className="relative space-y-2">
                     {cat.items.map((item) => (
                       <li key={item} className="flex items-start gap-2 text-sm text-slate-300">
                         <span className="text-emerald-400 mt-0.5 flex-shrink-0">✓</span>
