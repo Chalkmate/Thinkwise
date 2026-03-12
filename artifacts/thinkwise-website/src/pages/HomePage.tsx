@@ -230,29 +230,27 @@ export default function HomePage() {
             : 'bg-transparent py-6'
         }`}
       >
-        <div className="container mx-auto px-6 max-w-7xl flex items-center justify-between">
+        <div className="container mx-auto px-4 sm:px-6 max-w-7xl flex items-center justify-between">
           <a href="#home" className="flex items-center gap-0">
             <img
               src="/bulb-icon.png"
               alt="ThinkWise Logo"
-              className="object-contain flex-shrink-0"
+              className="object-contain flex-shrink-0 w-14 h-14 lg:w-[104px] lg:h-[104px]"
               style={{
-                width: '104px',
-                height: '104px',
                 filter: 'invert(1) drop-shadow(0 0 10px rgba(59,130,246,0.7))',
                 mixBlendMode: 'screen',
               }}
             />
-            <div className="flex flex-col gap-0.5" style={{ marginLeft: '-14px' }}>
-              <span className="text-6xl font-bold tracking-tight leading-none" style={{ fontFamily: "'Raleway', sans-serif", fontWeight: 700 }}>
-                <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-emerald-400">Think</span><span className="text-white">Wise</span><sup className="text-blue-400 text-[28px] font-semibold align-super">™</sup>
+            <div className="flex flex-col gap-0.5 -ml-1.5 lg:-ml-[14px]">
+              <span className="text-2xl sm:text-3xl lg:text-6xl font-bold tracking-tight leading-none" style={{ fontFamily: "'Raleway', sans-serif", fontWeight: 700 }}>
+                <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-emerald-400">Think</span><span className="text-white">Wise</span><sup className="text-blue-400 text-[11px] sm:text-[14px] lg:text-[28px] font-semibold align-super">™</sup>
               </span>
-              <span className="text-sm font-medium tracking-[0.2em] uppercase text-slate-400 pl-1">Make the difference</span>
+              <span className="hidden sm:block text-[10px] sm:text-xs font-medium tracking-[0.2em] uppercase text-slate-400 pl-1">Make the difference</span>
             </div>
           </a>
 
-          {/* Desktop Nav */}
-          <div className="hidden md:flex items-center space-x-8">
+          {/* Desktop Nav — only on large screens */}
+          <div className="hidden lg:flex items-center space-x-6 xl:space-x-8">
             {navLinks.map((link) => (
               <a
                 key={link.name}
@@ -270,29 +268,36 @@ export default function HomePage() {
             </a>
           </div>
 
-          {/* Mobile Menu Toggle */}
+          {/* Hamburger — mobile & tablet */}
           <button
-            className="md:hidden text-slate-300 hover:text-white"
+            className="lg:hidden text-slate-300 hover:text-white p-1"
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
             aria-label="Toggle menu"
           >
-            {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+            {mobileMenuOpen ? <X className="w-7 h-7" /> : <Menu className="w-7 h-7" />}
           </button>
         </div>
 
-        {/* Mobile Nav */}
+        {/* Mobile / Tablet Nav Drawer */}
         {mobileMenuOpen && (
-          <div className="md:hidden absolute top-full left-0 right-0 bg-[#0A0F1E]/95 backdrop-blur-xl border-b border-white/10 p-6 flex flex-col space-y-4 shadow-2xl">
+          <div className="lg:hidden absolute top-full left-0 right-0 bg-[#0A0F1E]/97 backdrop-blur-xl border-b border-white/10 px-6 py-6 flex flex-col space-y-5 shadow-2xl">
             {navLinks.map((link) => (
               <a
                 key={link.name}
                 href={link.href}
-                className="text-lg font-medium text-slate-300 hover:text-white transition-colors"
+                className="text-xl font-semibold text-slate-300 hover:text-white transition-colors"
                 onClick={() => setMobileMenuOpen(false)}
               >
                 {link.name}
               </a>
             ))}
+            <a
+              href="#contact"
+              className="inline-block mt-2 px-6 py-3 text-base font-semibold text-white bg-blue-600 hover:bg-blue-500 rounded-full transition-all text-center"
+              onClick={() => setMobileMenuOpen(false)}
+            >
+              Get Started
+            </a>
           </div>
         )}
       </nav>
@@ -438,7 +443,7 @@ export default function HomePage() {
       {/* About Section */}
       <section id="about" className="py-24 bg-[#0d1425] relative">
         <div className="container mx-auto px-6 max-w-7xl">
-          <div className="grid lg:grid-cols-2 gap-16 items-center">
+          <div className="grid lg:grid-cols-2 gap-10 lg:gap-16 items-center">
             <div>
               <div className="text-blue-500 font-semibold tracking-wider uppercase text-sm mb-4">About ThinkWise</div>
               <h2 className="text-4xl md:text-5xl font-bold text-white mb-6 leading-tight">
@@ -814,7 +819,7 @@ export default function HomePage() {
           <div className="bg-[#131c31] border border-white/10 rounded-3xl overflow-hidden shadow-2xl flex flex-col lg:flex-row">
 
             {/* Contact Info */}
-            <div className="lg:w-2/5 p-12 bg-gradient-to-br from-blue-900/40 to-[#131c31] border-r border-white/5 relative overflow-hidden">
+            <div className="lg:w-2/5 p-6 sm:p-8 lg:p-12 bg-gradient-to-br from-blue-900/40 to-[#131c31] border-b lg:border-b-0 lg:border-r border-white/5 relative overflow-hidden">
               <div className="absolute top-0 right-0 w-64 h-64 bg-blue-500/10 rounded-full blur-3xl"></div>
 
               <h2 className="text-3xl font-bold text-white mb-6 relative z-10">Get in Touch</h2>
@@ -858,7 +863,7 @@ export default function HomePage() {
             </div>
 
             {/* Contact Form */}
-            <div className="lg:w-3/5 p-12">
+            <div className="lg:w-3/5 p-6 sm:p-8 lg:p-12">
               {formStatus === 'sent' ? (
                 <div className="h-full flex flex-col items-center justify-center text-center py-12">
                   <div className="w-20 h-20 bg-emerald-500/20 rounded-full flex items-center justify-center mb-6">
