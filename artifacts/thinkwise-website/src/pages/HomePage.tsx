@@ -125,9 +125,41 @@ function BulbBrainIcon({ className = '' }: { className?: string }) {
   );
 }
 
+const slides = [
+  {
+    image: '/banners/banner1-redesigned.png',
+    tag: 'Smart Assessment Platform',
+    title: 'ThinkWise Assessment',
+    titleAccent: 'Smarter Learning',
+    subtitle: 'Comprehensive online assessment system with deep analytics, automated grading, and real-time performance tracking for every student.',
+    cta: 'Explore Assessment',
+    ctaHref: '#products',
+  },
+  {
+    image: '/banners/banner2-redesigned.png',
+    tag: 'Complete Digital Solutions',
+    title: 'Technology Support',
+    titleAccent: 'for Schools',
+    subtitle: 'Empowering institutions with brand building, professional video production, dynamic websites, and full digital marketing support.',
+    cta: 'Digital Solutions',
+    ctaHref: '#products',
+  },
+  {
+    image: '/banners/banner3-redesigned.png',
+    tag: 'Safety & Attendance',
+    title: 'Bus Tracking &',
+    titleAccent: 'RFID Attendance',
+    subtitle: 'Real-time GPS school bus monitoring and smart RFID attendance systems — keeping students safe and administration seamless.',
+    cta: 'Learn More',
+    ctaHref: '#products',
+  },
+];
+
 export default function HomePage() {
   const [isScrolled, setIsScrolled] = React.useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = React.useState(false);
+  const [activeSlide, setActiveSlide] = React.useState(0);
+  const [isTransitioning, setIsTransitioning] = React.useState(false);
   const [formData, setFormData] = React.useState({
     name: '',
     email: '',
@@ -143,6 +175,28 @@ export default function HomePage() {
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
+
+  const goToSlide = React.useCallback((index: number) => {
+    if (isTransitioning) return;
+    setIsTransitioning(true);
+    setTimeout(() => {
+      setActiveSlide(index);
+      setIsTransitioning(false);
+    }, 300);
+  }, [isTransitioning]);
+
+  const nextSlide = React.useCallback(() => {
+    goToSlide((activeSlide + 1) % slides.length);
+  }, [activeSlide, goToSlide]);
+
+  const prevSlide = React.useCallback(() => {
+    goToSlide((activeSlide - 1 + slides.length) % slides.length);
+  }, [activeSlide, goToSlide]);
+
+  React.useEffect(() => {
+    const interval = setInterval(nextSlide, 5000);
+    return () => clearInterval(interval);
+  }, [nextSlide]);
 
   const navLinks = [
     { name: 'Home', href: '#home' },
@@ -227,57 +281,122 @@ export default function HomePage() {
         )}
       </nav>
 
-      {/* Hero Section */}
-      <section
-        id="home"
-        className="relative min-h-screen flex items-center pt-24 pb-12 overflow-hidden bg-gradient-to-br from-[#0A0F1E] via-[#0f172a] to-[#0A0F1E]"
-      >
-        <div className="absolute top-1/4 -left-64 w-96 h-96 bg-blue-600/20 rounded-full blur-[128px] pointer-events-none"></div>
-        <div className="absolute bottom-1/4 -right-64 w-96 h-96 bg-emerald-500/10 rounded-full blur-[128px] pointer-events-none"></div>
-        <div
-          className="absolute inset-0 opacity-30 pointer-events-none"
-          style={{
-            backgroundImage: `url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='20' height='20'%3E%3Ccircle cx='1' cy='1' r='1' fill='rgba(255,255,255,0.05)'/%3E%3C/svg%3E")`,
-          }}
-        ></div>
+      {/* Hero Slider Section */}
+      <section id="home" className="relative min-h-screen overflow-hidden">
+        {/* Slide backgrounds */}
+        {slides.map((slide, i) => (
+          <div
+            key={i}
+            className="absolute inset-0 transition-opacity duration-700"
+            style={{ opacity: activeSlide === i && !isTransitioning ? 1 : 0 }}
+          >
+            <img
+              src={slide.image}
+              alt={slide.title}
+              className="w-full h-full object-cover"
+            />
+            {/* Dark gradient overlay — left side for text readability, right side lighter to show image */}
+            <div className="absolute inset-0 bg-gradient-to-r from-[#0A0F1E]/95 via-[#0A0F1E]/70 to-[#0A0F1E]/30" />
+            <div className="absolute inset-0 bg-gradient-to-t from-[#0A0F1E]/80 via-transparent to-[#0A0F1E]/40" />
+          </div>
+        ))}
 
-        <div className="container mx-auto px-6 max-w-7xl relative z-10">
-          <div className="max-w-4xl mx-auto text-center">
-            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/5 border border-white/10 text-sm text-emerald-400 font-medium mb-8 backdrop-blur-sm">
-              <Star className="w-4 h-4 fill-emerald-400" />
-              India's Leading EdTech Solutions Provider
-            </div>
-
-            <h1 className="text-5xl md:text-7xl font-extrabold tracking-tight leading-tight mb-8">
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-white via-blue-100 to-slate-400">
-                Empowering Education
-              </span>
-              <br className="hidden md:block" />
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-emerald-400">
-                {' '}Through Technology
-              </span>
-            </h1>
-
-            <p className="text-lg md:text-xl text-slate-400 mb-10 max-w-2xl mx-auto leading-relaxed">
-              Catalyzing the competence and competitiveness of educational institutions with world-class, tailor-made digital solutions.
-            </p>
-
-            <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-              <a
-                href="#products"
-                className="w-full sm:w-auto px-8 py-4 text-base font-semibold text-white bg-blue-600 hover:bg-blue-500 rounded-full transition-all shadow-[0_0_20px_rgba(59,130,246,0.3)] hover:shadow-[0_0_30px_rgba(59,130,246,0.6)] flex items-center justify-center gap-2"
+        {/* Slide content */}
+        <div className="relative z-10 min-h-screen flex items-center pt-24 pb-32">
+          <div className="container mx-auto px-6 max-w-7xl">
+            <div className="max-w-2xl">
+              {/* Tag badge */}
+              <div
+                key={`tag-${activeSlide}`}
+                className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/5 border border-white/15 text-sm text-emerald-400 font-medium mb-6 backdrop-blur-sm"
+                style={{ animation: 'fadeSlideUp 0.5s ease forwards' }}
               >
-                Explore Products
-                <ChevronRight className="w-5 h-5" />
-              </a>
-              <a
-                href="#about"
-                className="w-full sm:w-auto px-8 py-4 text-base font-semibold text-white bg-white/5 hover:bg-white/10 border border-white/10 rounded-full transition-all backdrop-blur-sm flex items-center justify-center"
+                <Star className="w-4 h-4 fill-emerald-400" />
+                {slides[activeSlide].tag}
+              </div>
+
+              {/* Headline */}
+              <h1
+                key={`title-${activeSlide}`}
+                className="text-5xl md:text-6xl lg:text-7xl font-extrabold tracking-tight leading-tight mb-6"
+                style={{ animation: 'fadeSlideUp 0.5s ease 0.1s both' }}
               >
-                Learn More
-              </a>
+                <span className="text-white">{slides[activeSlide].title}</span>
+                <br />
+                <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-emerald-400">
+                  {slides[activeSlide].titleAccent}
+                </span>
+              </h1>
+
+              {/* Subtitle */}
+              <p
+                key={`sub-${activeSlide}`}
+                className="text-lg text-slate-300 mb-10 leading-relaxed max-w-xl"
+                style={{ animation: 'fadeSlideUp 0.5s ease 0.2s both' }}
+              >
+                {slides[activeSlide].subtitle}
+              </p>
+
+              {/* CTAs */}
+              <div
+                key={`cta-${activeSlide}`}
+                className="flex flex-col sm:flex-row items-start gap-4"
+                style={{ animation: 'fadeSlideUp 0.5s ease 0.3s both' }}
+              >
+                <a
+                  href={slides[activeSlide].ctaHref}
+                  className="px-8 py-4 text-base font-semibold text-white bg-blue-600 hover:bg-blue-500 rounded-full transition-all shadow-[0_0_20px_rgba(59,130,246,0.4)] hover:shadow-[0_0_30px_rgba(59,130,246,0.7)] flex items-center gap-2"
+                >
+                  {slides[activeSlide].cta}
+                  <ChevronRight className="w-5 h-5" />
+                </a>
+                <a
+                  href="#contact"
+                  className="px-8 py-4 text-base font-semibold text-white bg-white/5 hover:bg-white/10 border border-white/15 rounded-full transition-all backdrop-blur-sm"
+                >
+                  Get Started
+                </a>
+              </div>
             </div>
           </div>
+        </div>
+
+        {/* Slider controls */}
+        {/* Prev / Next arrows */}
+        <button
+          onClick={prevSlide}
+          className="absolute left-4 md:left-8 top-1/2 -translate-y-1/2 z-20 w-12 h-12 rounded-full bg-white/10 hover:bg-white/20 border border-white/15 backdrop-blur-sm flex items-center justify-center transition-all"
+          aria-label="Previous slide"
+        >
+          <ChevronRight className="w-5 h-5 text-white rotate-180" />
+        </button>
+        <button
+          onClick={nextSlide}
+          className="absolute right-4 md:right-8 top-1/2 -translate-y-1/2 z-20 w-12 h-12 rounded-full bg-white/10 hover:bg-white/20 border border-white/15 backdrop-blur-sm flex items-center justify-center transition-all"
+          aria-label="Next slide"
+        >
+          <ChevronRight className="w-5 h-5 text-white" />
+        </button>
+
+        {/* Dot indicators */}
+        <div className="absolute bottom-10 left-1/2 -translate-x-1/2 z-20 flex items-center gap-3">
+          {slides.map((_, i) => (
+            <button
+              key={i}
+              onClick={() => goToSlide(i)}
+              aria-label={`Go to slide ${i + 1}`}
+              className={`transition-all duration-300 rounded-full ${
+                activeSlide === i
+                  ? 'w-8 h-2.5 bg-blue-500 shadow-[0_0_8px_rgba(59,130,246,0.8)]'
+                  : 'w-2.5 h-2.5 bg-white/30 hover:bg-white/60'
+              }`}
+            />
+          ))}
+        </div>
+
+        {/* Slide counter */}
+        <div className="absolute bottom-10 right-8 z-20 text-slate-400 text-sm font-mono hidden md:block">
+          {String(activeSlide + 1).padStart(2, '0')} / {String(slides.length).padStart(2, '0')}
         </div>
       </section>
 
