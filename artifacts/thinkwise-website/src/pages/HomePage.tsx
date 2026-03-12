@@ -243,7 +243,7 @@ export default function HomePage() {
             />
             <div className="flex flex-col gap-0.5 -ml-1.5 lg:-ml-[14px]">
               <span className="text-2xl sm:text-3xl lg:text-6xl font-bold tracking-tight leading-none" style={{ fontFamily: "'Raleway', sans-serif", fontWeight: 700 }}>
-                <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-emerald-400">Think</span><span className="text-white">Wise</span><sup className="text-blue-400 text-[11px] sm:text-[14px] lg:text-[28px] font-semibold align-super">™</sup>
+                <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-emerald-400">Think</span><span className="text-white">Wise</span><sup className="text-blue-400 text-[11px] sm:text-[14px] lg:text-[28px] font-semibold" style={{ verticalAlign: '0.2em' }}>™</sup>
               </span>
               {/* Mobile/tablet: words spread to match logo width */}
               <span className="flex lg:hidden justify-between w-full text-[9px] sm:text-xs font-medium uppercase text-slate-400">
@@ -1005,7 +1005,7 @@ export default function HomePage() {
               />
               <div className="flex flex-col gap-0.5" style={{ marginLeft: '-9px' }}>
                 <span className="text-4xl font-bold tracking-tight leading-none" style={{ fontFamily: "'Raleway', sans-serif", fontWeight: 700 }}>
-                  <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-emerald-400">Think</span><span className="text-white">Wise</span><sup className="text-blue-400 text-[18px] font-semibold align-super">™</sup>
+                  <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-emerald-400">Think</span><span className="text-white">Wise</span><sup className="text-blue-400 text-[18px] font-semibold" style={{ verticalAlign: '0.2em' }}>™</sup>
                 </span>
                 {/* Mobile/tablet: words spread to match logo width */}
                 <span className="flex lg:hidden justify-between w-full text-xs font-medium uppercase text-slate-400">
