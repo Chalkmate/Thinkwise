@@ -230,9 +230,18 @@ export default function HomePage() {
         }`}
       >
         <div className="container mx-auto px-6 max-w-7xl flex items-center justify-between">
-          <a href="#home" className="flex items-center gap-3">
-            <BulbBrainIcon className="w-10 h-10" />
-            <img src="/logo.png" alt="ThinkWise" className="h-8 object-contain" />
+          <a href="#home" className="flex items-center gap-2.5">
+            <img
+              src="/thinkwise-logo.png"
+              alt="ThinkWise Logo"
+              className="h-10 w-10 object-contain object-left flex-shrink-0"
+              style={{
+                filter: 'invert(1) drop-shadow(0 0 8px rgba(59,130,246,0.6))',
+              }}
+            />
+            <span className="text-xl font-bold tracking-tight leading-none">
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-emerald-400">Think</span><span className="text-white">Wise</span><sup className="text-blue-400 text-[10px] font-semibold align-super ml-0.5">™</sup>
+            </span>
           </a>
 
           {/* Desktop Nav */}
@@ -716,9 +725,18 @@ export default function HomePage() {
       <footer className="bg-[#050812] py-12 border-t border-white/5">
         <div className="container mx-auto px-6 max-w-7xl">
           <div className="flex flex-col md:flex-row justify-between items-center gap-6">
-            <a href="#home" className="flex items-center gap-3">
-              <BulbBrainIcon className="w-10 h-10" />
-              <img src="/logo.png" alt="ThinkWise" className="h-8 object-contain" />
+            <a href="#home" className="flex items-center gap-2.5">
+              <img
+                src="/thinkwise-logo.png"
+                alt="ThinkWise Logo"
+                className="h-10 w-10 object-contain object-left flex-shrink-0"
+                style={{
+                  filter: 'invert(1) drop-shadow(0 0 8px rgba(59,130,246,0.6))',
+                }}
+              />
+              <span className="text-xl font-bold tracking-tight leading-none">
+                <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-emerald-400">Think</span><span className="text-white">Wise</span><sup className="text-blue-400 text-[10px] font-semibold align-super ml-0.5">™</sup>
+              </span>
             </a>
             <p className="text-slate-500 text-sm text-center md:text-left">
               Catalyzing competence through information technology.
