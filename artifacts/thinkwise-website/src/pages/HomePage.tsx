@@ -231,23 +231,23 @@ export default function HomePage() {
         }`}
       >
         <div className="container mx-auto px-6 max-w-7xl flex items-center justify-between">
-          <a href="#home" className="flex items-center gap-3">
+          <a href="#home" className="flex items-center gap-0">
             <img
               src="/bulb-icon.png"
               alt="ThinkWise Logo"
               className="object-contain flex-shrink-0"
               style={{
-                width: '72px',
-                height: '72px',
+                width: '104px',
+                height: '104px',
                 filter: 'invert(1) drop-shadow(0 0 10px rgba(59,130,246,0.7))',
                 mixBlendMode: 'screen',
               }}
             />
-            <div className="flex flex-col gap-0.5">
-              <span className="text-5xl font-bold tracking-tight leading-none" style={{ fontFamily: "'Raleway', sans-serif", fontWeight: 700 }}>
-                <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-emerald-400">Think</span><span className="text-white">Wise</span><sup className="text-blue-400 text-[22px] font-semibold align-super">™</sup>
+            <div className="flex flex-col gap-0.5" style={{ marginLeft: '-14px' }}>
+              <span className="text-6xl font-bold tracking-tight leading-none" style={{ fontFamily: "'Raleway', sans-serif", fontWeight: 700 }}>
+                <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-emerald-400">Think</span><span className="text-white">Wise</span><sup className="text-blue-400 text-[28px] font-semibold align-super">™</sup>
               </span>
-              <span className="text-sm font-medium tracking-[0.2em] uppercase text-slate-400">Make the difference</span>
+              <span className="text-sm font-medium tracking-[0.2em] uppercase text-slate-400 pl-1">Make the difference</span>
             </div>
           </a>
 
@@ -948,23 +948,23 @@ export default function HomePage() {
       <footer className="bg-[#050812] py-12 border-t border-white/5">
         <div className="container mx-auto px-6 max-w-7xl">
           <div className="flex flex-col md:flex-row justify-between items-center gap-6">
-            <a href="#home" className="flex items-center gap-3">
+            <a href="#home" className="flex items-center gap-0">
               <img
                 src="/bulb-icon.png"
                 alt="ThinkWise Logo"
                 className="object-contain flex-shrink-0"
                 style={{
-                  width: '52px',
-                  height: '52px',
-                  filter: 'invert(1) drop-shadow(0 0 8px rgba(59,130,246,0.7))',
+                  width: '68px',
+                  height: '68px',
+                  filter: 'invert(1) drop-shadow(0 0 10px rgba(59,130,246,0.7))',
                   mixBlendMode: 'screen',
                 }}
               />
-              <div className="flex flex-col gap-0.5">
-                <span className="text-3xl font-bold tracking-tight leading-none" style={{ fontFamily: "'Raleway', sans-serif", fontWeight: 700 }}>
-                  <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-emerald-400">Think</span><span className="text-white">Wise</span><sup className="text-blue-400 text-[14px] font-semibold align-super">™</sup>
+              <div className="flex flex-col gap-0.5" style={{ marginLeft: '-9px' }}>
+                <span className="text-4xl font-bold tracking-tight leading-none" style={{ fontFamily: "'Raleway', sans-serif", fontWeight: 700 }}>
+                  <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-emerald-400">Think</span><span className="text-white">Wise</span><sup className="text-blue-400 text-[18px] font-semibold align-super">™</sup>
                 </span>
-                <span className="text-xs font-medium tracking-[0.2em] uppercase text-slate-400">Make the difference</span>
+                <span className="text-xs font-medium tracking-[0.2em] uppercase text-slate-400 pl-1">Make the difference</span>
               </div>
             </a>
             <p className="text-slate-500 text-sm text-center md:text-left">
