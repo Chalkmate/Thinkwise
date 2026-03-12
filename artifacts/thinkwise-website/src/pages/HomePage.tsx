@@ -554,44 +554,6 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Why Choose Us */}
-      <section className="py-24 bg-[#0d1425]">
-        <div className="container mx-auto px-6 max-w-7xl">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">Why Choose ThinkWise?</h2>
-            <p className="text-slate-400 max-w-2xl mx-auto">We don't just provide software; we partner with you to transform your educational ecosystem.</p>
-          </div>
-
-          <div className="grid md:grid-cols-3 gap-8">
-            {[
-              {
-                title: 'Proven Technology',
-                desc: 'Robust, scalable platforms battle-tested by hundreds of institutions.',
-                icon: <Award className="w-10 h-10 text-blue-400" />,
-              },
-              {
-                title: 'Dedicated Support',
-                desc: '24/7 personalized technical support to ensure uninterrupted operations.',
-                icon: <Shield className="w-10 h-10 text-emerald-400" />,
-              },
-              {
-                title: 'Custom Solutions',
-                desc: 'Highly tailored systems that adapt to your specific workflow and needs.',
-                icon: <Brain className="w-10 h-10 text-purple-400" />,
-              },
-            ].map((feature, i) => (
-              <div key={i} className="bg-[#131c31] border border-white/5 rounded-2xl p-8 text-center hover:-translate-y-2 transition-transform duration-300">
-                <div className="w-20 h-20 mx-auto bg-[#0A0F1E] rounded-full flex items-center justify-center border border-white/5 mb-6">
-                  {feature.icon}
-                </div>
-                <h3 className="text-xl font-bold text-white mb-3">{feature.title}</h3>
-                <p className="text-slate-400">{feature.desc}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
       {/* Content Library Section */}
       <section id="content" className="py-24 bg-[#0d1425] relative overflow-hidden">
         <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-blue-600/10 rounded-full blur-[120px] pointer-events-none" />
@@ -765,6 +727,44 @@ export default function HomePage() {
                 </span>
               ))}
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Why Choose Us */}
+      <section className="py-24 bg-[#0A0F1E]">
+        <div className="container mx-auto px-6 max-w-7xl">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">Why Choose ThinkWise?</h2>
+            <p className="text-slate-400 max-w-2xl mx-auto">We don't just provide software; we partner with you to transform your educational ecosystem.</p>
+          </div>
+
+          <div className="grid md:grid-cols-3 gap-8">
+            {[
+              {
+                title: 'Proven Technology',
+                desc: 'Robust, scalable platforms battle-tested by hundreds of institutions.',
+                icon: <Award className="w-10 h-10 text-blue-400" />,
+              },
+              {
+                title: 'Dedicated Support',
+                desc: '24/7 personalized technical support to ensure uninterrupted operations.',
+                icon: <Shield className="w-10 h-10 text-emerald-400" />,
+              },
+              {
+                title: 'Custom Solutions',
+                desc: 'Highly tailored systems that adapt to your specific workflow and needs.',
+                icon: <Brain className="w-10 h-10 text-purple-400" />,
+              },
+            ].map((feature, i) => (
+              <div key={i} className="bg-[#131c31] border border-white/5 rounded-2xl p-8 text-center hover:-translate-y-2 transition-transform duration-300">
+                <div className="w-20 h-20 mx-auto bg-[#0A0F1E] rounded-full flex items-center justify-center border border-white/5 mb-6">
+                  {feature.icon}
+                </div>
+                <h3 className="text-xl font-bold text-white mb-3">{feature.title}</h3>
+                <p className="text-slate-400">{feature.desc}</p>
+              </div>
+            ))}
           </div>
         </div>
       </section>
