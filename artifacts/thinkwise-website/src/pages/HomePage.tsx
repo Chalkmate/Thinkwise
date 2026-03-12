@@ -1,7 +1,7 @@
 import React from 'react';
 import {
   MapPin, CreditCard, Smartphone, Award, Shield, Users,
-  Star, CheckCircle, ChevronRight, Mail, Phone, Globe, Menu, X, Brain
+  Star, CheckCircle, ChevronRight, Mail, Phone, Globe, Menu, X, Brain, BookOpen
 } from 'lucide-react';
 
 function BulbBrainIcon({ className = '' }: { className?: string }) {
@@ -202,6 +202,7 @@ export default function HomePage() {
     { name: 'Home', href: '#home' },
     { name: 'About', href: '#about' },
     { name: 'Products', href: '#products' },
+    { name: 'Content', href: '#content' },
     { name: 'Contact', href: '#contact' },
   ];
 
@@ -587,6 +588,130 @@ export default function HomePage() {
                 <p className="text-slate-400">{feature.desc}</p>
               </div>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Content Library Section */}
+      <section id="content" className="py-24 bg-[#0d1425] relative overflow-hidden">
+        <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-blue-600/10 rounded-full blur-[120px] pointer-events-none" />
+        <div className="absolute bottom-0 left-0 w-[400px] h-[400px] bg-emerald-500/8 rounded-full blur-[100px] pointer-events-none" />
+
+        <div className="container mx-auto px-6 max-w-7xl relative z-10">
+          {/* Header */}
+          <div className="text-center mb-16">
+            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 text-sm font-medium mb-6">
+              <BookOpen className="w-4 h-4" />
+              World-Class Digital Content
+            </div>
+            <h2 className="text-4xl md:text-5xl font-extrabold text-white mb-5 tracking-tight">
+              ThinkWise <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-emerald-400">Content Library</span>
+            </h2>
+            <p className="text-slate-400 text-lg max-w-2xl mx-auto leading-relaxed">
+              A comprehensive repository of curriculum-aligned rich-media content for Grades K–12, mapped to 12+ education boards across India and available in 6 languages.
+            </p>
+          </div>
+
+          {/* Stats bar */}
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-16">
+            {[
+              { value: 'K–12', label: 'All Grades' },
+              { value: '12+', label: 'Education Boards' },
+              { value: '6', label: 'Languages' },
+              { value: '5000+', label: 'Learning Resources' },
+            ].map((stat) => (
+              <div key={stat.label} className="bg-white/5 border border-white/10 rounded-2xl p-5 text-center backdrop-blur-sm">
+                <div className="text-3xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-emerald-400 mb-1">{stat.value}</div>
+                <div className="text-slate-400 text-sm">{stat.label}</div>
+              </div>
+            ))}
+          </div>
+
+          {/* 5 Pedagogy Categories */}
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-16">
+            {[
+              {
+                icon: '🎬',
+                color: 'from-blue-500 to-blue-700',
+                glow: 'rgba(59,130,246,0.15)',
+                title: 'Engage',
+                subtitle: 'Visual & Interactive Learning',
+                items: ['2D/3D Animated Video Lessons', 'Real-time Lab Experiment Videos', 'Step-by-step Diagram Makers', 'Interactive Geography Maps', 'Subject Simulations', 'Teacher Presentation Decks'],
+              },
+              {
+                icon: '📝',
+                color: 'from-violet-500 to-purple-700',
+                glow: 'rgba(139,92,246,0.15)',
+                title: 'Practice',
+                subtitle: 'Reinforcement & Application',
+                items: ['Chapter-wise Worksheets', 'Interactive Exercises', 'Solved Textbook Solutions', 'Physics & Chemistry Numericals', 'Solved Board Exam Papers', 'Printable Home Assignments'],
+              },
+              {
+                icon: '📋',
+                color: 'from-emerald-500 to-teal-700',
+                glow: 'rgba(16,185,129,0.15)',
+                title: 'Summarize',
+                subtitle: 'Revision & Recall',
+                items: ['Topic Synopses for Quick Revision', 'Visual Concept Maps', 'Chapter Highlight Notes', 'Key Term Glossaries'],
+              },
+              {
+                icon: '✅',
+                color: 'from-orange-500 to-amber-600',
+                glow: 'rgba(249,115,22,0.15)',
+                title: 'Evaluate',
+                subtitle: 'Assessment & Testing',
+                items: ['Instant-Feedback MCQ Tests', 'Solved Subjective Chapter Tests', 'CCE-Aligned Sample Papers', 'Summative Assessment Sets', 'Grade-wise Practice Exams'],
+              },
+              {
+                icon: '🔭',
+                color: 'from-pink-500 to-rose-700',
+                glow: 'rgba(236,72,153,0.15)',
+                title: 'Explore',
+                subtitle: 'Extended & Deep Learning',
+                items: ['Curated Web Resource Library', 'Community Teacher Resources', 'Real-life Concept Applications', 'Innovative Teaching Ideas', 'Group-based Learning Activities'],
+              },
+              {
+                icon: '🌐',
+                color: 'from-cyan-500 to-sky-700',
+                glow: 'rgba(6,182,212,0.15)',
+                title: 'Multi-Board & Multilingual',
+                subtitle: 'Inclusive Education',
+                items: ['CBSE, ICSE & State Boards', 'English & Hindi Content', 'Marathi, Gujarati, Tamil, Kannada', 'Curriculum-mapped Modules', 'Localized Regional Learning'],
+              },
+            ].map((cat) => (
+              <div
+                key={cat.title}
+                className="relative bg-white/5 border border-white/10 rounded-2xl p-6 hover:border-white/20 transition-all hover:-translate-y-1 group overflow-hidden"
+                style={{ boxShadow: `0 0 40px ${cat.glow}` }}
+              >
+                <div className={`absolute inset-0 bg-gradient-to-br ${cat.color} opacity-5 group-hover:opacity-10 transition-opacity rounded-2xl`} />
+                <div className="relative z-10">
+                  <div className="text-3xl mb-3">{cat.icon}</div>
+                  <h3 className={`text-xl font-bold text-transparent bg-clip-text bg-gradient-to-r ${cat.color} mb-0.5`}>{cat.title}</h3>
+                  <p className="text-slate-500 text-xs font-medium uppercase tracking-wider mb-4">{cat.subtitle}</p>
+                  <ul className="space-y-2">
+                    {cat.items.map((item) => (
+                      <li key={item} className="flex items-start gap-2 text-sm text-slate-300">
+                        <span className="text-emerald-400 mt-0.5 flex-shrink-0">✓</span>
+                        {item}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              </div>
+            ))}
+          </div>
+
+          {/* Subjects covered */}
+          <div className="bg-white/5 border border-white/10 rounded-2xl p-8">
+            <h3 className="text-white font-bold text-xl mb-6 text-center">Subjects Covered</h3>
+            <div className="flex flex-wrap justify-center gap-3">
+              {['Mathematics', 'Physics', 'Chemistry', 'Biology', 'Environmental Studies', 'History', 'Geography', 'Civics', 'Commerce', 'Business Studies', 'Arts', 'English', 'Hindi'].map((sub) => (
+                <span key={sub} className="px-4 py-2 rounded-full bg-blue-600/15 border border-blue-500/25 text-blue-300 text-sm font-medium">
+                  {sub}
+                </span>
+              ))}
+            </div>
           </div>
         </div>
       </section>
