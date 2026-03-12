@@ -950,17 +950,17 @@ export default function HomePage() {
                 alt="ThinkWise Logo"
                 className="object-contain flex-shrink-0"
                 style={{
-                  width: '104px',
-                  height: '104px',
+                  width: '68px',
+                  height: '68px',
                   filter: 'invert(1) drop-shadow(0 0 10px rgba(59,130,246,0.7))',
                   mixBlendMode: 'screen',
                 }}
               />
-              <div className="flex flex-col gap-0.5" style={{ marginLeft: '-14px' }}>
-                <span className="text-6xl font-bold tracking-tight leading-none" style={{ fontFamily: "'Raleway', sans-serif", fontWeight: 700 }}>
-                  <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-emerald-400">Think</span><span className="text-white">Wise</span><sup className="text-blue-400 text-[28px] font-semibold align-super">™</sup>
+              <div className="flex flex-col gap-0.5" style={{ marginLeft: '-9px' }}>
+                <span className="text-4xl font-bold tracking-tight leading-none" style={{ fontFamily: "'Raleway', sans-serif", fontWeight: 700 }}>
+                  <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-emerald-400">Think</span><span className="text-white">Wise</span><sup className="text-blue-400 text-[18px] font-semibold align-super">™</sup>
                 </span>
-                <span className="text-sm font-medium tracking-[0.2em] uppercase text-slate-400 pl-1">Make the difference</span>
+                <span className="text-xs font-medium tracking-[0.2em] uppercase text-slate-400 pl-1">Make the difference</span>
               </div>
             </a>
             <p className="text-slate-500 text-sm text-center md:text-left">
