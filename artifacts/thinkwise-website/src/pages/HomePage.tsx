@@ -320,28 +320,43 @@ export default function HomePage() {
               overflow: 'hidden',
             }}
           >
+            {/* Desktop image — right-aligned to show dashboard UI */}
             <img
               src={slide.image}
               alt={slide.title}
+              className="hidden sm:block"
               style={{
                 display: 'block',
                 width: '100%',
                 height: '100%',
                 objectFit: 'cover',
-                objectPosition: 'center',
+                objectPosition: 'center top',
               }}
             />
-            {/* Strong top overlay — keeps navbar area dark and readable */}
-            <div className="absolute top-0 left-0 right-0 h-32 bg-gradient-to-b from-[#0A0F1E] via-[#0A0F1E]/80 to-transparent" />
-            {/* Left overlay for text readability */}
-            <div className="absolute inset-0 bg-gradient-to-r from-[#0A0F1E]/95 via-[#0A0F1E]/65 to-[#0A0F1E]/40" />
-            {/* Bottom overlay */}
-            <div className="absolute bottom-0 left-0 right-0 h-40 bg-gradient-to-t from-[#0A0F1E]/90 to-transparent" />
+            {/* Mobile image — top-aligned to show key visuals */}
+            <img
+              src={slide.image}
+              alt={slide.title}
+              className="sm:hidden"
+              style={{
+                display: 'block',
+                width: '100%',
+                height: '100%',
+                objectFit: 'cover',
+                objectPosition: 'right top',
+              }}
+            />
+            {/* Strong top overlay — keeps navbar area solid dark */}
+            <div className="absolute top-0 left-0 right-0 h-36 bg-gradient-to-b from-[#0A0F1E] via-[#0A0F1E]/90 to-transparent" />
+            {/* Heavy left overlay on mobile (full readability), lighter on desktop */}
+            <div className="absolute inset-0 bg-gradient-to-r from-[#0A0F1E] via-[#0A0F1E]/85 to-[#0A0F1E]/20 sm:from-[#0A0F1E]/95 sm:via-[#0A0F1E]/65 sm:to-[#0A0F1E]/20" />
+            {/* Bottom fade */}
+            <div className="absolute bottom-0 left-0 right-0 h-48 bg-gradient-to-t from-[#0A0F1E]/95 to-transparent" />
           </div>
         ))}
 
         {/* Slide content */}
-        <div className="relative z-10 flex items-center pt-16 sm:pt-24 pb-20 sm:pb-32" style={{ minHeight: '100dvh' }}>
+        <div className="relative z-10 flex flex-col justify-center pt-20 sm:pt-28 pb-24 sm:pb-32" style={{ minHeight: '100dvh' }}>
           <div className="container mx-auto px-5 sm:px-6 max-w-7xl">
             <div className="max-w-2xl">
               {/* Tag badge */}
