@@ -232,11 +232,12 @@ export default function HomePage() {
         <div className="container mx-auto px-6 max-w-7xl flex items-center justify-between">
           <a href="#home" className="flex items-center gap-4">
             <img
-              src="/thinkwise-logo.png"
+              src="/bulb-icon.png"
               alt="ThinkWise Logo"
-              className="h-40 w-40 object-contain object-left flex-shrink-0"
+              className="h-40 w-40 object-contain flex-shrink-0"
               style={{
-                filter: 'invert(1) drop-shadow(0 0 8px rgba(59,130,246,0.6))',
+                filter: 'invert(1) drop-shadow(0 0 10px rgba(59,130,246,0.7))',
+                mixBlendMode: 'screen',
               }}
             />
             <span className="text-7xl font-bold tracking-tight leading-none">
@@ -727,11 +728,12 @@ export default function HomePage() {
           <div className="flex flex-col md:flex-row justify-between items-center gap-6">
             <a href="#home" className="flex items-center gap-4">
               <img
-                src="/thinkwise-logo.png"
+                src="/bulb-icon.png"
                 alt="ThinkWise Logo"
-                className="h-40 w-40 object-contain object-left flex-shrink-0"
+                className="h-40 w-40 object-contain flex-shrink-0"
                 style={{
-                  filter: 'invert(1) drop-shadow(0 0 8px rgba(59,130,246,0.6))',
+                  filter: 'invert(1) drop-shadow(0 0 10px rgba(59,130,246,0.7))',
+                  mixBlendMode: 'screen',
                 }}
               />
               <span className="text-7xl font-bold tracking-tight leading-none">
