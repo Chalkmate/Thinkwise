@@ -790,8 +790,8 @@ export default function HomePage() {
                   </div>
                   <div>
                     <div className="text-sm text-slate-400 mb-1">Email Us</div>
-                    <a href="mailto:contact@thinkwise.pro" className="text-white font-medium hover:text-blue-400 transition-colors">
-                      contact@thinkwise.pro
+                    <a href="mailto:info@thinkwise.pro" className="text-white font-medium hover:text-blue-400 transition-colors">
+                      info@thinkwise.pro
                     </a>
                   </div>
                 </div>
@@ -801,8 +801,8 @@ export default function HomePage() {
                   </div>
                   <div>
                     <div className="text-sm text-slate-400 mb-1">Call Us</div>
-                    <a href="tel:+911234567890" className="text-white font-medium hover:text-emerald-400 transition-colors">
-                      +91 (123) 456-7890
+                    <a href="tel:+917825838383" className="text-white font-medium hover:text-emerald-400 transition-colors">
+                      +91 78258 38383
                     </a>
                   </div>
                 </div>
@@ -812,7 +812,7 @@ export default function HomePage() {
                   </div>
                   <div>
                     <div className="text-sm text-slate-400 mb-1">Location</div>
-                    <div className="text-white font-medium">Tech Park, India</div>
+                    <div className="text-white font-medium leading-relaxed">#299, 1st Floor, 4th Main Road,<br />Perungudi, OMR, Chennai,<br />Tamil Nadu – 600096</div>
                   </div>
                 </div>
               </div>
