@@ -303,7 +303,7 @@ export default function HomePage() {
       </nav>
 
       {/* Hero Slider Section */}
-      <section id="home" className="relative min-h-screen overflow-hidden">
+      <section id="home" className="relative overflow-hidden" style={{ minHeight: '100dvh' }}>
         {/* Slide backgrounds */}
         {slides.map((slide, i) => (
           <div
@@ -323,23 +323,23 @@ export default function HomePage() {
         ))}
 
         {/* Slide content */}
-        <div className="relative z-10 min-h-screen flex items-center pt-24 pb-32">
-          <div className="container mx-auto px-6 max-w-7xl">
+        <div className="relative z-10 flex items-center pt-16 sm:pt-24 pb-20 sm:pb-32" style={{ minHeight: '100dvh' }}>
+          <div className="container mx-auto px-5 sm:px-6 max-w-7xl">
             <div className="max-w-2xl">
               {/* Tag badge */}
               <div
                 key={`tag-${activeSlide}`}
-                className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/5 border border-white/15 text-sm text-emerald-400 font-medium mb-6 backdrop-blur-sm"
+                className="inline-flex items-center gap-2 px-3 py-1.5 sm:px-4 sm:py-2 rounded-full bg-white/5 border border-white/15 text-xs sm:text-sm text-emerald-400 font-medium mb-4 sm:mb-6 backdrop-blur-sm"
                 style={{ animation: 'fadeSlideUp 0.5s ease forwards' }}
               >
-                <Star className="w-4 h-4 fill-emerald-400" />
+                <Star className="w-3 h-3 sm:w-4 sm:h-4 fill-emerald-400" />
                 {slides[activeSlide].tag}
               </div>
 
               {/* Headline */}
               <h1
                 key={`title-${activeSlide}`}
-                className="text-5xl md:text-6xl lg:text-7xl font-extrabold tracking-tight leading-tight mb-6"
+                className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-extrabold tracking-tight leading-tight mb-3 sm:mb-6"
                 style={{ animation: 'fadeSlideUp 0.5s ease 0.1s both' }}
               >
                 <span className="text-white">{slides[activeSlide].title}</span>
@@ -352,7 +352,7 @@ export default function HomePage() {
               {/* Subtitle */}
               <p
                 key={`sub-${activeSlide}`}
-                className="text-lg text-slate-300 mb-10 leading-relaxed max-w-xl"
+                className="text-sm sm:text-base md:text-lg text-slate-300 mb-6 sm:mb-10 leading-relaxed max-w-xl"
                 style={{ animation: 'fadeSlideUp 0.5s ease 0.2s both' }}
               >
                 {slides[activeSlide].subtitle}
@@ -361,19 +361,19 @@ export default function HomePage() {
               {/* CTAs */}
               <div
                 key={`cta-${activeSlide}`}
-                className="flex flex-col sm:flex-row items-start gap-4"
+                className="flex flex-col sm:flex-row items-start gap-3 sm:gap-4"
                 style={{ animation: 'fadeSlideUp 0.5s ease 0.3s both' }}
               >
                 <a
                   href={slides[activeSlide].ctaHref}
-                  className="px-8 py-4 text-base font-semibold text-white bg-blue-600 hover:bg-blue-500 rounded-full transition-all shadow-[0_0_20px_rgba(59,130,246,0.4)] hover:shadow-[0_0_30px_rgba(59,130,246,0.7)] flex items-center gap-2"
+                  className="px-6 sm:px-8 py-3 sm:py-4 text-sm sm:text-base font-semibold text-white bg-blue-600 hover:bg-blue-500 rounded-full transition-all shadow-[0_0_20px_rgba(59,130,246,0.4)] hover:shadow-[0_0_30px_rgba(59,130,246,0.7)] flex items-center gap-2"
                 >
                   {slides[activeSlide].cta}
-                  <ChevronRight className="w-5 h-5" />
+                  <ChevronRight className="w-4 h-4 sm:w-5 sm:h-5" />
                 </a>
                 <a
                   href="#contact"
-                  className="px-8 py-4 text-base font-semibold text-white bg-white/5 hover:bg-white/10 border border-white/15 rounded-full transition-all backdrop-blur-sm"
+                  className="px-6 sm:px-8 py-3 sm:py-4 text-sm sm:text-base font-semibold text-white bg-white/5 hover:bg-white/10 border border-white/15 rounded-full transition-all backdrop-blur-sm"
                 >
                   Get Started
                 </a>
