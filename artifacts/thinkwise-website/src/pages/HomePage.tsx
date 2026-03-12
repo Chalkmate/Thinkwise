@@ -306,7 +306,7 @@ export default function HomePage() {
       <section
         id="home"
         className="relative overflow-hidden"
-        style={{ minHeight: 'min(100dvh, 700px)', width: '100%', maxWidth: '100vw' }}
+        style={{ minHeight: '100dvh', width: '100%', maxWidth: '100vw' }}
       >
         {/* Slide backgrounds */}
         {slides.map((slide, i) => (
@@ -356,7 +356,7 @@ export default function HomePage() {
         ))}
 
         {/* Slide content */}
-        <div className="relative z-10 flex flex-col justify-center pt-20 sm:pt-28 pb-24 sm:pb-32" style={{ minHeight: 'min(100dvh, 700px)' }}>
+        <div className="relative z-10 flex flex-col justify-center pt-20 sm:pt-28 pb-24 sm:pb-32" style={{ minHeight: '100dvh' }}>
           <div className="container mx-auto px-5 sm:px-6 max-w-7xl">
             <div className="max-w-2xl">
               {/* Tag badge */}
