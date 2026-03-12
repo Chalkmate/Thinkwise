@@ -732,37 +732,72 @@ export default function HomePage() {
       </section>
 
       {/* Why Choose Us */}
-      <section className="py-24 bg-[#0A0F1E]">
-        <div className="container mx-auto px-6 max-w-7xl">
+      <section className="py-24 relative overflow-hidden" style={{ background: 'linear-gradient(135deg, #0d1f3c 0%, #0A0F1E 45%, #0d2318 100%)' }}>
+        {/* Decorative glows */}
+        <div className="absolute top-0 left-1/4 w-[600px] h-[600px] bg-blue-600/10 rounded-full blur-[140px] pointer-events-none" />
+        <div className="absolute bottom-0 right-1/4 w-[400px] h-[400px] bg-emerald-500/10 rounded-full blur-[120px] pointer-events-none" />
+        {/* Top border accent */}
+        <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-blue-500/40 to-transparent" />
+        {/* Bottom border accent */}
+        <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-emerald-500/30 to-transparent" />
+
+        <div className="container mx-auto px-6 max-w-7xl relative z-10">
           <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">Why Choose ThinkWise?</h2>
-            <p className="text-slate-400 max-w-2xl mx-auto">We don't just provide software; we partner with you to transform your educational ecosystem.</p>
+            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-blue-500/10 border border-blue-500/25 text-blue-400 text-sm font-medium mb-6">
+              <Star className="w-4 h-4 fill-blue-400" />
+              Our Advantage
+            </div>
+            <h2 className="text-4xl md:text-5xl font-extrabold mb-5 tracking-tight">
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-cyan-300 to-emerald-400">
+                Why Choose ThinkWise?
+              </span>
+            </h2>
+            <p className="text-slate-400 max-w-2xl mx-auto text-lg">We don't just provide software — we partner with you to transform your entire educational ecosystem.</p>
           </div>
 
           <div className="grid md:grid-cols-3 gap-8">
             {[
               {
                 title: 'Proven Technology',
-                desc: 'Robust, scalable platforms battle-tested by hundreds of institutions.',
+                desc: 'Robust, scalable platforms battle-tested by hundreds of institutions across India.',
                 icon: <Award className="w-10 h-10 text-blue-400" />,
+                accent: 'from-blue-500/20 to-blue-600/5',
+                border: 'border-blue-500/20',
+                glow: 'bg-blue-500/10',
+                iconRing: 'text-blue-400',
               },
               {
                 title: 'Dedicated Support',
-                desc: '24/7 personalized technical support to ensure uninterrupted operations.',
+                desc: '24/7 personalized technical support to ensure uninterrupted operations at your institution.',
                 icon: <Shield className="w-10 h-10 text-emerald-400" />,
+                accent: 'from-emerald-500/20 to-emerald-600/5',
+                border: 'border-emerald-500/20',
+                glow: 'bg-emerald-500/10',
+                iconRing: 'text-emerald-400',
               },
               {
                 title: 'Custom Solutions',
-                desc: 'Highly tailored systems that adapt to your specific workflow and needs.',
+                desc: 'Highly tailored systems that adapt to your specific curriculum, workflow, and needs.',
                 icon: <Brain className="w-10 h-10 text-purple-400" />,
+                accent: 'from-purple-500/20 to-purple-600/5',
+                border: 'border-purple-500/20',
+                glow: 'bg-purple-500/10',
+                iconRing: 'text-purple-400',
               },
             ].map((feature, i) => (
-              <div key={i} className="bg-[#131c31] border border-white/5 rounded-2xl p-8 text-center hover:-translate-y-2 transition-transform duration-300">
-                <div className="w-20 h-20 mx-auto bg-[#0A0F1E] rounded-full flex items-center justify-center border border-white/5 mb-6">
-                  {feature.icon}
+              <div
+                key={i}
+                className={`relative bg-gradient-to-br ${feature.accent} border ${feature.border} rounded-2xl p-10 text-center hover:-translate-y-2 transition-all duration-300 group overflow-hidden`}
+                style={{ backdropFilter: 'blur(8px)', backgroundColor: 'rgba(13,28,49,0.6)' }}
+              >
+                <div className={`absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity bg-gradient-to-br ${feature.accent} rounded-2xl`} />
+                <div className="relative z-10">
+                  <div className={`w-20 h-20 mx-auto ${feature.glow} rounded-2xl flex items-center justify-center border ${feature.border} mb-6 group-hover:scale-110 transition-transform duration-300`}>
+                    {feature.icon}
+                  </div>
+                  <h3 className="text-xl font-bold text-white mb-3">{feature.title}</h3>
+                  <p className="text-slate-400 leading-relaxed">{feature.desc}</p>
                 </div>
-                <h3 className="text-xl font-bold text-white mb-3">{feature.title}</h3>
-                <p className="text-slate-400">{feature.desc}</p>
               </div>
             ))}
           </div>
@@ -770,7 +805,7 @@ export default function HomePage() {
       </section>
 
       {/* Contact Section */}
-      <section id="contact" className="py-24 bg-[#0A0F1E] relative">
+      <section id="contact" className="py-24 bg-[#06080f] relative">
         <div className="container mx-auto px-6 max-w-7xl relative z-10">
           <div className="bg-[#131c31] border border-white/10 rounded-3xl overflow-hidden shadow-2xl flex flex-col lg:flex-row">
 
