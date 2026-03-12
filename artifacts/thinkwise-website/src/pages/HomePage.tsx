@@ -467,9 +467,13 @@ export default function HomePage() {
             <div className="relative">
               <div className="absolute inset-0 bg-gradient-to-tr from-blue-600/20 to-emerald-500/20 rounded-3xl transform rotate-3 blur-xl"></div>
               <div className="relative bg-[#131c31] border border-white/10 p-8 rounded-3xl shadow-2xl">
-                <div className="aspect-video bg-slate-800/50 rounded-xl mb-6 flex items-center justify-center border border-white/5 overflow-hidden relative group">
-                  <div className="absolute inset-0 bg-gradient-to-br from-blue-500/20 to-emerald-500/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-                  <Users className="w-16 h-16 text-slate-500 group-hover:text-white/80 transition-colors" />
+                <div className="aspect-video rounded-xl mb-6 overflow-hidden relative group">
+                  <img
+                    src="/about/global-impact.png"
+                    alt="Global Impact"
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-[#131c31]/60 via-transparent to-transparent" />
                 </div>
                 <div className="flex items-center gap-4">
                   <div className="w-12 h-12 bg-blue-500/20 rounded-full flex items-center justify-center shrink-0">
