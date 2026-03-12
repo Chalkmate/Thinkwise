@@ -244,7 +244,9 @@ export default function HomePage() {
               <span className="text-6xl font-bold tracking-tight leading-none" style={{ fontFamily: "'Raleway', sans-serif", fontWeight: 700 }}>
                 <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-emerald-400">Think</span><span className="text-white">Wise</span><sup className="text-blue-400 text-[28px] font-semibold align-super ml-1">™</sup>
               </span>
-              <span className="text-sm font-medium tracking-[0.2em] uppercase text-slate-400 pl-1">Make the difference</span>
+              <div className="flex justify-between w-full text-sm uppercase text-slate-400" style={{ fontFamily: "'Raleway', sans-serif", fontWeight: 400 }}>
+                <span>Make</span><span>the</span><span>difference</span>
+              </div>
             </div>
           </a>
 
@@ -743,7 +745,9 @@ export default function HomePage() {
                 <span className="text-6xl font-bold tracking-tight leading-none" style={{ fontFamily: "'Raleway', sans-serif", fontWeight: 700 }}>
                   <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-emerald-400">Think</span><span className="text-white">Wise</span><sup className="text-blue-400 text-[28px] font-semibold align-super ml-1">™</sup>
                 </span>
-                <span className="text-sm font-medium tracking-[0.2em] uppercase text-slate-400 pl-1">Make the difference</span>
+                <div className="flex justify-between w-full text-sm uppercase text-slate-400" style={{ fontFamily: "'Raleway', sans-serif", fontWeight: 400 }}>
+                  <span>Make</span><span>the</span><span>difference</span>
+                </div>
               </div>
             </a>
             <p className="text-slate-500 text-sm text-center md:text-left">
