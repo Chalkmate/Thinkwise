@@ -245,9 +245,12 @@ export default function HomePage() {
               <span className="text-2xl sm:text-3xl lg:text-6xl font-bold tracking-tight leading-none" style={{ fontFamily: "'Raleway', sans-serif", fontWeight: 700 }}>
                 <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-emerald-400">Think</span><span className="text-white">Wise</span><sup className="text-blue-400 text-[11px] sm:text-[14px] lg:text-[28px] font-semibold align-super">™</sup>
               </span>
-              <span className="flex justify-between w-full text-[9px] sm:text-xs font-medium uppercase text-slate-400">
+              {/* Mobile/tablet: words spread to match logo width */}
+              <span className="flex lg:hidden justify-between w-full text-[9px] sm:text-xs font-medium uppercase text-slate-400">
                 <span>Make</span><span>the</span><span>difference</span>
               </span>
+              {/* Desktop: original style */}
+              <span className="hidden lg:block text-sm font-medium tracking-[0.2em] uppercase text-slate-400 pl-1">Make the difference</span>
             </div>
           </a>
 
@@ -1004,9 +1007,12 @@ export default function HomePage() {
                 <span className="text-4xl font-bold tracking-tight leading-none" style={{ fontFamily: "'Raleway', sans-serif", fontWeight: 700 }}>
                   <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-emerald-400">Think</span><span className="text-white">Wise</span><sup className="text-blue-400 text-[18px] font-semibold align-super">™</sup>
                 </span>
-                <span className="flex justify-between w-full text-xs font-medium uppercase text-slate-400">
+                {/* Mobile/tablet: words spread to match logo width */}
+                <span className="flex lg:hidden justify-between w-full text-xs font-medium uppercase text-slate-400">
                   <span>Make</span><span>the</span><span>difference</span>
                 </span>
+                {/* Desktop: original style */}
+                <span className="hidden lg:block text-xs font-medium tracking-[0.2em] uppercase text-slate-400 pl-1">Make the difference</span>
               </div>
             </a>
             <p className="text-slate-500 text-sm text-center md:text-left">
