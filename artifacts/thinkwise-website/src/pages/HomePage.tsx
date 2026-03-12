@@ -245,7 +245,7 @@ export default function HomePage() {
               <span className="text-2xl sm:text-3xl lg:text-6xl font-bold tracking-tight leading-none" style={{ fontFamily: "'Raleway', sans-serif", fontWeight: 700 }}>
                 <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-emerald-400">Think</span><span className="text-white">Wise</span><sup className="text-blue-400 text-[11px] sm:text-[14px] lg:text-[28px] font-semibold align-super">™</sup>
               </span>
-              <span className="hidden sm:block text-[10px] sm:text-xs font-medium tracking-[0.2em] uppercase text-slate-400 pl-1">Make the difference</span>
+              <span className="block text-[9px] sm:text-xs font-medium tracking-[0.2em] uppercase text-slate-400 pl-1">Make the difference</span>
             </div>
           </a>
 
