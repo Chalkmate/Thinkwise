@@ -1,8 +1,129 @@
 import React from 'react';
 import {
-  Brain, MapPin, CreditCard, Smartphone, Award, Shield, Users,
-  Star, CheckCircle, ChevronRight, Mail, Phone, Globe, Menu, X
+  MapPin, CreditCard, Smartphone, Award, Shield, Users,
+  Star, CheckCircle, ChevronRight, Mail, Phone, Globe, Menu, X, Brain
 } from 'lucide-react';
+
+function BulbBrainIcon({ className = '' }: { className?: string }) {
+  return (
+    <svg
+      viewBox="0 0 64 64"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+      className={className}
+      aria-hidden="true"
+    >
+      {/* Outer glow */}
+      <circle cx="32" cy="28" r="20" fill="url(#bulbGlow)" opacity="0.15" />
+
+      {/* Bulb body */}
+      <path
+        d="M32 10C22.06 10 14 18.06 14 28c0 5.8 2.76 10.96 7.04 14.28V46a2 2 0 0 0 2 2h17.92a2 2 0 0 0 2-2v-3.72C47.24 38.96 50 33.8 50 28c0-9.94-8.06-18-18-18z"
+        fill="url(#bulbBody)"
+        opacity="0.18"
+      />
+      <path
+        d="M32 10C22.06 10 14 18.06 14 28c0 5.8 2.76 10.96 7.04 14.28V46a2 2 0 0 0 2 2h17.92a2 2 0 0 0 2-2v-3.72C47.24 38.96 50 33.8 50 28c0-9.94-8.06-18-18-18z"
+        stroke="url(#bulbStroke)"
+        strokeWidth="1.8"
+        fill="none"
+      />
+
+      {/* Brain folds inside the bulb */}
+      {/* Left hemisphere */}
+      <path
+        d="M22 26c0-2.2 1.4-4 3.2-4.6C25.6 19.4 27.4 18 29.5 18c1.6 0 3 .8 3.8 2"
+        stroke="url(#brainColor)"
+        strokeWidth="1.6"
+        strokeLinecap="round"
+        fill="none"
+      />
+      <path
+        d="M21 30c-.6-1-.8-2.2-.4-3.4"
+        stroke="url(#brainColor)"
+        strokeWidth="1.6"
+        strokeLinecap="round"
+        fill="none"
+      />
+      <path
+        d="M22.5 34c-1.2-1-2-2.6-1.8-4.2"
+        stroke="url(#brainColor)"
+        strokeWidth="1.6"
+        strokeLinecap="round"
+        fill="none"
+      />
+      <path
+        d="M26 37.5c-1.6-.4-2.8-1.6-3.4-3"
+        stroke="url(#brainColor)"
+        strokeWidth="1.6"
+        strokeLinecap="round"
+        fill="none"
+      />
+      {/* Right hemisphere */}
+      <path
+        d="M42 26c0-2.2-1.4-4-3.2-4.6C38.4 19.4 36.6 18 34.5 18c-1.6 0-3 .8-3.8 2"
+        stroke="url(#brainColor)"
+        strokeWidth="1.6"
+        strokeLinecap="round"
+        fill="none"
+      />
+      <path
+        d="M43 30c.6-1 .8-2.2.4-3.4"
+        stroke="url(#brainColor)"
+        strokeWidth="1.6"
+        strokeLinecap="round"
+        fill="none"
+      />
+      <path
+        d="M41.5 34c1.2-1 2-2.6 1.8-4.2"
+        stroke="url(#brainColor)"
+        strokeWidth="1.6"
+        strokeLinecap="round"
+        fill="none"
+      />
+      <path
+        d="M38 37.5c1.6-.4 2.8-1.6 3.4-3"
+        stroke="url(#brainColor)"
+        strokeWidth="1.6"
+        strokeLinecap="round"
+        fill="none"
+      />
+      {/* Center divider */}
+      <line x1="32" y1="19" x2="32" y2="38" stroke="url(#brainColor)" strokeWidth="1.4" strokeLinecap="round" strokeDasharray="2 2" />
+
+      {/* Filament / base connector */}
+      <rect x="26" y="48" width="12" height="2.5" rx="1.25" fill="url(#brainColor)" opacity="0.7" />
+      <rect x="27.5" y="51.5" width="9" height="2.5" rx="1.25" fill="url(#brainColor)" opacity="0.5" />
+      <rect x="29" y="55" width="6" height="2.5" rx="1.25" fill="url(#brainColor)" opacity="0.3" />
+
+      {/* Light rays */}
+      <line x1="32" y1="4" x2="32" y2="8" stroke="url(#brainColor)" strokeWidth="1.5" strokeLinecap="round" opacity="0.6" />
+      <line x1="44" y1="7" x2="42" y2="10" stroke="url(#brainColor)" strokeWidth="1.5" strokeLinecap="round" opacity="0.5" />
+      <line x1="20" y1="7" x2="22" y2="10" stroke="url(#brainColor)" strokeWidth="1.5" strokeLinecap="round" opacity="0.5" />
+      <line x1="50" y1="15" x2="47" y2="17" stroke="url(#brainColor)" strokeWidth="1.5" strokeLinecap="round" opacity="0.4" />
+      <line x1="14" y1="15" x2="17" y2="17" stroke="url(#brainColor)" strokeWidth="1.5" strokeLinecap="round" opacity="0.4" />
+
+      <defs>
+        <linearGradient id="bulbGlow" x1="14" y1="10" x2="50" y2="48" gradientUnits="userSpaceOnUse">
+          <stop stopColor="#60a5fa" />
+          <stop offset="1" stopColor="#34d399" />
+        </linearGradient>
+        <linearGradient id="bulbBody" x1="14" y1="10" x2="50" y2="48" gradientUnits="userSpaceOnUse">
+          <stop stopColor="#3b82f6" />
+          <stop offset="1" stopColor="#10b981" />
+        </linearGradient>
+        <linearGradient id="bulbStroke" x1="14" y1="10" x2="50" y2="48" gradientUnits="userSpaceOnUse">
+          <stop stopColor="#60a5fa" />
+          <stop offset="1" stopColor="#34d399" />
+        </linearGradient>
+        <linearGradient id="brainColor" x1="20" y1="18" x2="44" y2="42" gradientUnits="userSpaceOnUse">
+          <stop stopColor="#93c5fd" />
+          <stop offset="1" stopColor="#6ee7b7" />
+        </linearGradient>
+      </defs>
+    </svg>
+  );
+}
 
 export default function HomePage() {
   const [isScrolled, setIsScrolled] = React.useState(false);
@@ -55,9 +176,9 @@ export default function HomePage() {
         }`}
       >
         <div className="container mx-auto px-6 max-w-7xl flex items-center justify-between">
-          <a href="#home" className="text-2xl font-bold tracking-tighter text-white flex items-center gap-2">
-            <Brain className="w-8 h-8 text-blue-500" />
-            Think<span className="text-blue-500">Wise</span>
+          <a href="#home" className="flex items-center gap-3">
+            <BulbBrainIcon className="w-10 h-10" />
+            <img src="/logo.png" alt="ThinkWise" className="h-8 object-contain" />
           </a>
 
           {/* Desktop Nav */}
@@ -476,11 +597,9 @@ export default function HomePage() {
       <footer className="bg-[#050812] py-12 border-t border-white/5">
         <div className="container mx-auto px-6 max-w-7xl">
           <div className="flex flex-col md:flex-row justify-between items-center gap-6">
-            <a href="#home" className="flex items-center gap-2">
-              <Brain className="w-8 h-8 text-blue-500" />
-              <span className="text-2xl font-bold tracking-tighter text-white">
-                Think<span className="text-blue-500">Wise</span>
-              </span>
+            <a href="#home" className="flex items-center gap-3">
+              <BulbBrainIcon className="w-10 h-10" />
+              <img src="/logo.png" alt="ThinkWise" className="h-8 object-contain" />
             </a>
             <p className="text-slate-500 text-sm text-center md:text-left">
               Catalyzing competence through information technology.
