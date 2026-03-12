@@ -241,7 +241,7 @@ export default function HomePage() {
               }}
             />
             <div className="flex flex-col gap-0.5">
-              <span className="text-7xl font-bold tracking-tight leading-none">
+              <span className="text-7xl font-bold tracking-tight leading-none" style={{ fontFamily: "'Raleway', sans-serif", fontWeight: 700 }}>
                 <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-emerald-400">Think</span><span className="text-white">Wise</span><sup className="text-blue-400 text-[28px] font-semibold align-super ml-1">™</sup>
               </span>
               <span className="text-sm font-medium tracking-[0.2em] uppercase text-slate-400 pl-1">Make the difference</span>
@@ -740,7 +740,7 @@ export default function HomePage() {
                 }}
               />
               <div className="flex flex-col gap-0.5">
-                <span className="text-7xl font-bold tracking-tight leading-none">
+                <span className="text-7xl font-bold tracking-tight leading-none" style={{ fontFamily: "'Raleway', sans-serif", fontWeight: 700 }}>
                   <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-emerald-400">Think</span><span className="text-white">Wise</span><sup className="text-blue-400 text-[28px] font-semibold align-super ml-1">™</sup>
                 </span>
                 <span className="text-sm font-medium tracking-[0.2em] uppercase text-slate-400 pl-1">Make the difference</span>
