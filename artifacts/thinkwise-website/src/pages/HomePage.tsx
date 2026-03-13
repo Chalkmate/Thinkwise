@@ -1,7 +1,7 @@
 import React from 'react';
 import {
   MapPin, CreditCard, Smartphone, Award, Shield, Users,
-  Star, CheckCircle, ChevronRight, Mail, Phone, Globe, Menu, X, Brain, BookOpen, Monitor, Layers, Video, Package, ClipboardList
+  Star, CheckCircle, ChevronRight, ChevronDown, Mail, Phone, Globe, Menu, X, Brain, BookOpen, Monitor, Layers, Video, Package, ClipboardList
 } from 'lucide-react';
 
 function BulbBrainIcon({ className = '' }: { className?: string }) {
@@ -219,7 +219,14 @@ export default function HomePage() {
   const navLinks = [
     { name: 'Home', href: '#home' },
     { name: 'About', href: '#about' },
-    { name: 'Products', href: '#products' },
+    {
+      name: 'Products', href: '#products', subLinks: [
+        { name: 'LMS', href: '#products' },
+        { name: 'Content', href: '#content' },
+        { name: 'IFP', href: '#chalkmate' },
+        { name: 'Visual', href: '#visual-tech' },
+      ]
+    },
     { name: 'Contact', href: '#contact' },
   ];
 
@@ -258,16 +265,44 @@ export default function HomePage() {
           {/* Desktop Nav — only on large screens */}
           <div className="hidden lg:flex items-center space-x-6 xl:space-x-8">
             {navLinks.map((link) => (
-              <a
-                key={link.name}
-                href={link.href}
-                className={`text-lg font-semibold transition-all duration-200 hover:scale-[1.2] active:scale-95 inline-block ${
-                  isScrolled ? 'text-slate-600 hover:text-[#2463eb]' : 'text-white/90 hover:text-white'
-                }`}
-                style={!isScrolled ? { textShadow: '0 1px 4px rgba(0,0,0,0.4)' } : {}}
-              >
-                {link.name}
-              </a>
+              link.subLinks ? (
+                <div key={link.name} className="relative group">
+                  <a
+                    href={link.href}
+                    className={`text-lg font-semibold transition-all duration-200 hover:scale-[1.05] inline-flex items-center gap-1 ${
+                      isScrolled ? 'text-slate-600 hover:text-[#2463eb]' : 'text-white/90 hover:text-white'
+                    }`}
+                    style={!isScrolled ? { textShadow: '0 1px 4px rgba(0,0,0,0.4)' } : {}}
+                  >
+                    {link.name}
+                    <ChevronDown className="w-4 h-4 transition-transform duration-200 group-hover:rotate-180" />
+                  </a>
+                  <div className="absolute top-full left-1/2 -translate-x-1/2 pt-3 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
+                    <div className="bg-white rounded-xl shadow-xl border border-slate-100 py-2 min-w-[140px] overflow-hidden">
+                      {link.subLinks.map((sub) => (
+                        <a
+                          key={sub.name}
+                          href={sub.href}
+                          className="block px-5 py-2.5 text-sm font-semibold text-slate-600 hover:text-[#2463eb] hover:bg-blue-50 transition-colors"
+                        >
+                          {sub.name}
+                        </a>
+                      ))}
+                    </div>
+                  </div>
+                </div>
+              ) : (
+                <a
+                  key={link.name}
+                  href={link.href}
+                  className={`text-lg font-semibold transition-all duration-200 hover:scale-[1.2] active:scale-95 inline-block ${
+                    isScrolled ? 'text-slate-600 hover:text-[#2463eb]' : 'text-white/90 hover:text-white'
+                  }`}
+                  style={!isScrolled ? { textShadow: '0 1px 4px rgba(0,0,0,0.4)' } : {}}
+                >
+                  {link.name}
+                </a>
+              )
             ))}
             <a
               href="#contact"
@@ -295,14 +330,38 @@ export default function HomePage() {
         {mobileMenuOpen && (
           <div className="lg:hidden absolute top-full left-0 right-0 bg-white border-b border-slate-200 px-6 py-6 flex flex-col space-y-5 shadow-lg">
             {navLinks.map((link) => (
-              <a
-                key={link.name}
-                href={link.href}
-                className="text-xl font-semibold text-slate-700 hover:text-[#2463eb] transition-colors"
-                onClick={() => setMobileMenuOpen(false)}
-              >
-                {link.name}
-              </a>
+              link.subLinks ? (
+                <div key={link.name}>
+                  <a
+                    href={link.href}
+                    className="text-xl font-semibold text-slate-700 hover:text-[#2463eb] transition-colors block"
+                    onClick={() => setMobileMenuOpen(false)}
+                  >
+                    {link.name}
+                  </a>
+                  <div className="mt-2 ml-4 flex flex-col space-y-3 border-l-2 border-blue-100 pl-4">
+                    {link.subLinks.map((sub) => (
+                      <a
+                        key={sub.name}
+                        href={sub.href}
+                        className="text-base font-semibold text-slate-500 hover:text-[#2463eb] transition-colors"
+                        onClick={() => setMobileMenuOpen(false)}
+                      >
+                        {sub.name}
+                      </a>
+                    ))}
+                  </div>
+                </div>
+              ) : (
+                <a
+                  key={link.name}
+                  href={link.href}
+                  className="text-xl font-semibold text-slate-700 hover:text-[#2463eb] transition-colors"
+                  onClick={() => setMobileMenuOpen(false)}
+                >
+                  {link.name}
+                </a>
+              )
             ))}
             <a
               href="#contact"
