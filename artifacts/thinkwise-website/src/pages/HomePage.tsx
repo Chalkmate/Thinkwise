@@ -1327,7 +1327,7 @@ export default function HomePage() {
               Our Advantage
             </div>
             <h2 className="text-4xl md:text-5xl font-extrabold mb-5 tracking-tight">
-              <span className="text-slate-900">Why Choose </span><span style={{ color: '#2463eb' }}>Think</span><span className="text-slate-900">Wise</span><sup className="text-[#2463eb] font-semibold text-[20px] md:text-[24px]" style={{ verticalAlign: '0.2em' }}>™</sup><span className="text-slate-900">?</span>
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#2463eb] to-emerald-600">Why Choose </span><span style={{ color: '#2463eb' }}>Think</span><span className="text-slate-900">Wise</span><sup className="text-[#2463eb] font-semibold text-[20px] md:text-[24px]" style={{ verticalAlign: '0.2em' }}>™</sup><span className="text-transparent bg-clip-text bg-gradient-to-r from-[#2463eb] to-emerald-600">?</span>
             </h2>
             <p className="text-slate-600 max-w-2xl mx-auto text-lg">We don't just provide software — we partner with you to transform your entire educational ecosystem.</p>
           </div>
