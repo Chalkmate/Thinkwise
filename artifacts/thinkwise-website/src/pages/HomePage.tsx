@@ -220,7 +220,6 @@ export default function HomePage() {
     { name: 'Home', href: '#home' },
     { name: 'About', href: '#about' },
     { name: 'Products', href: '#products' },
-    { name: 'Content', href: '#content' },
     { name: 'Contact', href: '#contact' },
   ];
 
