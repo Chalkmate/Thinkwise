@@ -745,7 +745,6 @@ export default function HomePage() {
                     alt={cat.title}
                     className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-slate-900/50 via-slate-900/10 to-transparent" />
                   <div className="absolute bottom-3 left-4 text-2xl drop-shadow-lg">{cat.icon}</div>
                 </div>
                 {/* Card Content */}
