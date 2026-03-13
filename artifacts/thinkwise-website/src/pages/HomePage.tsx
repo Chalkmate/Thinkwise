@@ -547,7 +547,22 @@ export default function HomePage() {
               {
                 title: 'ChalkMate IFP',
                 desc: 'ChalkMate is our flagship Interactive Flat Panel — a premium classroom hardware solution engineered for modern education. Featuring a 4K touch display, zero-lag stylus input, built-in speakers, and seamless integration with ThinkWise digital content, ChalkMate turns any classroom into a next-generation smart learning environment.',
-                icon: <Monitor className="w-8 h-8" />,
+                icon: (
+                  <svg viewBox="0 0 32 32" fill="none" className="w-8 h-8" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                    {/* Outer bezel */}
+                    <rect x="1" y="3" width="30" height="22" rx="2.5" fill="currentColor" opacity="0.15" stroke="currentColor" strokeWidth="2" />
+                    {/* Inner screen */}
+                    <rect x="4" y="6" width="24" height="16" rx="1" fill="currentColor" opacity="0.25" stroke="currentColor" strokeWidth="1.5" />
+                    {/* Touch indicator dots */}
+                    <circle cx="10" cy="14" r="1" fill="currentColor" opacity="0.7" />
+                    <circle cx="16" cy="11" r="1" fill="currentColor" opacity="0.7" />
+                    <circle cx="22" cy="14" r="1" fill="currentColor" opacity="0.7" />
+                    {/* Stand neck */}
+                    <line x1="16" y1="25" x2="16" y2="28" stroke="currentColor" strokeWidth="2" />
+                    {/* Stand base */}
+                    <line x1="11" y1="28" x2="21" y2="28" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" />
+                  </svg>
+                ),
                 color: 'from-purple-500 to-pink-500',
               },
               {
