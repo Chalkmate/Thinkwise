@@ -372,7 +372,7 @@ export default function HomePage() {
             {/* Punchy tagline */}
             <p
               key={`tagline-${activeSlide}`}
-              className="font-aptos text-lg sm:text-xl md:text-2xl font-light text-white mb-8"
+              className="font-aptos text-2xl sm:text-3xl md:text-4xl font-light text-white mb-8"
               style={{ animation: 'fadeSlideUp 0.5s ease 0.16s both', textShadow: '0 1px 10px rgba(0,0,0,0.9), 0 0 30px rgba(0,0,0,0.6)' }}
             >
               {slides[activeSlide].tagline}
