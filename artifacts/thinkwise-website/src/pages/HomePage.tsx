@@ -478,7 +478,7 @@ export default function HomePage() {
             <div>
               <div className="text-[#2463eb] font-semibold tracking-wider uppercase text-sm mb-4">About ThinkWise</div>
               <h2 className="text-4xl md:text-5xl font-bold text-slate-900 mb-6 leading-tight">
-                Progressive professionals delivering world-class solutions.
+                Innovation-Driven Professionals Delivering Excellence.
               </h2>
               <p className="text-slate-600 text-lg leading-relaxed mb-8">
                 We are committed to catalyzing the competence and competitiveness of our clients through cutting-edge information technology. Our tech backbone for educational institutions enhances overall performance and operational efficiency.
