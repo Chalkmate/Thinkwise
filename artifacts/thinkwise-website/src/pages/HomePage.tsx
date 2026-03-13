@@ -127,236 +127,51 @@ function BulbBrainIcon({ className = '' }: { className?: string }) {
 
 const slides = [
   {
+    image: '/banners/slide-lms.jpg',
     tag: 'Learning Management System',
-    title: 'Thinkwise',
-    titleAccent: 'LMS',
-    subtitle: 'Deliver, manage, and track education end-to-end — assessments, live classes, homework, and parent communication, all on one seamless platform.',
+    title: 'Thinkwise LMS',
+    tagline: 'Smart learning, delivered end-to-end.',
+    subtitle: 'Assessments, live classes, homework, and parent communication — one seamless platform for every school.',
     cta: 'Explore LMS',
     ctaHref: '#products',
     accentColor: '#2463eb',
-    bg: 'from-blue-50 via-white to-indigo-50',
-    dotColor: '#bfdbfe',
+    tabLabel: 'Thinkwise LMS',
   },
   {
-    tag: 'World-Class Digital Content',
-    title: 'Smartclass',
-    titleAccent: 'Digital Content',
-    subtitle: 'Curriculum-aligned 3D animations, multimedia lessons and virtual labs for Grades K–12. Designed to inspire curiosity and deeper learning.',
+    image: '/banners/slide-content.jpg',
+    tag: 'Digital Content Library',
+    title: 'Smartclass Content',
+    tagline: 'Curriculum that captivates.',
+    subtitle: 'Curriculum-aligned 3D animations, virtual labs and multimedia lessons for Grades K–12, across all major Indian education boards.',
     cta: 'Explore Content',
     ctaHref: '#content',
     accentColor: '#059669',
-    bg: 'from-emerald-50 via-white to-teal-50',
-    dotColor: '#a7f3d0',
+    tabLabel: 'Digital Content',
   },
   {
+    image: '/banners/slide-chalkmate.jpg',
     tag: 'Interactive Flat Panel',
-    title: 'ChalkMate',
-    titleAccent: 'IFP',
-    subtitle: 'Our flagship 4K Interactive Flat Panel with AI integrated writing board and Android 14, turning any classroom into a future smart learning environment.',
+    title: 'ChalkMate IFP',
+    tagline: 'The future of the classroom.',
+    subtitle: '4K UHD touch display with AI writing board and Android 14. Every lesson becomes an immersive, interactive experience.',
     cta: 'Explore ChalkMate',
     ctaHref: '#products',
     accentColor: '#7c3aed',
-    bg: 'from-violet-50 via-white to-purple-50',
-    dotColor: '#ddd6fe',
+    tabLabel: 'ChalkMate IFP',
   },
   {
+    image: '/banners/slide-display.jpg',
     tag: 'AV Hardware & Accessories',
-    title: 'Display',
-    titleAccent: 'Solutions',
-    subtitle: 'Digital Podiums, Active LED Walls, PTZ Cameras and premium accessories — a complete AV hardware ecosystem for the modern smart campus.',
+    title: 'Display Solutions',
+    tagline: 'Display excellence, everywhere.',
+    subtitle: 'Digital Podiums, Active LED Walls, PTZ Cameras and premium AV accessories — a complete ecosystem for the smart campus.',
     cta: 'Explore Products',
     ctaHref: '#products',
     accentColor: '#d97706',
-    bg: 'from-orange-50 via-white to-amber-50',
-    dotColor: '#fed7aa',
+    tabLabel: 'Display Solutions',
   },
 ];
 
-function LMSVisual() {
-  return (
-    <div className="relative w-full flex items-center justify-center py-4 lg:py-8">
-      <div className="relative w-full max-w-sm">
-        <div className="absolute -top-4 right-2 bg-white rounded-xl shadow-lg border border-slate-200 px-3 py-2 flex items-center gap-2 z-10">
-          <div className="w-6 h-6 bg-emerald-100 rounded-full flex items-center justify-center flex-shrink-0">
-            <CheckCircle className="w-3 h-3 text-emerald-600" />
-          </div>
-          <div>
-            <div className="text-[11px] font-semibold text-slate-800">Assignment Graded</div>
-            <div className="text-[10px] text-slate-500">Score: 48 / 50</div>
-          </div>
-        </div>
-        <div className="bg-white rounded-2xl shadow-xl border border-slate-200 p-5">
-          <div className="flex items-center justify-between mb-4">
-            <div className="flex items-center gap-2">
-              <div className="w-7 h-7 bg-[#2463eb] rounded-lg flex items-center justify-center">
-                <Brain className="w-3.5 h-3.5 text-white" />
-              </div>
-              <span className="font-bold text-slate-800 text-sm">LMS Dashboard</span>
-            </div>
-            <span className="text-[10px] text-emerald-600 bg-emerald-50 border border-emerald-200 px-2 py-0.5 rounded-full font-medium">● Live</span>
-          </div>
-          <div className="grid grid-cols-3 gap-2 mb-4">
-            {[
-              { v: '1,248', l: 'Students', color: 'text-[#2463eb]', bg: 'bg-blue-50' },
-              { v: '86', l: 'Courses', color: 'text-emerald-600', bg: 'bg-emerald-50' },
-              { v: '97%', l: 'Pass Rate', color: 'text-purple-600', bg: 'bg-purple-50' },
-            ].map((s, i) => (
-              <div key={i} className={`${s.bg} rounded-xl p-2.5 text-center`}>
-                <div className={`text-base font-bold ${s.color}`}>{s.v}</div>
-                <div className="text-[10px] text-slate-500 mt-0.5">{s.l}</div>
-              </div>
-            ))}
-          </div>
-          <div className="space-y-2.5">
-            {[
-              { s: 'Mathematics', p: 85, color: 'bg-[#2463eb]' },
-              { s: 'Science', p: 72, color: 'bg-emerald-500' },
-              { s: 'English', p: 91, color: 'bg-purple-500' },
-            ].map((item, i) => (
-              <div key={i}>
-                <div className="flex justify-between text-[11px] mb-1">
-                  <span className="text-slate-600">{item.s}</span>
-                  <span className="font-semibold text-slate-700">{item.p}%</span>
-                </div>
-                <div className="h-1.5 bg-slate-100 rounded-full overflow-hidden">
-                  <div className={`h-full ${item.color} rounded-full`} style={{ width: `${item.p}%` }} />
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-        <div className="mt-3 bg-white rounded-xl shadow-lg border border-slate-200 p-3 flex items-center gap-3">
-          <div className="w-9 h-9 bg-[#2463eb] rounded-full flex items-center justify-center flex-shrink-0">
-            <Video className="w-4 h-4 text-white" />
-          </div>
-          <div className="flex-1 min-w-0">
-            <div className="text-[11px] font-semibold text-slate-800">Live Class — Physics</div>
-            <div className="text-[10px] text-slate-500">Starting in 15 min · 42 students joined</div>
-          </div>
-          <div className="text-[11px] bg-[#2463eb] text-white px-2.5 py-1 rounded-full font-medium flex-shrink-0">Join</div>
-        </div>
-      </div>
-    </div>
-  );
-}
-
-function ContentVisual() {
-  return (
-    <div className="relative w-full flex items-center justify-center py-4 lg:py-8">
-      <div className="relative w-full max-w-sm">
-        <div className="absolute -top-3 -right-2 bg-emerald-600 text-white rounded-2xl px-3 py-2 shadow-lg z-10 text-center">
-          <div className="text-base font-bold leading-none">5000+</div>
-          <div className="text-[10px] opacity-90 mt-0.5">Resources</div>
-        </div>
-        <div className="grid grid-cols-2 gap-3">
-          {[
-            { icon: '🧪', subject: 'Chemistry', lessons: '124 Lessons', gradient: 'from-blue-500 to-indigo-600' },
-            { icon: '🔭', subject: 'Physics', lessons: '96 Lessons', gradient: 'from-purple-500 to-violet-600' },
-            { icon: '🌿', subject: 'Biology', lessons: '118 Lessons', gradient: 'from-emerald-500 to-teal-600' },
-            { icon: '📐', subject: 'Mathematics', lessons: '150 Lessons', gradient: 'from-orange-500 to-amber-500' },
-          ].map((card, i) => (
-            <div key={i} className="bg-white rounded-2xl shadow-md border border-slate-200 overflow-hidden">
-              <div className={`bg-gradient-to-br ${card.gradient} p-4 relative h-20 flex items-end`}>
-                <span className="text-2xl">{card.icon}</span>
-                <div className="absolute top-2 right-2 w-5 h-5 bg-white/25 rounded-full flex items-center justify-center">
-                  <ChevronRight className="w-3 h-3 text-white" />
-                </div>
-              </div>
-              <div className="p-2.5">
-                <div className="text-[12px] font-semibold text-slate-800">{card.subject}</div>
-                <div className="text-[10px] text-slate-500">{card.lessons}</div>
-              </div>
-            </div>
-          ))}
-        </div>
-        <div className="mt-3 bg-white rounded-xl shadow-lg border border-slate-200 p-3 flex items-center gap-3">
-          <div className="w-8 h-8 bg-emerald-100 rounded-full flex items-center justify-center flex-shrink-0">
-            <Globe className="w-4 h-4 text-emerald-600" />
-          </div>
-          <div>
-            <div className="text-[11px] font-semibold text-slate-800">12+ Education Boards · 6 Languages</div>
-            <div className="text-[10px] text-slate-500">CBSE, ICSE, State Boards and more</div>
-          </div>
-        </div>
-      </div>
-    </div>
-  );
-}
-
-function ChalkMateVisual() {
-  return (
-    <div className="relative w-full flex items-center justify-center py-4 lg:py-8">
-      <div className="relative">
-        <div className="bg-slate-800 rounded-2xl p-2.5 shadow-2xl" style={{ width: 320, aspectRatio: '16/10' }}>
-          <div className="bg-gradient-to-br from-violet-900 via-purple-900 to-indigo-900 rounded-xl h-full relative overflow-hidden flex items-center justify-center">
-            <div className="absolute inset-0 opacity-[0.07]" style={{ backgroundImage: 'linear-gradient(#fff 1px, transparent 1px), linear-gradient(90deg, #fff 1px, transparent 1px)', backgroundSize: '24px 24px' }} />
-            <div className="relative z-10 text-center px-6">
-              <div className="text-white/90 text-2xl font-bold tracking-wide mb-1">E = mc²</div>
-              <div className="text-white/50 text-xs mb-3">Interactive Whiteboard</div>
-              <div className="flex gap-2 justify-center">
-                {[0, 1, 2].map(i => (
-                  <div key={i} className="w-2 h-2 rounded-full bg-white/40" />
-                ))}
-              </div>
-            </div>
-            <div className="absolute top-2 right-2 bg-white/15 rounded-lg px-2 py-1">
-              <span className="text-white text-[9px] font-bold">Android 14</span>
-            </div>
-            <div className="absolute top-2 left-2 bg-white/15 rounded-lg px-2 py-1">
-              <span className="text-white text-[9px] font-bold">4K UHD</span>
-            </div>
-            <div className="absolute bottom-2 left-1/2 -translate-x-1/2 bg-violet-500/80 rounded-lg px-3 py-1">
-              <span className="text-white text-[9px] font-bold">✦ AI Writing Board</span>
-            </div>
-          </div>
-        </div>
-        <div className="h-2 bg-slate-700 rounded-b-xl mx-6" />
-        <div className="absolute -left-10 top-1/3 bg-white rounded-xl shadow-lg border border-slate-200 px-3 py-2 z-10">
-          <div className="text-[11px] font-bold text-purple-600">AI Writing</div>
-          <div className="text-[10px] text-slate-500">Board Integrated</div>
-        </div>
-        <div className="absolute -right-10 bottom-1/3 bg-white rounded-xl shadow-lg border border-slate-200 px-3 py-2 z-10">
-          <div className="text-[11px] font-bold text-[#2463eb]">4K UHD</div>
-          <div className="text-[10px] text-slate-500">Touch Display</div>
-        </div>
-      </div>
-    </div>
-  );
-}
-
-function DisplayVisual() {
-  return (
-    <div className="relative w-full flex items-center justify-center py-4 lg:py-8">
-      <div className="relative w-full max-w-sm">
-        <div className="grid grid-cols-2 gap-3">
-          {[
-            { icon: <Monitor className="w-7 h-7 text-orange-600" />, name: 'Digital Podium', desc: 'Presenter-led teaching', bg: 'bg-orange-50', border: 'border-orange-200', iconBg: 'bg-orange-100' },
-            { icon: <Layers className="w-7 h-7 text-amber-600" />, name: 'Active LED Wall', desc: 'Large-format display', bg: 'bg-amber-50', border: 'border-amber-200', iconBg: 'bg-amber-100' },
-            { icon: <Video className="w-7 h-7 text-red-500" />, name: 'PTZ Camera', desc: 'Hybrid learning sessions', bg: 'bg-red-50', border: 'border-red-200', iconBg: 'bg-red-100' },
-            { icon: <Package className="w-7 h-7 text-slate-600" />, name: 'Accessories', desc: 'Complete AV setup', bg: 'bg-slate-50', border: 'border-slate-200', iconBg: 'bg-slate-100' },
-          ].map((item, i) => (
-            <div key={i} className={`${item.bg} border ${item.border} rounded-2xl p-4`}>
-              <div className={`w-11 h-11 ${item.iconBg} rounded-xl flex items-center justify-center mb-3`}>
-                {item.icon}
-              </div>
-              <div className="text-sm font-semibold text-slate-800">{item.name}</div>
-              <div className="text-[11px] text-slate-500 mt-1">{item.desc}</div>
-            </div>
-          ))}
-        </div>
-        <div className="mt-3 bg-orange-600 text-white rounded-xl p-3 flex items-center gap-3 shadow-lg">
-          <div className="w-8 h-8 bg-white/20 rounded-full flex items-center justify-center flex-shrink-0">
-            <Award className="w-4 h-4 text-white" />
-          </div>
-          <div>
-            <div className="text-[11px] font-bold">Complete Smart Campus Solution</div>
-            <div className="text-[10px] opacity-80">Engineered for modern institutions</div>
-          </div>
-        </div>
-      </div>
-    </div>
-  );
-}
 
 export default function HomePage() {
   const [isScrolled, setIsScrolled] = React.useState(false);
@@ -494,178 +309,177 @@ export default function HomePage() {
         )}
       </nav>
 
-      {/* Hero Slider Section */}
+      {/* Hero Slider Section — Apple-style full-bleed */}
       <section
         id="home"
-        className="relative overflow-hidden"
-        style={{ minHeight: '100dvh', width: '100%', maxWidth: '100vw' }}
+        className="relative overflow-hidden bg-black"
+        style={{ height: '100dvh', minHeight: 600 }}
       >
-        {/* Animated gradient background */}
-        <div
-          className={`absolute inset-0 bg-gradient-to-br ${slides[activeSlide].bg} transition-all duration-700`}
-        />
-        {/* Dot grid pattern */}
-        <div
-          className="absolute inset-0 opacity-50"
-          style={{
-            backgroundImage: `radial-gradient(circle, ${slides[activeSlide].dotColor} 1.5px, transparent 1.5px)`,
-            backgroundSize: '32px 32px',
-          }}
-        />
-        {/* Decorative blobs */}
-        <div
-          className="absolute -top-32 -right-32 w-96 h-96 rounded-full blur-3xl opacity-20 transition-all duration-700"
-          style={{ background: slides[activeSlide].accentColor }}
-        />
-        <div
-          className="absolute -bottom-32 -left-32 w-80 h-80 rounded-full blur-3xl opacity-10 transition-all duration-700"
-          style={{ background: slides[activeSlide].accentColor }}
-        />
+        {/* Slide background images — crossfade */}
+        {slides.map((slide, i) => (
+          <div
+            key={i}
+            className="absolute inset-0 transition-opacity duration-1000 ease-in-out"
+            style={{ opacity: activeSlide === i ? 1 : 0, zIndex: 0 }}
+          >
+            <img
+              src={slide.image}
+              alt={slide.title}
+              className="w-full h-full object-cover object-center"
+              style={{ transform: activeSlide === i ? 'scale(1.03)' : 'scale(1)', transition: 'transform 6s ease-out' }}
+            />
+          </div>
+        ))}
 
-        {/* Slide content — two column layout */}
-        <div
-          className="relative z-10 flex items-center"
-          style={{ minHeight: '100dvh' }}
-        >
-          <div className="container mx-auto px-5 sm:px-6 max-w-7xl w-full">
-            <div className="grid lg:grid-cols-2 gap-8 lg:gap-16 items-center pt-24 pb-20 lg:pt-0 lg:pb-0" style={{ minHeight: '100dvh' }}>
+        {/* Multi-layer gradient overlay for text legibility */}
+        <div className="absolute inset-0 z-10" style={{
+          background: 'linear-gradient(to bottom, rgba(0,0,0,0.55) 0%, rgba(0,0,0,0.15) 40%, rgba(0,0,0,0.20) 60%, rgba(0,0,0,0.75) 100%)',
+        }} />
+        {/* Left-edge vignette */}
+        <div className="absolute inset-0 z-10" style={{
+          background: 'linear-gradient(to right, rgba(0,0,0,0.3) 0%, transparent 50%)',
+        }} />
 
-              {/* Left: Text */}
-              <div className="flex flex-col justify-center">
-                {/* Product label tabs */}
-                <div className="flex flex-wrap gap-2 mb-6 lg:mb-8">
-                  {slides.map((s, i) => (
-                    <button
-                      key={i}
-                      onClick={() => goToSlide(i)}
-                      className={`text-[11px] sm:text-xs font-semibold px-3 py-1.5 rounded-full border transition-all duration-300 ${
-                        activeSlide === i
-                          ? 'text-white border-transparent shadow-md'
-                          : 'text-slate-500 bg-white/70 border-slate-200 hover:border-slate-300'
-                      }`}
-                      style={activeSlide === i ? { background: s.accentColor } : {}}
-                    >
-                      {s.titleAccent === 'LMS' ? 'Thinkwise LMS' : s.titleAccent === 'Digital Content' ? 'Digital Content' : s.titleAccent === 'IFP' ? 'ChalkMate IFP' : 'Display Solutions'}
-                    </button>
-                  ))}
-                </div>
+        {/* Content — centered layout */}
+        <div className="absolute inset-0 z-20 flex flex-col" style={{ height: '100dvh' }}>
 
-                {/* Tag badge */}
-                <div
-                  key={`tag-${activeSlide}`}
-                  className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full text-xs font-semibold mb-4 w-fit border"
-                  style={{
-                    background: `${slides[activeSlide].accentColor}15`,
-                    borderColor: `${slides[activeSlide].accentColor}30`,
-                    color: slides[activeSlide].accentColor,
-                    animation: 'fadeSlideUp 0.45s ease both',
-                  }}
+          {/* Spacer for navbar */}
+          <div className="flex-none" style={{ height: 72 }} />
+
+          {/* Product tab bar — Apple lineup style */}
+          <div className="flex-none flex justify-center pt-4 pb-0 px-4">
+            <div className="flex items-center gap-1 bg-white/10 backdrop-blur-md border border-white/20 rounded-full px-2 py-1.5">
+              {slides.map((s, i) => (
+                <button
+                  key={i}
+                  onClick={() => goToSlide(i)}
+                  className={`text-xs font-semibold px-4 py-1.5 rounded-full transition-all duration-300 ${
+                    activeSlide === i
+                      ? 'text-slate-900 bg-white shadow-sm'
+                      : 'text-white/80 hover:text-white hover:bg-white/10'
+                  }`}
                 >
-                  <Star className="w-3 h-3 fill-current" />
-                  {slides[activeSlide].tag}
-                </div>
+                  {s.tabLabel}
+                </button>
+              ))}
+            </div>
+          </div>
 
-                {/* Headline */}
-                <h1
-                  key={`title-${activeSlide}`}
-                  className="text-4xl sm:text-5xl md:text-6xl lg:text-5xl xl:text-6xl font-extrabold tracking-tight leading-[1.1] mb-5"
-                  style={{ animation: 'fadeSlideUp 0.45s ease 0.08s both' }}
-                >
-                  <span className="text-slate-900">{slides[activeSlide].title}</span>
-                  <br />
-                  <span
-                    className="text-transparent bg-clip-text"
-                    style={{ backgroundImage: `linear-gradient(135deg, ${slides[activeSlide].accentColor}, ${slides[activeSlide].accentColor}aa)` }}
-                  >
-                    {slides[activeSlide].titleAccent}
-                  </span>
-                </h1>
+          {/* Main text — center stage */}
+          <div className="flex-1 flex flex-col items-center justify-center text-white text-center px-6 -mt-8">
+            {/* Category badge */}
+            <div
+              key={`tag-${activeSlide}`}
+              className="text-xs sm:text-sm font-semibold tracking-widest uppercase mb-4 opacity-80"
+              style={{ animation: 'fadeSlideUp 0.5s ease both', letterSpacing: '0.15em' }}
+            >
+              {slides[activeSlide].tag}
+            </div>
 
-                {/* Subtitle */}
-                <p
-                  key={`sub-${activeSlide}`}
-                  className="text-base md:text-lg text-slate-600 mb-8 leading-relaxed max-w-lg"
-                  style={{ animation: 'fadeSlideUp 0.45s ease 0.16s both' }}
-                >
-                  {slides[activeSlide].subtitle}
-                </p>
+            {/* Product name — huge, bold */}
+            <h1
+              key={`title-${activeSlide}`}
+              className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-black tracking-tight leading-none mb-4"
+              style={{ animation: 'fadeSlideUp 0.5s ease 0.08s both' }}
+            >
+              {slides[activeSlide].title}
+            </h1>
 
-                {/* CTAs */}
-                <div
-                  key={`cta-${activeSlide}`}
-                  className="flex flex-col sm:flex-row items-start gap-3"
-                  style={{ animation: 'fadeSlideUp 0.45s ease 0.24s both' }}
-                >
-                  <a
-                    href={slides[activeSlide].ctaHref}
-                    className="px-7 py-3.5 text-sm font-semibold text-white rounded-full transition-all flex items-center gap-2 shadow-lg hover:shadow-xl hover:scale-105"
-                    style={{
-                      background: slides[activeSlide].accentColor,
-                      boxShadow: `0 8px 24px ${slides[activeSlide].accentColor}40`,
-                    }}
-                  >
-                    {slides[activeSlide].cta}
-                    <ChevronRight className="w-4 h-4" />
-                  </a>
-                  <a
-                    href="#contact"
-                    className="px-7 py-3.5 text-sm font-semibold text-slate-700 bg-white/80 hover:bg-white border border-slate-200 hover:border-slate-300 rounded-full transition-all backdrop-blur-sm shadow-sm hover:shadow-md"
-                  >
-                    Get a Demo
-                  </a>
-                </div>
+            {/* Punchy tagline */}
+            <p
+              key={`tagline-${activeSlide}`}
+              className="text-lg sm:text-xl md:text-2xl font-light text-white/90 mb-8"
+              style={{ animation: 'fadeSlideUp 0.5s ease 0.16s both' }}
+            >
+              {slides[activeSlide].tagline}
+            </p>
 
-                {/* Slide dots */}
-                <div className="flex items-center gap-2.5 mt-10">
-                  {slides.map((s, i) => (
-                    <button
-                      key={i}
-                      onClick={() => goToSlide(i)}
-                      aria-label={`Go to slide ${i + 1}`}
-                      className="transition-all duration-400 rounded-full"
-                      style={{
-                        width: activeSlide === i ? 28 : 8,
-                        height: 8,
-                        background: activeSlide === i ? s.accentColor : '#cbd5e1',
-                      }}
-                    />
-                  ))}
-                  <span className="ml-2 text-slate-400 text-xs font-mono">
-                    {String(activeSlide + 1).padStart(2, '0')} / {String(slides.length).padStart(2, '0')}
-                  </span>
-                </div>
-              </div>
+            {/* Subtitle — one liner */}
+            <p
+              key={`sub-${activeSlide}`}
+              className="text-sm sm:text-base text-white/70 max-w-xl mb-10 leading-relaxed"
+              style={{ animation: 'fadeSlideUp 0.5s ease 0.22s both' }}
+            >
+              {slides[activeSlide].subtitle}
+            </p>
 
-              {/* Right: Visual */}
-              <div
-                key={`visual-${activeSlide}`}
-                className="hidden lg:flex items-center justify-center"
-                style={{ animation: 'fadeSlideUp 0.5s ease 0.1s both' }}
+            {/* CTA Buttons — Apple style */}
+            <div
+              key={`cta-${activeSlide}`}
+              className="flex flex-col sm:flex-row items-center gap-3"
+              style={{ animation: 'fadeSlideUp 0.5s ease 0.3s both' }}
+            >
+              <a
+                href={slides[activeSlide].ctaHref}
+                className="px-8 py-3.5 rounded-full font-semibold text-sm transition-all hover:scale-105 flex items-center gap-2"
+                style={{
+                  background: slides[activeSlide].accentColor,
+                  boxShadow: `0 0 32px ${slides[activeSlide].accentColor}70`,
+                  color: '#fff',
+                }}
               >
-                {activeSlide === 0 && <LMSVisual />}
-                {activeSlide === 1 && <ContentVisual />}
-                {activeSlide === 2 && <ChalkMateVisual />}
-                {activeSlide === 3 && <DisplayVisual />}
-              </div>
+                {slides[activeSlide].cta}
+                <ChevronRight className="w-4 h-4" />
+              </a>
+              <a
+                href="#contact"
+                className="px-8 py-3.5 rounded-full font-semibold text-sm text-white bg-white/15 hover:bg-white/25 border border-white/30 backdrop-blur-sm transition-all hover:scale-105"
+              >
+                Get a Demo
+              </a>
+            </div>
+          </div>
 
+          {/* Bottom bar — dots + counter + progress line */}
+          <div className="flex-none pb-8 flex flex-col items-center gap-4">
+            {/* Thin progress bar */}
+            <div className="w-48 h-0.5 bg-white/20 rounded-full overflow-hidden">
+              <div
+                className="h-full rounded-full transition-all duration-700"
+                style={{
+                  width: `${((activeSlide + 1) / slides.length) * 100}%`,
+                  background: slides[activeSlide].accentColor,
+                }}
+              />
+            </div>
+            {/* Dot indicators */}
+            <div className="flex items-center gap-2">
+              {slides.map((s, i) => (
+                <button
+                  key={i}
+                  onClick={() => goToSlide(i)}
+                  aria-label={`Slide ${i + 1}`}
+                  className="transition-all duration-300 rounded-full"
+                  style={{
+                    width: activeSlide === i ? 24 : 6,
+                    height: 6,
+                    background: activeSlide === i ? '#fff' : 'rgba(255,255,255,0.35)',
+                  }}
+                />
+              ))}
+              <span className="ml-3 text-white/40 text-xs font-mono tabular-nums">
+                {String(activeSlide + 1).padStart(2, '0')} / {String(slides.length).padStart(2, '0')}
+              </span>
             </div>
           </div>
         </div>
 
-        {/* Prev / Next arrows */}
+        {/* Prev / Next arrows — slim, elegant */}
         <button
           onClick={prevSlide}
-          className="absolute left-3 md:left-6 top-1/2 -translate-y-1/2 z-20 w-10 h-10 rounded-full bg-white/80 hover:bg-white border border-slate-200 shadow-md flex items-center justify-center transition-all hover:shadow-lg backdrop-blur-sm"
+          className="absolute left-4 md:left-8 top-1/2 -translate-y-1/2 z-30 w-11 h-11 rounded-full flex items-center justify-center transition-all hover:scale-110"
+          style={{ background: 'rgba(255,255,255,0.12)', backdropFilter: 'blur(8px)', border: '1px solid rgba(255,255,255,0.2)' }}
           aria-label="Previous slide"
         >
-          <ChevronRight className="w-5 h-5 text-slate-600 rotate-180" />
+          <ChevronRight className="w-5 h-5 text-white rotate-180" />
         </button>
         <button
           onClick={nextSlide}
-          className="absolute right-3 md:right-6 top-1/2 -translate-y-1/2 z-20 w-10 h-10 rounded-full bg-white/80 hover:bg-white border border-slate-200 shadow-md flex items-center justify-center transition-all hover:shadow-lg backdrop-blur-sm"
+          className="absolute right-4 md:right-8 top-1/2 -translate-y-1/2 z-30 w-11 h-11 rounded-full flex items-center justify-center transition-all hover:scale-110"
+          style={{ background: 'rgba(255,255,255,0.12)', backdropFilter: 'blur(8px)', border: '1px solid rgba(255,255,255,0.2)' }}
           aria-label="Next slide"
         >
-          <ChevronRight className="w-5 h-5 text-slate-600" />
+          <ChevronRight className="w-5 h-5 text-white" />
         </button>
       </section>
 
