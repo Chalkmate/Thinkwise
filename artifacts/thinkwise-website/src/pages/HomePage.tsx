@@ -1119,25 +1119,6 @@ export default function HomePage() {
             ))}
           </div>
 
-          {/* Testimonials */}
-          <div className="grid md:grid-cols-3 gap-6">
-            {[
-              { quote: 'ChalkMate has completely transformed our classrooms. The AI writing board is a game-changer for our teachers.', name: 'Dr. Rajesh Kumar', role: 'Principal, Global International School' },
-              { quote: 'The visual clarity and touch responsiveness are unmatched. It\'s the best investment we\'ve made for our students.', name: 'Mrs. Priya Sharma', role: 'Head of Dept, St. Xavier\'s College' },
-              { quote: 'Reliable, intuitive, and feature-rich. The wireless sharing makes collaboration so much easier during lectures.', name: 'Amit Patel', role: 'Director, Vidya Academy' },
-            ].map((t) => (
-              <div key={t.name} className="bg-white border border-slate-200 rounded-2xl p-6 shadow-sm">
-                <div className="flex gap-1 mb-4">
-                  {[...Array(5)].map((_, i) => <Star key={i} className="w-4 h-4 fill-amber-400 text-amber-400" />)}
-                </div>
-                <p className="text-slate-700 text-sm leading-relaxed mb-4 italic">"{t.quote}"</p>
-                <div>
-                  <p className="font-semibold text-slate-900 text-sm">{t.name}</p>
-                  <p className="text-slate-500 text-xs">{t.role}</p>
-                </div>
-              </div>
-            ))}
-          </div>
         </div>
       </section>
 
@@ -1206,6 +1187,76 @@ export default function HomePage() {
                   </div>
                   <h3 className="text-xl font-bold text-slate-900 mb-3">{feature.title}</h3>
                   <p className="text-slate-600 leading-relaxed">{feature.desc}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Testimonials Section */}
+      <section className="py-24 bg-white relative overflow-hidden">
+        <div className="absolute top-0 left-1/3 w-[500px] h-[500px] bg-amber-50/60 rounded-full blur-[120px] pointer-events-none" />
+        <div className="absolute bottom-0 right-1/4 w-[400px] h-[400px] bg-blue-50/60 rounded-full blur-[100px] pointer-events-none" />
+
+        <div className="container mx-auto px-6 max-w-7xl relative z-10">
+          <div className="text-center mb-16">
+            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-amber-50 border border-amber-200 text-amber-700 text-sm font-medium mb-6">
+              <Star className="w-4 h-4 fill-amber-400 text-amber-400" />
+              What Educators Say
+            </div>
+            <h2 className="text-4xl md:text-5xl font-extrabold text-slate-900 mb-5 tracking-tight">
+              Trusted by <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#2463eb] to-cyan-600">Educators</span> Across India
+            </h2>
+            <p className="text-slate-600 text-lg max-w-2xl mx-auto leading-relaxed">
+              Hear from institutions that have transformed their classrooms with ThinkWise and ChalkMate technology.
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-3 gap-6">
+            {[
+              {
+                quote: 'ChalkMate has completely transformed our classrooms. The AI writing board is a game-changer for our teachers.',
+                name: 'Dr. Rajesh Kumar',
+                role: 'Principal, Global International School',
+                product: 'ChalkMate IFP',
+                color: 'from-cyan-500 to-blue-600',
+                bg: 'bg-cyan-50',
+                border: 'border-cyan-200',
+              },
+              {
+                quote: 'The visual clarity and touch responsiveness are unmatched. The best investment we have made for our students.',
+                name: 'Mrs. Priya Sharma',
+                role: 'Head of Dept, St. Xavier\'s College',
+                product: 'ChalkMate IFP',
+                color: 'from-blue-500 to-indigo-600',
+                bg: 'bg-blue-50',
+                border: 'border-blue-200',
+              },
+              {
+                quote: 'Reliable, intuitive, and feature-rich. The wireless sharing makes collaboration so much easier during lectures.',
+                name: 'Amit Patel',
+                role: 'Director, Vidya Academy',
+                product: 'ChalkMate IFP',
+                color: 'from-violet-500 to-purple-600',
+                bg: 'bg-violet-50',
+                border: 'border-violet-200',
+              },
+            ].map((t) => (
+              <div key={t.name} className={`bg-white border ${t.border} rounded-2xl p-8 shadow-sm hover:shadow-md hover:-translate-y-1 transition-all duration-300 flex flex-col`}>
+                <div className="flex gap-1 mb-5">
+                  {[...Array(5)].map((_, i) => <Star key={i} className="w-4 h-4 fill-amber-400 text-amber-400" />)}
+                </div>
+                <p className="text-slate-700 text-base leading-relaxed mb-6 italic flex-1">"{t.quote}"</p>
+                <div className="flex items-center gap-3 pt-4 border-t border-slate-100">
+                  <div className={`w-10 h-10 rounded-full ${t.bg} border ${t.border} flex items-center justify-center flex-shrink-0`}>
+                    <span className="text-sm font-bold text-transparent bg-clip-text bg-gradient-to-r ${t.color}">{t.name.charAt(0)}</span>
+                  </div>
+                  <div>
+                    <p className="font-semibold text-slate-900 text-sm">{t.name}</p>
+                    <p className="text-slate-500 text-xs">{t.role}</p>
+                  </div>
+                  <div className={`ml-auto px-3 py-1 rounded-full ${t.bg} border ${t.border} text-xs font-medium text-transparent bg-clip-text bg-gradient-to-r ${t.color}`}>{t.product}</div>
                 </div>
               </div>
             ))}
