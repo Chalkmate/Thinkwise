@@ -1041,7 +1041,7 @@ export default function HomePage() {
                   'Anti-Glare Optical Coating',
                   'Zero Bonding Technology',
                   'Wide Viewing Angle for Every Seat',
-                  'Flicker-Free Eye-Safe Certification',
+                  '9 MOHS Hardness Glass',
                 ],
               },
               {
