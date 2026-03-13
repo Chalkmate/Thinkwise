@@ -230,7 +230,7 @@ export default function HomePage() {
     { name: 'Contact', href: '#contact' },
   ];
 
-  const whatsappUrl = `https://wa.me/917825838383?text=${encodeURIComponent("Hello ThinkWise Technologies! 👋 I'm interested in your EdTech solutions and would love to learn more about your products — LMS, Digital Content Library, ChalkMate™ IFP, and Smart Visual Technologies. Kindly get in touch with me at your earliest convenience.")}`;
+  const whatsappUrl = `https://wa.me/917825838383?text=${encodeURIComponent("Hello ThinkWise Technologies! Interested in your EdTech solutions. Please connect.")}`;
 
   const handleFormChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     setFormData(prev => ({ ...prev, [e.target.name]: e.target.value }));
