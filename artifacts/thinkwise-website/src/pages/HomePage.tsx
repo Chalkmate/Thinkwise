@@ -242,18 +242,18 @@ export default function HomePage() {
 
       {/* Navigation */}
       <nav
-        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
           isScrolled
             ? 'bg-white/95 backdrop-blur-md border-b border-slate-200 shadow-sm py-3'
-            : 'bg-white/70 backdrop-blur-sm py-5'
+            : 'bg-transparent py-5'
         }`}
       >
         <div className="container mx-auto px-4 sm:px-6 max-w-7xl flex items-center justify-between">
           <a href="#home" className="flex flex-col gap-0.5">
-            <span className="text-[29px] sm:text-2xl lg:text-5xl font-bold tracking-tight leading-none" style={{ fontFamily: "'Raleway', sans-serif", fontWeight: 700 }}>
-              <span style={{ color: '#2463eb' }}>Think</span><span className="text-slate-900">Wise</span><sup className="text-[#2463eb] text-[11px] sm:text-[13px] lg:text-[24px] font-semibold" style={{ verticalAlign: '0.2em' }}>™</sup>
+            <span className="text-[29px] sm:text-2xl lg:text-5xl font-bold tracking-tight leading-none" style={{ fontFamily: "'Raleway', sans-serif", fontWeight: 700, filter: isScrolled ? 'none' : 'drop-shadow(0 1px 4px rgba(0,0,0,0.4))' }}>
+              <span style={{ color: isScrolled ? '#2463eb' : '#fff' }}>Think</span><span className={isScrolled ? 'text-slate-900' : 'text-white'}>Wise</span><sup className={`text-[11px] sm:text-[13px] lg:text-[24px] font-semibold ${isScrolled ? 'text-[#2463eb]' : 'text-white'}`} style={{ verticalAlign: '0.2em' }}>™</sup>
             </span>
-            <span className="text-[8.9px] sm:text-xs lg:text-[15px] font-medium tracking-[0.2em] uppercase text-slate-500 pl-1">Make the difference</span>
+            <span className={`text-[8.9px] sm:text-xs lg:text-[15px] font-medium tracking-[0.2em] uppercase pl-1 transition-colors duration-500 ${isScrolled ? 'text-slate-500' : 'text-white/80'}`}>Make the difference</span>
           </a>
 
           {/* Desktop Nav — only on large screens */}
@@ -262,14 +262,21 @@ export default function HomePage() {
               <a
                 key={link.name}
                 href={link.href}
-                className="text-lg font-semibold text-slate-600 hover:text-[#2463eb] transition-all duration-200 hover:scale-[1.2] active:scale-95 inline-block"
+                className={`text-lg font-semibold transition-all duration-200 hover:scale-[1.2] active:scale-95 inline-block ${
+                  isScrolled ? 'text-slate-600 hover:text-[#2463eb]' : 'text-white/90 hover:text-white'
+                }`}
+                style={!isScrolled ? { textShadow: '0 1px 4px rgba(0,0,0,0.4)' } : {}}
               >
                 {link.name}
               </a>
             ))}
             <a
               href="#contact"
-              className="px-5 py-2.5 text-sm font-medium text-white bg-[#2463eb] hover:bg-blue-700 rounded-full transition-all shadow-[0_0_15px_rgba(59,130,246,0.3)] hover:shadow-[0_0_25px_rgba(59,130,246,0.5)]"
+              className={`px-5 py-2.5 text-sm font-medium rounded-full transition-all ${
+                isScrolled
+                  ? 'text-white bg-[#2463eb] hover:bg-blue-700 shadow-[0_0_15px_rgba(59,130,246,0.3)] hover:shadow-[0_0_25px_rgba(59,130,246,0.5)]'
+                  : 'text-white bg-white/20 hover:bg-white/30 border border-white/40 backdrop-blur-sm'
+              }`}
             >
               Get Started
             </a>
@@ -277,7 +284,7 @@ export default function HomePage() {
 
           {/* Hamburger — mobile & tablet */}
           <button
-            className="lg:hidden text-slate-600 hover:text-slate-900 p-1"
+            className={`lg:hidden p-1 transition-colors duration-300 ${isScrolled ? 'text-slate-600 hover:text-slate-900' : 'text-white hover:text-white/80'}`}
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
             aria-label="Toggle menu"
           >
@@ -331,13 +338,9 @@ export default function HomePage() {
           </div>
         ))}
 
-        {/* Multi-layer gradient overlay for text legibility */}
+        {/* Subtle gradient overlay — preserves photo clarity */}
         <div className="absolute inset-0 z-10" style={{
-          background: 'linear-gradient(to bottom, rgba(0,0,0,0.55) 0%, rgba(0,0,0,0.15) 40%, rgba(0,0,0,0.20) 60%, rgba(0,0,0,0.75) 100%)',
-        }} />
-        {/* Left-edge vignette */}
-        <div className="absolute inset-0 z-10" style={{
-          background: 'linear-gradient(to right, rgba(0,0,0,0.3) 0%, transparent 50%)',
+          background: 'linear-gradient(to bottom, rgba(0,0,0,0.18) 0%, rgba(0,0,0,0.04) 40%, rgba(0,0,0,0.08) 60%, rgba(0,0,0,0.52) 100%)',
         }} />
 
         {/* Content — centered layout */}
