@@ -1,7 +1,7 @@
 import React from 'react';
 import {
   MapPin, CreditCard, Smartphone, Award, Shield, Users,
-  Star, CheckCircle, ChevronRight, Mail, Phone, Globe, Menu, X, Brain, BookOpen, Monitor, Layers, Video, Package
+  Star, CheckCircle, ChevronRight, Mail, Phone, Globe, Menu, X, Brain, BookOpen, Monitor, Layers, Video, Package, ClipboardList
 } from 'lucide-react';
 
 function BulbBrainIcon({ className = '' }: { className?: string }) {
@@ -597,6 +597,173 @@ export default function HomePage() {
                 <a href="#contact" className="inline-flex items-center text-sm font-semibold text-[#2463eb] hover:text-blue-700 transition-colors group/link">
                   Learn more <ChevronRight className="w-4 h-4 ml-1 group-hover/link:translate-x-1 transition-transform" />
                 </a>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Assessment Section */}
+      <section id="assessment" className="py-24 bg-slate-50 relative overflow-hidden">
+        <div className="absolute top-0 left-0 w-[500px] h-[500px] bg-blue-100/50 rounded-full blur-[120px] pointer-events-none" />
+        <div className="absolute bottom-0 right-0 w-[400px] h-[400px] bg-violet-100/50 rounded-full blur-[100px] pointer-events-none" />
+
+        <div className="container mx-auto px-6 max-w-7xl relative z-10">
+          {/* Header — same design as Content section */}
+          <div className="text-center mb-16">
+            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-blue-50 border border-blue-200 text-blue-700 text-sm font-medium mb-6">
+              <ClipboardList className="w-4 h-4" />
+              Powered by Thinkwise LMS
+            </div>
+            <h2 className="text-4xl md:text-5xl font-extrabold text-slate-900 mb-5 tracking-tight">
+              <span style={{ color: '#2463eb' }}>Think</span><span className="text-slate-900">Wise</span><sup className="text-[#2463eb] font-semibold text-[20px] md:text-[24px]" style={{ verticalAlign: '0.2em' }}>™</sup> <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#2463eb] to-violet-600">Assessment Suite</span>
+            </h2>
+            <p className="text-slate-600 text-lg max-w-2xl mx-auto leading-relaxed">
+              A complete end-to-end assessment ecosystem built into Thinkwise LMS — from question creation to automated grading, real-time analytics, and parent reporting.
+            </p>
+          </div>
+
+          {/* Stats bar */}
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-16">
+            {[
+              { value: '10+', label: 'Question Types' },
+              { value: 'Auto', label: 'Instant Grading' },
+              { value: '100%', label: 'Curriculum Mapped' },
+              { value: 'Live', label: 'Real-time Reports' },
+            ].map((stat) => (
+              <div key={stat.label} className="bg-white border border-slate-200 rounded-2xl p-5 text-center shadow-sm">
+                <div className="text-3xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-[#2463eb] to-violet-600 mb-1">{stat.value}</div>
+                <div className="text-slate-500 text-sm">{stat.label}</div>
+              </div>
+            ))}
+          </div>
+
+          {/* 6 Assessment Feature Cards */}
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-16">
+            {[
+              {
+                icon: '📝',
+                color: 'from-blue-500 to-blue-700',
+                glow: 'rgba(59,130,246,0.18)',
+                image: '/assessment/online-tests.png',
+                title: 'Online Tests & Exams',
+                subtitle: 'Flexible Digital Assessment',
+                items: [
+                  'MCQ, True/False, Fill-in-the-blank & Subjective',
+                  'Timed & Proctored Online Examinations',
+                  'Chapter-wise & Cumulative Unit Tests',
+                  'Board-pattern Mock Exam Simulators',
+                  'Adaptive Difficulty Question Sequences',
+                  'Offline Exam Sync with Auto Upload',
+                ],
+              },
+              {
+                icon: '⚡',
+                color: 'from-emerald-500 to-teal-700',
+                glow: 'rgba(16,185,129,0.18)',
+                image: '/assessment/auto-grading.png',
+                title: 'Automated Grading',
+                subtitle: 'Instant & Accurate Evaluation',
+                items: [
+                  'One-click Auto-grade for Objective Questions',
+                  'Rubric-based Subjective Answer Evaluation',
+                  'Instant Score Display with Correct Answers',
+                  'Negative Marking & Partial Credit Options',
+                  'Bulk Paper Evaluation & Score Export',
+                  'Teacher Override & Manual Review Tools',
+                ],
+              },
+              {
+                icon: '📚',
+                color: 'from-violet-500 to-purple-700',
+                glow: 'rgba(139,92,246,0.18)',
+                image: '/assessment/question-bank.png',
+                title: 'Smart Question Bank',
+                subtitle: 'Curriculum-Mapped Repository',
+                items: [
+                  '50,000+ Curriculum-aligned Questions',
+                  'Tagged by Chapter, Topic & Difficulty',
+                  'CBSE, ICSE & State Board Coverage',
+                  'Teacher-contributed Custom Question Pools',
+                  'Bloom\'s Taxonomy Level Classification',
+                  'One-click Paper Generation from Bank',
+                ],
+              },
+              {
+                icon: '📊',
+                color: 'from-orange-500 to-amber-600',
+                glow: 'rgba(249,115,22,0.18)',
+                image: '/assessment/analytics.png',
+                title: 'Performance Analytics',
+                subtitle: 'Data-Driven Learning Insights',
+                items: [
+                  'Student-wise Score Trends & Progress Charts',
+                  'Class & Section Comparative Reports',
+                  'Weak Topic Identification & Remediation Alerts',
+                  'Teacher Dashboard with Cohort Analysis',
+                  'Subject & Chapter Mastery Heat Maps',
+                  'Exportable PDF & Excel Report Packs',
+                ],
+              },
+              {
+                icon: '📋',
+                color: 'from-cyan-500 to-sky-700',
+                glow: 'rgba(6,182,212,0.18)',
+                image: '/assessment/homework.png',
+                title: 'Homework Management',
+                subtitle: 'Assignment Tracking & Review',
+                items: [
+                  'Digital Homework Assignment & Submission',
+                  'Deadline Reminders & Late Submission Flags',
+                  'Teacher Feedback & Annotation Tools',
+                  'Photo Upload for Handwritten Work',
+                  'Parent Visibility into Assignment Status',
+                  'Auto-compile Pending Assignment Reports',
+                ],
+              },
+              {
+                icon: '📩',
+                color: 'from-pink-500 to-rose-700',
+                glow: 'rgba(236,72,153,0.18)',
+                image: '/assessment/reports.png',
+                title: 'Reports & Communication',
+                subtitle: 'Transparent Parent Engagement',
+                items: [
+                  'Auto-generated Student Report Cards',
+                  'WhatsApp & SMS Score Notifications',
+                  'Parent App with Real-time Score Access',
+                  'Attendance & Performance Combined Reports',
+                  'Teacher-to-Parent Direct Messaging',
+                  'Scheduled Term & Annual Progress Reports',
+                ],
+              },
+            ].map((feat) => (
+              <div
+                key={feat.title}
+                className="relative bg-white border border-slate-200 rounded-2xl hover:border-slate-300 hover:shadow-md transition-all duration-300 hover:-translate-y-1 group overflow-hidden"
+                style={{ boxShadow: `0 0 40px ${feat.glow}` }}
+              >
+                <div className="relative h-44 overflow-hidden rounded-t-2xl">
+                  <img
+                    src={feat.image}
+                    alt={feat.title}
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                  />
+                  <div className="absolute bottom-3 left-4 text-2xl drop-shadow-lg">{feat.icon}</div>
+                </div>
+                <div className="relative p-6">
+                  <div className={`absolute inset-0 bg-gradient-to-br ${feat.color} opacity-5 group-hover:opacity-10 transition-opacity`} />
+                  <h3 className={`relative text-xl font-bold text-transparent bg-clip-text bg-gradient-to-r ${feat.color} mb-0.5`}>{feat.title}</h3>
+                  <p className="relative text-slate-500 text-xs font-medium uppercase tracking-wider mb-4">{feat.subtitle}</p>
+                  <ul className="relative space-y-2">
+                    {feat.items.map((item) => (
+                      <li key={item} className="flex items-start gap-2 text-sm text-slate-700">
+                        <span className="text-blue-500 mt-0.5 flex-shrink-0">✓</span>
+                        {item}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
               </div>
             ))}
           </div>
