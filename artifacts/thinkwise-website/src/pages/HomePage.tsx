@@ -221,7 +221,7 @@ export default function HomePage() {
     { name: 'Vision', href: '#about' },
     {
       name: 'Products', href: '#products', subLinks: [
-        { name: 'LMS', href: '#products' },
+        { name: 'LMS', href: '#assessment' },
         { name: 'Content', href: '#content' },
         { name: 'IFP', href: '#chalkmate' },
         { name: 'Visual', href: '#visual-tech' },
