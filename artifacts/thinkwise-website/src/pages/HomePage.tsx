@@ -539,9 +539,9 @@ export default function HomePage() {
                 color: 'from-blue-500 to-indigo-500',
               },
               {
-                title: 'GPS School Bus Tracking',
-                desc: 'Real-time GPS tracking ensuring student safety with driver behavior monitoring, optimized routing, and instant parent notifications.',
-                icon: <MapPin className="w-8 h-8" />,
+                title: 'Digital Content',
+                desc: 'Immersive Smartclass content that transforms every classroom into an interactive learning hub — featuring curriculum-aligned 3D animations, rich multimedia lessons, virtual labs, and real-time assessments mapped to all major Indian education boards for Grades K–12.',
+                icon: <BookOpen className="w-8 h-8" />,
                 color: 'from-emerald-500 to-teal-500',
               },
               {
