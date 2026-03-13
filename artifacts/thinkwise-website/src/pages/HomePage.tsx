@@ -574,10 +574,8 @@ export default function HomePage() {
               >
                 <div className={`absolute top-0 right-0 w-32 h-32 bg-gradient-to-br ${product.color} opacity-5 blur-3xl group-hover:opacity-10 transition-opacity`}></div>
 
-                <div className={`w-16 h-16 rounded-2xl bg-gradient-to-br ${product.color} p-[1px] mb-6 inline-block shadow-lg`}>
-                  <div className="w-full h-full bg-white rounded-2xl flex items-center justify-center text-white group-hover:bg-transparent transition-colors duration-300">
-                    {product.icon}
-                  </div>
+                <div className={`w-16 h-16 rounded-2xl bg-gradient-to-br ${product.color} mb-6 inline-flex items-center justify-center shadow-lg text-white`}>
+                  {product.icon}
                 </div>
 
                 <h3 className="text-2xl font-bold text-slate-900 mb-4">
