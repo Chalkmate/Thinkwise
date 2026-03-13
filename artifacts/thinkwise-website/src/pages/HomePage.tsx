@@ -540,7 +540,7 @@ export default function HomePage() {
               },
               {
                 title: 'Digital Content',
-                desc: 'Immersive Smartclass content that transforms every classroom into an interactive learning hub — featuring curriculum-aligned 3D animations, rich multimedia lessons, virtual labs, and real-time assessments mapped to all major Indian education boards for Grades K–12.',
+                desc: 'Immersive Smartclass content that transforms every classroom into an interactive learning hub — featuring curriculum-aligned 3D animations, rich multimedia lessons, virtual labs, and real-time assessments mapped to all major Indian education boards for Grades K–12. Designed to inspire curiosity and deeper learning.',
                 icon: <BookOpen className="w-8 h-8" />,
                 color: 'from-emerald-500 to-teal-500',
               },
