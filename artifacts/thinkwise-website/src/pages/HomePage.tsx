@@ -970,7 +970,7 @@ export default function HomePage() {
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-16">
             {[
               { value: '4K', label: 'Ultra HD Display' },
-              { value: '40-Pt', label: 'Multi-Touch' },
+              { value: 'AI', label: 'Writing Board' },
               { value: '3-Year', label: 'Warranty' },
               { value: '7.5+', label: 'Years Expertise' },
             ].map((stat) => (
