@@ -548,15 +548,15 @@ export default function HomePage() {
                 title: 'ChalkMate IFP',
                 desc: 'ChalkMate is our flagship Interactive Flat Panel — a premium classroom hardware solution engineered for modern education. Featuring a 4K touch display, zero-lag stylus input, built-in speakers, and seamless integration with ThinkWise digital content, ChalkMate turns any classroom into a next-generation smart learning environment.',
                 icon: (
-                  <svg viewBox="0 0 32 32" fill="none" className="w-8 h-8" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                    {/* Outer bezel — full size */}
-                    <rect x="1" y="2" width="30" height="28" rx="2.5" fill="currentColor" opacity="0.15" stroke="currentColor" strokeWidth="2" />
+                  <svg viewBox="0 0 40 26" fill="none" className="w-8 h-8" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
+                    {/* Outer bezel — widescreen landscape */}
+                    <rect x="1" y="1" width="38" height="24" rx="2.5" fill="currentColor" opacity="0.15" stroke="currentColor" strokeWidth="1.8" />
                     {/* Inner screen */}
-                    <rect x="4" y="5" width="24" height="22" rx="1" fill="currentColor" opacity="0.25" stroke="currentColor" strokeWidth="1.5" />
+                    <rect x="4" y="4" width="32" height="18" rx="1" fill="currentColor" opacity="0.25" stroke="currentColor" strokeWidth="1.4" />
                     {/* Touch indicator dots */}
-                    <circle cx="10" cy="16" r="1.2" fill="currentColor" opacity="0.7" />
-                    <circle cx="16" cy="13" r="1.2" fill="currentColor" opacity="0.7" />
-                    <circle cx="22" cy="16" r="1.2" fill="currentColor" opacity="0.7" />
+                    <circle cx="14" cy="13" r="1.2" fill="currentColor" opacity="0.7" />
+                    <circle cx="20" cy="10" r="1.2" fill="currentColor" opacity="0.7" />
+                    <circle cx="26" cy="13" r="1.2" fill="currentColor" opacity="0.7" />
                   </svg>
                 ),
                 color: 'from-purple-500 to-pink-500',
