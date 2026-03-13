@@ -1080,7 +1080,7 @@ export default function HomePage() {
                 icon: '🛡️',
                 color: 'from-rose-500 to-pink-600',
                 glow: 'rgba(244,63,94,0.18)',
-                image: '/chalkmate/display.png',
+                image: '/chalkmate/support.png',
                 title: 'Service & Support',
                 subtitle: 'Trusted Partnership',
                 items: [
