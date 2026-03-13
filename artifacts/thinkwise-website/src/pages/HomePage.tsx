@@ -1,7 +1,7 @@
 import React from 'react';
 import {
   MapPin, CreditCard, Smartphone, Award, Shield, Users,
-  Star, CheckCircle, ChevronRight, Mail, Phone, Globe, Menu, X, Brain, BookOpen, Monitor
+  Star, CheckCircle, ChevronRight, Mail, Phone, Globe, Menu, X, Brain, BookOpen, Monitor, Layers
 } from 'lucide-react';
 
 function BulbBrainIcon({ className = '' }: { className?: string }) {
@@ -551,9 +551,9 @@ export default function HomePage() {
                 color: 'from-purple-500 to-pink-500',
               },
               {
-                title: 'Digital Products',
-                desc: 'Holistic brand building, professional video shoots, dynamic campus websites, and secure school email infrastructures for staff.',
-                icon: <Smartphone className="w-8 h-8" />,
+                title: 'Our Products',
+                desc: 'A complete ecosystem of premium AV hardware for modern classrooms — including our Digital Podium for confident presenter-led teaching, Active LED Walls for stunning large-format visuals, PTZ Cameras for seamless hybrid and recorded sessions, and a full range of accessories to complete your smart campus setup.',
+                icon: <Layers className="w-8 h-8" />,
                 color: 'from-orange-500 to-red-500',
               },
             ].map((product, i) => (
