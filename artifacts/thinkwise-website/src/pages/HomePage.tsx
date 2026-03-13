@@ -1381,9 +1381,11 @@ export default function HomePage() {
       </section>
 
       {/* Testimonials Section */}
-      <section className="py-24 bg-white relative overflow-hidden">
-        <div className="absolute top-0 left-1/3 w-[500px] h-[500px] bg-amber-50/60 rounded-full blur-[120px] pointer-events-none" />
-        <div className="absolute bottom-0 right-1/4 w-[400px] h-[400px] bg-blue-50/60 rounded-full blur-[100px] pointer-events-none" />
+      <section className="py-24 relative overflow-hidden" style={{ background: 'linear-gradient(135deg, #eff6ff 0%, #f8fafc 40%, #ecfdf5 100%)' }}>
+        <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-blue-300/60 to-transparent" />
+        <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-emerald-300/50 to-transparent" />
+        <div className="absolute top-0 left-1/4 w-[500px] h-[500px] bg-blue-200/30 rounded-full blur-[130px] pointer-events-none" />
+        <div className="absolute bottom-0 right-1/4 w-[400px] h-[400px] bg-emerald-200/30 rounded-full blur-[110px] pointer-events-none" />
 
         <div className="container mx-auto px-6 max-w-7xl relative z-10">
           <div className="text-center mb-16">
