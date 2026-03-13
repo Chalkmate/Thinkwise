@@ -5,6 +5,7 @@
 
 @theme inline {
   --font-sans: 'Inter', ui-sans-serif, system-ui, sans-serif;
+  --font-aptos: 'Aptos Display', 'Segoe UI', ui-sans-serif, system-ui, sans-serif;
   --font-serif: Georgia, serif;
   --font-mono: Menlo, monospace;
   --radius-sm: calc(var(--radius) - 4px);

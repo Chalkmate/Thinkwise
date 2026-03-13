@@ -351,7 +351,7 @@ export default function HomePage() {
             {/* Category badge */}
             <div
               key={`tag-${activeSlide}`}
-              className="text-xs sm:text-sm font-semibold tracking-widest uppercase mb-4 opacity-80"
+              className="font-aptos text-xs sm:text-sm font-semibold tracking-widest uppercase mb-4 opacity-80"
               style={{ animation: 'fadeSlideUp 0.5s ease both', letterSpacing: '0.15em' }}
             >
               {slides[activeSlide].tag}
@@ -360,7 +360,7 @@ export default function HomePage() {
             {/* Product name — huge, bold */}
             <h1
               key={`title-${activeSlide}`}
-              className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-black tracking-tight leading-none mb-4"
+              className="font-aptos text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-black tracking-tight leading-none mb-4"
               style={{ animation: 'fadeSlideUp 0.5s ease 0.08s both' }}
             >
               {slides[activeSlide].title}
@@ -369,7 +369,7 @@ export default function HomePage() {
             {/* Punchy tagline */}
             <p
               key={`tagline-${activeSlide}`}
-              className="text-lg sm:text-xl md:text-2xl font-light text-white/90 mb-8"
+              className="font-aptos text-lg sm:text-xl md:text-2xl font-light text-white/90 mb-8"
               style={{ animation: 'fadeSlideUp 0.5s ease 0.16s both' }}
             >
               {slides[activeSlide].tagline}
@@ -378,7 +378,7 @@ export default function HomePage() {
             {/* Subtitle — one liner */}
             <p
               key={`sub-${activeSlide}`}
-              className="text-sm sm:text-base text-white/70 max-w-xl mb-10 leading-relaxed"
+              className="font-aptos text-sm sm:text-base text-white/70 max-w-xl mb-10 leading-relaxed"
               style={{ animation: 'fadeSlideUp 0.5s ease 0.22s both' }}
             >
               {slides[activeSlide].subtitle}
