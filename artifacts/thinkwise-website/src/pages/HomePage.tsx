@@ -598,7 +598,7 @@ export default function HomePage() {
               World-Class Digital Content
             </div>
             <h2 className="text-4xl md:text-5xl font-extrabold text-slate-900 mb-5 tracking-tight">
-              ThinkWise <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#2463eb] to-emerald-600">Content Library</span>
+              <span style={{ color: '#2463eb' }}>Think</span><span className="text-slate-900">Wise</span> <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#2463eb] to-emerald-600">Content Library</span>
             </h2>
             <p className="text-slate-600 text-lg max-w-2xl mx-auto leading-relaxed">
               A comprehensive repository of curriculum-aligned rich-media content for Grades K–12, mapped to 12+ education boards across India and available in 6 languages.
