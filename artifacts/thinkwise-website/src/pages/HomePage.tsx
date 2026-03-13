@@ -127,7 +127,7 @@ function BulbBrainIcon({ className = '' }: { className?: string }) {
 
 const slides = [
   {
-    image: '/banners/slide-lms.jpg',
+    image: '/banners/slide-lms.png',
     tag: 'Learning Management System',
     title: 'Thinkwise LMS',
     tagline: 'Smart learning, delivered end-to-end.',
@@ -160,7 +160,7 @@ const slides = [
     tabLabel: 'ChalkMate IFP',
   },
   {
-    image: '/banners/slide-display.jpg',
+    image: '/banners/slide-display.png',
     tag: 'AV Hardware & Accessories',
     title: 'Display Solutions',
     tagline: 'Display excellence, everywhere.',
