@@ -233,7 +233,7 @@ export default function HomePage() {
         <div className="container mx-auto px-4 sm:px-6 max-w-7xl flex items-center justify-between">
           <a href="#home" className="flex flex-col gap-0.5">
             <span className="text-[29px] sm:text-2xl lg:text-5xl font-bold tracking-tight leading-none" style={{ fontFamily: "'Raleway', sans-serif", fontWeight: 700 }}>
-              <span style={{ color: '#2463eb' }}>Think</span><span className="text-slate-900">Wise</span><sup className="text-blue-600 text-[11px] sm:text-[13px] lg:text-[24px] font-semibold" style={{ verticalAlign: '0.2em' }}>™</sup>
+              <span style={{ color: '#2463eb' }}>Think</span><span className="text-slate-900">Wise</span><sup className="text-[#2463eb] text-[11px] sm:text-[13px] lg:text-[24px] font-semibold" style={{ verticalAlign: '0.2em' }}>™</sup>
             </span>
             <span className="text-[8.9px] sm:text-xs lg:text-[15px] font-medium tracking-[0.2em] uppercase text-slate-500 pl-1">Make the difference</span>
           </a>
@@ -244,14 +244,14 @@ export default function HomePage() {
               <a
                 key={link.name}
                 href={link.href}
-                className="text-lg font-semibold text-slate-600 hover:text-blue-600 transition-all duration-200 hover:scale-[1.2] active:scale-95 inline-block"
+                className="text-lg font-semibold text-slate-600 hover:text-[#2463eb] transition-all duration-200 hover:scale-[1.2] active:scale-95 inline-block"
               >
                 {link.name}
               </a>
             ))}
             <a
               href="#contact"
-              className="px-5 py-2.5 text-sm font-medium text-white bg-blue-600 hover:bg-blue-700 rounded-full transition-all shadow-[0_0_15px_rgba(59,130,246,0.3)] hover:shadow-[0_0_25px_rgba(59,130,246,0.5)]"
+              className="px-5 py-2.5 text-sm font-medium text-white bg-[#2463eb] hover:bg-blue-700 rounded-full transition-all shadow-[0_0_15px_rgba(59,130,246,0.3)] hover:shadow-[0_0_25px_rgba(59,130,246,0.5)]"
             >
               Get Started
             </a>
@@ -274,7 +274,7 @@ export default function HomePage() {
               <a
                 key={link.name}
                 href={link.href}
-                className="text-xl font-semibold text-slate-700 hover:text-blue-600 transition-colors"
+                className="text-xl font-semibold text-slate-700 hover:text-[#2463eb] transition-colors"
                 onClick={() => setMobileMenuOpen(false)}
               >
                 {link.name}
@@ -282,7 +282,7 @@ export default function HomePage() {
             ))}
             <a
               href="#contact"
-              className="inline-block mt-2 px-6 py-3 text-base font-semibold text-white bg-blue-600 hover:bg-blue-500 rounded-full transition-all text-center"
+              className="inline-block mt-2 px-6 py-3 text-base font-semibold text-white bg-[#2463eb] hover:bg-blue-500 rounded-full transition-all text-center"
               onClick={() => setMobileMenuOpen(false)}
             >
               Get Started
@@ -366,7 +366,7 @@ export default function HomePage() {
               >
                 <span className="text-slate-900">{slides[activeSlide].title}</span>
                 <br />
-                <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-emerald-600">
+                <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#2463eb] to-emerald-600">
                   {slides[activeSlide].titleAccent}
                 </span>
               </h1>
@@ -388,7 +388,7 @@ export default function HomePage() {
               >
                 <a
                   href={slides[activeSlide].ctaHref}
-                  className="px-6 sm:px-8 py-3 sm:py-4 text-sm sm:text-base font-semibold text-white bg-blue-600 hover:bg-blue-500 rounded-full transition-all shadow-[0_0_20px_rgba(59,130,246,0.4)] hover:shadow-[0_0_30px_rgba(59,130,246,0.7)] flex items-center gap-2"
+                  className="px-6 sm:px-8 py-3 sm:py-4 text-sm sm:text-base font-semibold text-white bg-[#2463eb] hover:bg-blue-500 rounded-full transition-all shadow-[0_0_20px_rgba(59,130,246,0.4)] hover:shadow-[0_0_30px_rgba(59,130,246,0.7)] flex items-center gap-2"
                 >
                   {slides[activeSlide].cta}
                   <ChevronRight className="w-4 h-4 sm:w-5 sm:h-5" />
@@ -430,7 +430,7 @@ export default function HomePage() {
               aria-label={`Go to slide ${i + 1}`}
               className={`transition-all duration-300 rounded-full ${
                 activeSlide === i
-                  ? 'w-8 h-2.5 bg-blue-600 shadow-[0_0_8px_rgba(37,99,235,0.5)]'
+                  ? 'w-8 h-2.5 bg-[#2463eb] shadow-[0_0_8px_rgba(37,99,235,0.5)]'
                   : 'w-2.5 h-2.5 bg-slate-400 hover:bg-slate-600'
               }`}
             />
@@ -467,7 +467,7 @@ export default function HomePage() {
         <div className="container mx-auto px-6 max-w-7xl">
           <div className="grid lg:grid-cols-2 gap-10 lg:gap-16 items-center">
             <div>
-              <div className="text-blue-600 font-semibold tracking-wider uppercase text-sm mb-4">About ThinkWise</div>
+              <div className="text-[#2463eb] font-semibold tracking-wider uppercase text-sm mb-4">About ThinkWise</div>
               <h2 className="text-4xl md:text-5xl font-bold text-slate-900 mb-6 leading-tight">
                 Progressive professionals delivering world-class solutions.
               </h2>
@@ -504,7 +504,7 @@ export default function HomePage() {
                 </div>
                 <div className="flex items-center gap-4">
                   <div className="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center shrink-0">
-                    <Globe className="w-6 h-6 text-blue-600" />
+                    <Globe className="w-6 h-6 text-[#2463eb]" />
                   </div>
                   <div>
                     <h3 className="text-slate-900 font-semibold text-lg">Global Impact</h3>
@@ -523,7 +523,7 @@ export default function HomePage() {
 
         <div className="container mx-auto px-6 max-w-7xl relative z-10">
           <div className="text-center max-w-3xl mx-auto mb-16">
-            <div className="text-blue-600 font-semibold tracking-wider uppercase text-sm mb-4">Our Ecosystem</div>
+            <div className="text-[#2463eb] font-semibold tracking-wider uppercase text-sm mb-4">Our Ecosystem</div>
             <h2 className="text-4xl md:text-5xl font-bold text-slate-900 mb-6">Comprehensive EdTech Suite</h2>
             <p className="text-slate-600 text-lg">
               Integrated platforms designed to modernize campus operations, enhance student outcomes, and streamline administration.
@@ -576,7 +576,7 @@ export default function HomePage() {
                   {product.desc}
                 </p>
 
-                <a href="#contact" className="inline-flex items-center text-sm font-semibold text-blue-600 hover:text-blue-700 transition-colors group/link">
+                <a href="#contact" className="inline-flex items-center text-sm font-semibold text-[#2463eb] hover:text-blue-700 transition-colors group/link">
                   Learn more <ChevronRight className="w-4 h-4 ml-1 group-hover/link:translate-x-1 transition-transform" />
                 </a>
               </div>
@@ -598,7 +598,7 @@ export default function HomePage() {
               World-Class Digital Content
             </div>
             <h2 className="text-4xl md:text-5xl font-extrabold text-slate-900 mb-5 tracking-tight">
-              ThinkWise <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-emerald-600">Content Library</span>
+              ThinkWise <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#2463eb] to-emerald-600">Content Library</span>
             </h2>
             <p className="text-slate-600 text-lg max-w-2xl mx-auto leading-relaxed">
               A comprehensive repository of curriculum-aligned rich-media content for Grades K–12, mapped to 12+ education boards across India and available in 6 languages.
@@ -614,7 +614,7 @@ export default function HomePage() {
               { value: '5000+', label: 'Learning Resources' },
             ].map((stat) => (
               <div key={stat.label} className="bg-slate-50 border border-slate-200 rounded-2xl p-5 text-center shadow-sm">
-                <div className="text-3xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-emerald-600 mb-1">{stat.value}</div>
+                <div className="text-3xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-[#2463eb] to-emerald-600 mb-1">{stat.value}</div>
                 <div className="text-slate-500 text-sm">{stat.label}</div>
               </div>
             ))}
@@ -775,11 +775,11 @@ export default function HomePage() {
         <div className="container mx-auto px-6 max-w-7xl relative z-10">
           <div className="text-center mb-16">
             <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-blue-50 border border-blue-200 text-blue-700 text-sm font-medium mb-6">
-              <Star className="w-4 h-4 fill-blue-600" />
+              <Star className="w-4 h-4 fill-[#2463eb]" />
               Our Advantage
             </div>
             <h2 className="text-4xl md:text-5xl font-extrabold mb-5 tracking-tight">
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 via-cyan-600 to-emerald-600">
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#2463eb] via-cyan-600 to-emerald-600">
                 Why Choose ThinkWise?
               </span>
             </h2>
@@ -791,11 +791,11 @@ export default function HomePage() {
               {
                 title: 'Proven Technology',
                 desc: 'Robust, scalable platforms battle-tested by hundreds of institutions across India.',
-                icon: <Award className="w-10 h-10 text-blue-600" />,
+                icon: <Award className="w-10 h-10 text-[#2463eb]" />,
                 accent: 'from-blue-50 to-white',
                 border: 'border-blue-200',
                 glow: 'bg-blue-50',
-                iconRing: 'text-blue-600',
+                iconRing: 'text-[#2463eb]',
               },
               {
                 title: 'Dedicated Support',
@@ -850,12 +850,12 @@ export default function HomePage() {
 
               <div className="space-y-6 relative z-10">
                 <div className="flex items-start gap-4">
-                  <div className="w-10 h-10 bg-blue-100 rounded-full flex items-center justify-center shrink-0 text-blue-600">
+                  <div className="w-10 h-10 bg-blue-100 rounded-full flex items-center justify-center shrink-0 text-[#2463eb]">
                     <Mail className="w-5 h-5" />
                   </div>
                   <div>
                     <div className="text-sm text-slate-500 mb-1">Email Us</div>
-                    <a href="mailto:info@thinkwise.pro" className="text-slate-900 font-medium hover:text-blue-600 transition-colors">
+                    <a href="mailto:info@thinkwise.pro" className="text-slate-900 font-medium hover:text-[#2463eb] transition-colors">
                       info@thinkwise.pro
                     </a>
                   </div>
@@ -894,7 +894,7 @@ export default function HomePage() {
                   <p className="text-slate-600 mb-8">Thank you for reaching out. Our team will contact you within 24 hours.</p>
                   <button
                     onClick={() => setFormStatus('idle')}
-                    className="px-6 py-3 text-sm font-semibold text-white bg-blue-600 hover:bg-blue-500 rounded-xl transition-all"
+                    className="px-6 py-3 text-sm font-semibold text-white bg-[#2463eb] hover:bg-blue-500 rounded-xl transition-all"
                   >
                     Send Another Message
                   </button>
@@ -958,7 +958,7 @@ export default function HomePage() {
                   <button
                     type="submit"
                     disabled={formStatus === 'sending'}
-                    className="w-full bg-blue-600 hover:bg-blue-500 disabled:opacity-70 disabled:cursor-not-allowed text-white font-semibold py-4 rounded-xl transition-all shadow-lg shadow-blue-500/20 hover:shadow-blue-500/40"
+                    className="w-full bg-[#2463eb] hover:bg-blue-500 disabled:opacity-70 disabled:cursor-not-allowed text-white font-semibold py-4 rounded-xl transition-all shadow-lg shadow-blue-500/20 hover:shadow-blue-500/40"
                   >
                     {formStatus === 'sending' ? 'Sending...' : 'Send Message'}
                   </button>
@@ -976,7 +976,7 @@ export default function HomePage() {
           <div className="flex flex-col md:flex-row justify-between items-center gap-6">
             <a href="#home" className="flex flex-col gap-0.5">
               <span className="text-4xl font-bold tracking-tight leading-none" style={{ fontFamily: "'Raleway', sans-serif", fontWeight: 700 }}>
-                <span style={{ color: '#2463eb' }}>Think</span><span className="text-slate-900">Wise</span><sup className="text-blue-600 text-[18px] font-semibold" style={{ verticalAlign: '0.2em' }}>™</sup>
+                <span style={{ color: '#2463eb' }}>Think</span><span className="text-slate-900">Wise</span><sup className="text-[#2463eb] text-[18px] font-semibold" style={{ verticalAlign: '0.2em' }}>™</sup>
               </span>
               <span className="text-[11px] font-medium tracking-[0.2em] uppercase text-slate-500 pl-1">Make the difference</span>
             </a>
