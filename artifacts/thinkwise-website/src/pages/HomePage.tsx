@@ -233,7 +233,7 @@ export default function HomePage() {
         <div className="container mx-auto px-4 sm:px-6 max-w-7xl flex items-center justify-between">
           <a href="#home" className="flex flex-col gap-0.5">
             <span className="text-[29px] sm:text-2xl lg:text-5xl font-bold tracking-tight leading-none" style={{ fontFamily: "'Raleway', sans-serif", fontWeight: 700 }}>
-              <span style={{ color: '#00305b' }}>Think</span><span className="text-slate-900">Wise</span><sup className="text-blue-600 text-[11px] sm:text-[13px] lg:text-[24px] font-semibold" style={{ verticalAlign: '0.2em' }}>™</sup>
+              <span style={{ color: '#2463eb' }}>Think</span><span className="text-slate-900">Wise</span><sup className="text-blue-600 text-[11px] sm:text-[13px] lg:text-[24px] font-semibold" style={{ verticalAlign: '0.2em' }}>™</sup>
             </span>
             <span className="text-[8.9px] sm:text-xs lg:text-[15px] font-medium tracking-[0.2em] uppercase text-slate-500 pl-1">Make the difference</span>
           </a>
@@ -976,7 +976,7 @@ export default function HomePage() {
           <div className="flex flex-col md:flex-row justify-between items-center gap-6">
             <a href="#home" className="flex flex-col gap-0.5">
               <span className="text-4xl font-bold tracking-tight leading-none" style={{ fontFamily: "'Raleway', sans-serif", fontWeight: 700 }}>
-                <span style={{ color: '#00305b' }}>Think</span><span className="text-slate-900">Wise</span><sup className="text-blue-600 text-[18px] font-semibold" style={{ verticalAlign: '0.2em' }}>™</sup>
+                <span style={{ color: '#2463eb' }}>Think</span><span className="text-slate-900">Wise</span><sup className="text-blue-600 text-[18px] font-semibold" style={{ verticalAlign: '0.2em' }}>™</sup>
               </span>
               <span className="text-[11px] font-medium tracking-[0.2em] uppercase text-slate-500 pl-1">Make the difference</span>
             </a>
