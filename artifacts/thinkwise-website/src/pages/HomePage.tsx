@@ -1461,7 +1461,7 @@ export default function HomePage() {
             <div className="lg:w-2/5 p-6 sm:p-8 lg:p-12 bg-gradient-to-br from-blue-50 to-white border-b lg:border-b-0 lg:border-r border-slate-200 relative overflow-hidden">
               <div className="absolute top-0 right-0 w-64 h-64 bg-blue-100/60 rounded-full blur-3xl"></div>
 
-              <h2 className="text-3xl font-bold text-slate-900 mb-6 relative z-10">Get in Touch</h2>
+              <h2 className="text-3xl font-bold mb-6 relative z-10"><span className="text-transparent bg-clip-text bg-gradient-to-r from-[#2463eb] to-blue-400">Get in Touch</span></h2>
               <p className="text-slate-600 mb-10 relative z-10">
                 Ready to transform your institution? Fill out the form and our team will get back to you within 24 hours.
               </p>
