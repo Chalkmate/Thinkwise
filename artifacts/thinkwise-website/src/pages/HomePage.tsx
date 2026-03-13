@@ -1394,7 +1394,7 @@ export default function HomePage() {
               What Educators Say
             </div>
             <h2 className="text-4xl md:text-5xl font-extrabold text-slate-900 mb-5 tracking-tight">
-              Trusted by <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#2463eb] to-cyan-600">Educators</span> Across India
+              Trusted by <span className="text-transparent bg-clip-text bg-gradient-to-r from-amber-500 to-orange-500">Educators</span> Across India
             </h2>
             <p className="text-slate-600 text-lg max-w-2xl mx-auto leading-relaxed">
               Hear from institutions that have transformed their classrooms with ThinkWise and ChalkMate technology.
