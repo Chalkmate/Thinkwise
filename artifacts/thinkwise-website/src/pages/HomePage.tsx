@@ -1123,9 +1123,11 @@ export default function HomePage() {
       </section>
 
       {/* Smart Visual Technologies Section */}
-      <section id="visual-tech" className="py-24 bg-white relative overflow-hidden">
-        <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-violet-100/40 rounded-full blur-[120px] pointer-events-none" />
-        <div className="absolute bottom-0 left-0 w-[400px] h-[400px] bg-indigo-100/40 rounded-full blur-[100px] pointer-events-none" />
+      <section id="visual-tech" className="py-24 relative overflow-hidden" style={{ background: 'linear-gradient(135deg, #f5f3ff 0%, #f8fafc 45%, #eef2ff 100%)' }}>
+        <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-violet-300/60 to-transparent" />
+        <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-indigo-300/50 to-transparent" />
+        <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-violet-200/30 rounded-full blur-[120px] pointer-events-none" />
+        <div className="absolute bottom-0 left-0 w-[400px] h-[400px] bg-indigo-200/30 rounded-full blur-[100px] pointer-events-none" />
 
         <div className="container mx-auto px-6 max-w-7xl relative z-10">
           {/* Header */}
