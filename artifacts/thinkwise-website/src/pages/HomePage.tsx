@@ -533,7 +533,9 @@ export default function HomePage() {
         <div className="container mx-auto px-6 max-w-7xl relative z-10">
           <div className="text-center max-w-3xl mx-auto mb-16">
             <div className="text-[#2463eb] font-semibold tracking-wider uppercase text-sm mb-4">Our Ecosystem</div>
-            <h2 className="text-4xl md:text-5xl font-bold text-slate-900 mb-6">Comprehensive EdTech Suite</h2>
+            <h2 className="text-4xl md:text-5xl font-extrabold text-slate-900 mb-5 tracking-tight">
+              <span style={{ color: '#2463eb' }}>Think</span><span className="text-slate-900">Wise</span><sup className="text-[#2463eb] font-semibold text-[20px] md:text-[24px]" style={{ verticalAlign: '0.2em' }}>™</sup> <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#2463eb] to-emerald-600">Comprehensive EdTech Suite</span>
+            </h2>
             <p className="text-slate-600 text-lg">
               Integrated platforms designed to modernize campus operations, enhance student outcomes, and streamline administration.
             </p>
