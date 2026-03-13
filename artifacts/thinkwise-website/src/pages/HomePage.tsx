@@ -959,7 +959,7 @@ export default function HomePage() {
               Interactive Flat Panels
             </div>
             <h2 className="text-4xl md:text-5xl font-extrabold text-slate-900 mb-5 tracking-tight">
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-600 to-blue-600">ChalkMate</span><sup className="text-cyan-600 font-semibold text-[20px] md:text-[24px]" style={{ verticalAlign: '0.2em' }}>™</sup> <span className="text-slate-900">Interactive Flat Panels</span>
+              <span style={{ color: '#2463eb' }}>Think</span><span className="text-slate-900">Wise</span><sup className="text-[#2463eb] font-semibold text-[20px] md:text-[24px]" style={{ verticalAlign: '0.2em' }}>™</sup> <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-600 to-blue-600">ChalkMate IFP</span>
             </h2>
             <p className="text-slate-600 text-lg max-w-2xl mx-auto leading-relaxed">
               Transform the conventional "Chalk and Talk" method into a dynamic, digital experience — next-generation smart classroom technology engineered for Indian schools, colleges, and institutions.
@@ -1135,8 +1135,7 @@ export default function HomePage() {
               AV & Display Solutions
             </div>
             <h2 className="text-4xl md:text-5xl font-extrabold text-slate-900 mb-5 tracking-tight">
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-violet-600 to-indigo-600">Smart Visual</span>{' '}
-              <span className="text-slate-900">Technologies</span>
+              <span style={{ color: '#2463eb' }}>Think</span><span className="text-slate-900">Wise</span><sup className="text-[#2463eb] font-semibold text-[20px] md:text-[24px]" style={{ verticalAlign: '0.2em' }}>™</sup> <span className="text-transparent bg-clip-text bg-gradient-to-r from-violet-600 to-indigo-600">Smart Visual Technologies</span>
             </h2>
             <p className="text-slate-600 text-lg max-w-2xl mx-auto leading-relaxed">
               End-to-end audiovisual solutions for modern educational institutions and corporate spaces — from digital podiums to fully equipped broadcast studios, designed to command every room.
