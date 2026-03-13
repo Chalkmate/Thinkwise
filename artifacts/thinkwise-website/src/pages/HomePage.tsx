@@ -162,13 +162,13 @@ const slides = [
   {
     image: '/banners/slide-display.png',
     tag: 'AV Hardware & Accessories',
-    title: 'Display Solutions',
+    title: 'Smart Visual Technologies',
     tagline: 'Display excellence, everywhere.',
     subtitle: 'Digital Podiums, Active LED Walls, PTZ Cameras and premium AV accessories — a complete ecosystem for the smart campus.',
     cta: 'Explore Products',
     ctaHref: '#products',
     accentColor: '#d97706',
-    tabLabel: 'Display Solutions',
+    tabLabel: 'Smart Visual Technologies',
   },
 ];
 
@@ -574,7 +574,7 @@ export default function HomePage() {
                 color: 'from-purple-500 to-pink-500',
               },
               {
-                title: 'Display Solutions',
+                title: 'Smart Visual Technologies',
                 desc: 'A complete ecosystem of premium AV hardware for modern classrooms — including our Digital Podium for confident presenter-led teaching, Active LED Walls for stunning large-format visuals, PTZ Cameras for seamless hybrid and recorded sessions, and a full range of accessories to complete your smart campus setup.',
                 icon: <Layers className="w-8 h-8" />,
                 color: 'from-orange-500 to-red-500',
