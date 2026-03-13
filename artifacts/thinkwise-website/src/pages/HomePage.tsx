@@ -346,25 +346,6 @@ export default function HomePage() {
           {/* Spacer for navbar */}
           <div className="flex-none" style={{ height: 72 }} />
 
-          {/* Product tab bar — Apple lineup style */}
-          <div className="flex-none flex justify-center pt-4 pb-0 px-4">
-            <div className="flex items-center gap-1 bg-white/10 backdrop-blur-md border border-white/20 rounded-full px-2 py-1.5">
-              {slides.map((s, i) => (
-                <button
-                  key={i}
-                  onClick={() => goToSlide(i)}
-                  className={`text-xs font-semibold px-4 py-1.5 rounded-full transition-all duration-300 ${
-                    activeSlide === i
-                      ? 'text-slate-900 bg-white shadow-sm'
-                      : 'text-white/80 hover:text-white hover:bg-white/10'
-                  }`}
-                >
-                  {s.tabLabel}
-                </button>
-              ))}
-            </div>
-          </div>
-
           {/* Main text — center stage */}
           <div className="flex-1 flex flex-col items-center justify-center text-white text-center px-6 -mt-8">
             {/* Category badge */}
