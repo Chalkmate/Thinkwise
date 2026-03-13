@@ -396,12 +396,6 @@ export default function HomePage() {
                 {slides[activeSlide].cta}
                 <ChevronRight className="w-4 h-4" />
               </a>
-              <a
-                href="#contact"
-                className="px-8 py-3.5 rounded-full font-semibold text-sm text-white bg-white/15 hover:bg-white/25 border border-white/30 backdrop-blur-sm transition-all hover:scale-105"
-              >
-                Get a Demo
-              </a>
             </div>
           </div>
 
