@@ -278,12 +278,12 @@ export default function HomePage() {
                     <ChevronDown className="w-4 h-4 transition-transform duration-200 group-hover:rotate-180" />
                   </a>
                   <div className="absolute top-full left-1/2 -translate-x-1/2 pt-3 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
-                    <div className="bg-white rounded-xl shadow-xl border border-slate-100 py-2 min-w-[140px] overflow-hidden">
+                    <div className="bg-white/10 backdrop-blur-md rounded-xl shadow-xl border border-white/20 py-2 min-w-[140px] overflow-hidden">
                       {link.subLinks.map((sub) => (
                         <a
                           key={sub.name}
                           href={sub.href}
-                          className="block px-5 py-2.5 text-sm font-semibold text-slate-600 hover:text-[#2463eb] hover:bg-blue-50 transition-colors"
+                          className={`block px-5 py-2.5 text-sm font-bold uppercase tracking-wider transition-colors hover:bg-white/10 ${isScrolled ? 'text-slate-700 hover:text-[#2463eb]' : 'text-white hover:text-white/80'}`}
                         >
                           {sub.name}
                         </a>
