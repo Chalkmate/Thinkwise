@@ -1557,7 +1557,7 @@ export default function HomePage() {
                   </div>
                   <div>
                     <div className="text-sm text-slate-500 mb-1">Email Us</div>
-                    <a href="mailto:info@thinkwise.pro" className="text-slate-900 font-medium hover:text-[#2463eb] transition-colors">
+                    <a href="mailto:info@thinkwise.pro" className="text-slate-500 font-medium hover:text-[#2463eb] transition-colors">
                       info@thinkwise.pro
                     </a>
                   </div>
@@ -1568,7 +1568,7 @@ export default function HomePage() {
                   </div>
                   <div>
                     <div className="text-sm text-slate-500 mb-1">Call Us</div>
-                    <a href="tel:+917825838383" className="text-slate-900 font-medium hover:text-emerald-600 transition-colors">
+                    <a href="tel:+917825838383" className="text-slate-500 font-medium hover:text-emerald-600 transition-colors">
                       +91 78258 38383
                     </a>
                   </div>
@@ -1579,7 +1579,7 @@ export default function HomePage() {
                   </div>
                   <div>
                     <div className="text-sm text-slate-500 mb-1">Location</div>
-                    <div className="text-slate-900 font-medium leading-relaxed">Thinkwise Technologies Private Limited.<br />#299, 1st Floor, 4th Main Road,<br />Perungudi, OMR, Chennai,<br />Tamil Nadu – 600096</div>
+                    <div className="text-slate-500 font-medium leading-relaxed">Thinkwise Technologies Private Limited.<br />#299, 1st Floor, 4th Main Road,<br />Perungudi, OMR, Chennai,<br />Tamil Nadu – 600096</div>
                   </div>
                 </div>
               </div>
