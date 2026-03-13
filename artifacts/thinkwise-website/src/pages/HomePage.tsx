@@ -354,8 +354,8 @@ export default function HomePage() {
             {/* Category badge */}
             <div
               key={`tag-${activeSlide}`}
-              className="font-aptos text-xs sm:text-sm font-semibold tracking-widest uppercase mb-4 opacity-80"
-              style={{ animation: 'fadeSlideUp 0.5s ease both', letterSpacing: '0.15em' }}
+              className="font-aptos text-xs sm:text-sm font-semibold tracking-widest uppercase mb-4 opacity-90"
+              style={{ animation: 'fadeSlideUp 0.5s ease both', letterSpacing: '0.15em', textShadow: '0 1px 8px rgba(0,0,0,0.9), 0 0 24px rgba(0,0,0,0.6)' }}
             >
               {slides[activeSlide].tag}
             </div>
@@ -364,7 +364,7 @@ export default function HomePage() {
             <h1
               key={`title-${activeSlide}`}
               className="font-aptos text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-black tracking-tight leading-none mb-4"
-              style={{ animation: 'fadeSlideUp 0.5s ease 0.08s both' }}
+              style={{ animation: 'fadeSlideUp 0.5s ease 0.08s both', textShadow: '0 2px 16px rgba(0,0,0,0.85), 0 4px 40px rgba(0,0,0,0.5)' }}
             >
               {slides[activeSlide].title}
             </h1>
@@ -372,8 +372,8 @@ export default function HomePage() {
             {/* Punchy tagline */}
             <p
               key={`tagline-${activeSlide}`}
-              className="font-aptos text-lg sm:text-xl md:text-2xl font-light text-white/90 mb-8"
-              style={{ animation: 'fadeSlideUp 0.5s ease 0.16s both' }}
+              className="font-aptos text-lg sm:text-xl md:text-2xl font-light text-white mb-8"
+              style={{ animation: 'fadeSlideUp 0.5s ease 0.16s both', textShadow: '0 1px 10px rgba(0,0,0,0.9), 0 0 30px rgba(0,0,0,0.6)' }}
             >
               {slides[activeSlide].tagline}
             </p>
