@@ -1119,26 +1119,6 @@ export default function HomePage() {
             ))}
           </div>
 
-          {/* Screen Size Options */}
-          <div className="bg-white border border-slate-200 rounded-3xl p-8 mb-16 shadow-sm">
-            <h3 className="text-slate-900 font-bold text-2xl mb-2 text-center">Tailored to Your Space</h3>
-            <p className="text-slate-500 text-center text-sm mb-8">Choose the right screen size for your classroom, lab, or auditorium</p>
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
-              {[
-                { size: '65"', use: 'Small Classrooms & Meeting Rooms', icon: '🏫' },
-                { size: '75"', use: 'Medium Classrooms & Labs', icon: '🏛️' },
-                { size: '86"', use: 'Large Classrooms & Lecture Halls', icon: '🎓' },
-                { size: '98"', use: 'Auditoriums & Large Venues', icon: '🏟️' },
-              ].map((s) => (
-                <div key={s.size} className="text-center p-6 rounded-2xl bg-slate-50 border border-slate-200 hover:border-cyan-300 hover:bg-cyan-50 transition-all group">
-                  <div className="text-3xl mb-3">{s.icon}</div>
-                  <div className="text-3xl font-black text-transparent bg-clip-text bg-gradient-to-r from-cyan-600 to-blue-600 mb-2">{s.size}</div>
-                  <p className="text-slate-600 text-sm">{s.use}</p>
-                </div>
-              ))}
-            </div>
-          </div>
-
           {/* Testimonials */}
           <div className="grid md:grid-cols-3 gap-6">
             {[
