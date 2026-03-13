@@ -1017,7 +1017,7 @@ export default function HomePage() {
                 color: 'from-blue-500 to-indigo-600',
                 glow: 'rgba(59,130,246,0.18)',
                 image: '/chalkmate/multitouch.png',
-                title: '40-Point Multi-Touch',
+                title: 'Feather Touch',
                 subtitle: 'Collaborative Classroom Interaction',
                 items: [
                   'Ultra-responsive IR Touch Technology',
