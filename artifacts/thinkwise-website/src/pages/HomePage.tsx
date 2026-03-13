@@ -236,18 +236,31 @@ export default function HomePage() {
     setFormData(prev => ({ ...prev, [e.target.name]: e.target.value }));
   };
 
-  const handleFormSubmit = (e: React.FormEvent) => {
+  const handleFormSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setFormStatus('sending');
-    const subject = encodeURIComponent(`Enquiry from ${formData.name} — ${formData.institution || 'ThinkWise Website'}`);
-    const body = encodeURIComponent(
-      `Name: ${formData.name}\nEmail: ${formData.email}\nInstitution: ${formData.institution}\n\nMessage:\n${formData.message}`
-    );
-    window.open(`mailto:info@thinkwise.pro?subject=${subject}&body=${body}`, '_blank');
-    setTimeout(() => {
-      setFormStatus('sent');
-      setFormData({ name: '', email: '', institution: '', message: '' });
-    }, 800);
+    try {
+      const res = await fetch('https://formsubmit.co/ajax/info@thinkwise.pro', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+        body: JSON.stringify({
+          _subject: `New Enquiry from ${formData.name} — ThinkWise Website`,
+          Name: formData.name,
+          Email: formData.email,
+          Institution: formData.institution,
+          Message: formData.message,
+          _captcha: 'false',
+        }),
+      });
+      if (res.ok) {
+        setFormStatus('sent');
+        setFormData({ name: '', email: '', institution: '', message: '' });
+      } else {
+        setFormStatus('error');
+      }
+    } catch {
+      setFormStatus('error');
+    }
   };
 
   return (
@@ -1586,6 +1599,20 @@ export default function HomePage() {
                     className="px-6 py-3 text-sm font-semibold text-white bg-[#2463eb] hover:bg-blue-500 rounded-xl transition-all"
                   >
                     Send Another Message
+                  </button>
+                </div>
+              ) : formStatus === 'error' ? (
+                <div className="h-full flex flex-col items-center justify-center text-center py-12">
+                  <div className="w-20 h-20 bg-red-100 rounded-full flex items-center justify-center mb-6">
+                    <X className="w-10 h-10 text-red-500" />
+                  </div>
+                  <h3 className="text-2xl font-bold text-slate-900 mb-3">Something went wrong</h3>
+                  <p className="text-slate-600 mb-8">We couldn't send your message. Please try again or email us directly at <a href="mailto:info@thinkwise.pro" className="text-[#2463eb] underline">info@thinkwise.pro</a>.</p>
+                  <button
+                    onClick={() => setFormStatus('idle')}
+                    className="px-6 py-3 text-sm font-semibold text-white bg-[#2463eb] hover:bg-blue-500 rounded-xl transition-all"
+                  >
+                    Try Again
                   </button>
                 </div>
               ) : (
