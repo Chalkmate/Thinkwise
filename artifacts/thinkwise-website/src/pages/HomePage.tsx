@@ -533,8 +533,8 @@ export default function HomePage() {
           <div className="grid md:grid-cols-2 gap-8">
             {[
               {
-                title: 'Thinkwise Assessment',
-                desc: 'Powerful online assessment platform for students featuring deep analytics, automated grading, and comprehensive performance tracking.',
+                title: 'Thinkwise LMS',
+                desc: 'A fully integrated Learning Management System that empowers schools to deliver, manage, and track education end-to-end — featuring online assessments, automated grading, homework management, live class scheduling, student progress dashboards, and parent communication tools, all on one seamless platform.',
                 icon: <Brain className="w-8 h-8" />,
                 color: 'from-blue-500 to-indigo-500',
               },
