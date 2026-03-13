@@ -218,7 +218,7 @@ export default function HomePage() {
 
   const navLinks = [
     { name: 'Home', href: '#home' },
-    { name: 'About', href: '#about' },
+    { name: 'Vision', href: '#about' },
     {
       name: 'Products', href: '#products', subLinks: [
         { name: 'LMS', href: '#products' },
