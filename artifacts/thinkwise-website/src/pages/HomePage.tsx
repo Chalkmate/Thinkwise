@@ -230,6 +230,8 @@ export default function HomePage() {
     { name: 'Contact', href: '#contact' },
   ];
 
+  const whatsappUrl = `https://wa.me/917825838383?text=${encodeURIComponent("Hello ThinkWise Technologies! 👋 I'm interested in your EdTech solutions and would love to learn more about your products — LMS, Digital Content Library, ChalkMate™ IFP, and Smart Visual Technologies. Kindly get in touch with me at your earliest convenience.")}`;
+
   const handleFormChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     setFormData(prev => ({ ...prev, [e.target.name]: e.target.value }));
   };
@@ -305,7 +307,9 @@ export default function HomePage() {
               )
             ))}
             <a
-              href="#contact"
+              href={whatsappUrl}
+              target="_blank"
+              rel="noopener noreferrer"
               className={`px-5 py-2.5 text-sm font-medium rounded-full transition-all ${
                 isScrolled
                   ? 'text-white bg-[#2463eb] hover:bg-blue-700 shadow-[0_0_15px_rgba(59,130,246,0.3)] hover:shadow-[0_0_25px_rgba(59,130,246,0.5)]'
@@ -364,7 +368,9 @@ export default function HomePage() {
               )
             ))}
             <a
-              href="#contact"
+              href={whatsappUrl}
+              target="_blank"
+              rel="noopener noreferrer"
               className="inline-block mt-2 px-6 py-3 text-base font-semibold text-white bg-[#2463eb] hover:bg-blue-500 rounded-full transition-all text-center"
               onClick={() => setMobileMenuOpen(false)}
             >
