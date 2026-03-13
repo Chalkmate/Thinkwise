@@ -138,7 +138,7 @@ const slides = [
     tabLabel: 'Thinkwise LMS',
   },
   {
-    image: '/banners/slide-content.jpg',
+    image: '/banners/slide-content.png',
     tag: 'Digital Content Library',
     title: 'Smartclass Content',
     tagline: 'Curriculum that captivates.',
@@ -149,7 +149,7 @@ const slides = [
     tabLabel: 'Digital Content',
   },
   {
-    image: '/banners/slide-chalkmate.jpg',
+    image: '/banners/slide-chalkmate.png',
     tag: 'Interactive Flat Panel',
     title: 'ChalkMate IFP',
     tagline: 'The future of the classroom.',
