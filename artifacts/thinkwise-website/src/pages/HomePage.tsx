@@ -239,10 +239,15 @@ export default function HomePage() {
   const handleFormSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     setFormStatus('sending');
+    const subject = encodeURIComponent(`Enquiry from ${formData.name} — ${formData.institution || 'ThinkWise Website'}`);
+    const body = encodeURIComponent(
+      `Name: ${formData.name}\nEmail: ${formData.email}\nInstitution: ${formData.institution}\n\nMessage:\n${formData.message}`
+    );
+    window.open(`mailto:info@thinkwise.pro?subject=${subject}&body=${body}`, '_blank');
     setTimeout(() => {
       setFormStatus('sent');
       setFormData({ name: '', email: '', institution: '', message: '' });
-    }, 1200);
+    }, 800);
   };
 
   return (
