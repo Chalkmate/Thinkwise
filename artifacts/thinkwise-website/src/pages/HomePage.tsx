@@ -375,15 +375,6 @@ export default function HomePage() {
               {slides[activeSlide].tagline}
             </p>
 
-            {/* Subtitle — one liner */}
-            <p
-              key={`sub-${activeSlide}`}
-              className="font-aptos text-sm sm:text-base text-white/70 max-w-xl mb-10 leading-relaxed"
-              style={{ animation: 'fadeSlideUp 0.5s ease 0.22s both' }}
-            >
-              {slides[activeSlide].subtitle}
-            </p>
-
             {/* CTA Buttons — Apple style */}
             <div
               key={`cta-${activeSlide}`}
