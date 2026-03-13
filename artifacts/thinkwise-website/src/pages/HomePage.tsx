@@ -1,7 +1,7 @@
 import React from 'react';
 import {
   MapPin, CreditCard, Smartphone, Award, Shield, Users,
-  Star, CheckCircle, ChevronRight, Mail, Phone, Globe, Menu, X, Brain, BookOpen
+  Star, CheckCircle, ChevronRight, Mail, Phone, Globe, Menu, X, Brain, BookOpen, Monitor
 } from 'lucide-react';
 
 function BulbBrainIcon({ className = '' }: { className?: string }) {
@@ -545,9 +545,9 @@ export default function HomePage() {
                 color: 'from-emerald-500 to-teal-500',
               },
               {
-                title: 'RFID Attendance System',
-                desc: 'Smart card-based automated attendance tracking for schools, featuring precise time-in/out monitoring and seamless access control.',
-                icon: <CreditCard className="w-8 h-8" />,
+                title: 'ChalkMate IFP',
+                desc: 'ChalkMate is our flagship Interactive Flat Panel — a premium classroom hardware solution engineered for modern education. Featuring a 4K touch display, zero-lag stylus input, built-in speakers, and seamless integration with ThinkWise digital content, ChalkMate turns any classroom into a next-generation smart learning environment.',
+                icon: <Monitor className="w-8 h-8" />,
                 color: 'from-purple-500 to-pink-500',
               },
               {
