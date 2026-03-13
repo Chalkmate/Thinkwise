@@ -946,6 +946,221 @@ export default function HomePage() {
         </div>
       </section>
 
+      {/* ChalkMate IFP Section */}
+      <section id="chalkmate" className="py-24 bg-slate-50 relative overflow-hidden">
+        <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-cyan-100/50 rounded-full blur-[120px] pointer-events-none" />
+        <div className="absolute bottom-0 left-0 w-[400px] h-[400px] bg-blue-100/50 rounded-full blur-[100px] pointer-events-none" />
+
+        <div className="container mx-auto px-6 max-w-7xl relative z-10">
+          {/* Header — same design as other sections */}
+          <div className="text-center mb-16">
+            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-cyan-50 border border-cyan-200 text-cyan-700 text-sm font-medium mb-6">
+              <Monitor className="w-4 h-4" />
+              Interactive Flat Panels
+            </div>
+            <h2 className="text-4xl md:text-5xl font-extrabold text-slate-900 mb-5 tracking-tight">
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-600 to-blue-600">ChalkMate</span><sup className="text-cyan-600 font-semibold text-[20px] md:text-[24px]" style={{ verticalAlign: '0.2em' }}>™</sup> <span className="text-slate-900">Interactive Flat Panels</span>
+            </h2>
+            <p className="text-slate-600 text-lg max-w-2xl mx-auto leading-relaxed">
+              Transform the conventional "Chalk and Talk" method into a dynamic, digital experience — next-generation smart classroom technology engineered for Indian schools, colleges, and institutions.
+            </p>
+          </div>
+
+          {/* Stats bar */}
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-16">
+            {[
+              { value: '4K', label: 'Ultra HD Display' },
+              { value: '40-Pt', label: 'Multi-Touch' },
+              { value: '3-Year', label: 'Warranty' },
+              { value: '7.5+', label: 'Years Expertise' },
+            ].map((stat) => (
+              <div key={stat.label} className="bg-white border border-slate-200 rounded-2xl p-5 text-center shadow-sm">
+                <div className="text-3xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-cyan-600 to-blue-600 mb-1">{stat.value}</div>
+                <div className="text-slate-500 text-sm">{stat.label}</div>
+              </div>
+            ))}
+          </div>
+
+          {/* Hero image */}
+          <div className="relative rounded-3xl overflow-hidden mb-16 shadow-2xl">
+            <img src="/chalkmate/hero.png" alt="ChalkMate IFP" className="w-full h-72 md:h-96 object-cover" />
+            <div className="absolute inset-0 bg-gradient-to-r from-slate-900/60 via-transparent to-transparent flex items-center">
+              <div className="p-8 md:p-14 text-white max-w-xl">
+                <p className="text-cyan-300 font-semibold tracking-widest uppercase text-sm mb-3">Next-Gen AI Integration</p>
+                <h3 className="text-3xl md:text-4xl font-black leading-tight mb-4">AI Learning Integrated Writing Board</h3>
+                <p className="text-white/80 text-base leading-relaxed">AI-powered handwriting recognition, shape correction, smart annotations, and one-tap lesson saving — bridging traditional teaching with digital education.</p>
+              </div>
+            </div>
+          </div>
+
+          {/* 6 Feature Cards */}
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-16">
+            {[
+              {
+                icon: '🧠',
+                color: 'from-cyan-500 to-blue-600',
+                glow: 'rgba(6,182,212,0.18)',
+                image: '/chalkmate/ai-writing.png',
+                title: 'AI Smart Writing Board',
+                subtitle: 'Intelligent Lesson Delivery',
+                items: [
+                  'AI-Powered Handwriting Recognition',
+                  'Auto Shape Correction & Smart Formatting',
+                  'Annotate over PDFs, Videos & Web Pages',
+                  'Build Multimedia Lessons with AI Suggestions',
+                  'One-tap Lesson Save & QR Code Sharing',
+                  'Cloud Upload to Google Drive & OneDrive',
+                ],
+              },
+              {
+                icon: '✋',
+                color: 'from-blue-500 to-indigo-600',
+                glow: 'rgba(59,130,246,0.18)',
+                image: '/chalkmate/multitouch.png',
+                title: '40-Point Multi-Touch',
+                subtitle: 'Collaborative Classroom Interaction',
+                items: [
+                  'Ultra-responsive IR Touch Technology',
+                  'Up to 40 Simultaneous Touch Points',
+                  'Multi-user Real-time Collaboration',
+                  'Zero Lag Touch Response',
+                  'Palm Rejection for Natural Writing',
+                  'Student Direct Participation on Screen',
+                ],
+              },
+              {
+                icon: '🖥️',
+                color: 'from-violet-500 to-purple-600',
+                glow: 'rgba(139,92,246,0.18)',
+                image: '/chalkmate/display.png',
+                title: '4K Ultra HD Display',
+                subtitle: 'Visual Excellence at Every Angle',
+                items: [
+                  '4K Resolution: 3840 × 2160 Pixels',
+                  '1.07 Billion Vivid Colors',
+                  'Anti-Glare Optical Coating',
+                  'Zero Bonding Technology',
+                  'Wide Viewing Angle for Every Seat',
+                  'Flicker-Free Eye-Safe Certification',
+                ],
+              },
+              {
+                icon: '⚡',
+                color: 'from-emerald-500 to-teal-600',
+                glow: 'rgba(16,185,129,0.18)',
+                image: '/chalkmate/connectivity.png',
+                title: 'Powerful Core & Connectivity',
+                subtitle: 'Android 14 + Windows Ready',
+                items: [
+                  'Octa-Core Processor, 8GB RAM, 128GB Storage',
+                  'Android 14 Built-in + OPS Windows Slot',
+                  'Wireless Screen Sharing (Windows/Mac/iOS/Android)',
+                  'HDMI, USB-C, USB 3.0 Ports',
+                  'Built-in Stereo Speakers & Dual Microphone',
+                  'Auto OTA Firmware & Software Updates',
+                ],
+              },
+              {
+                icon: '☁️',
+                color: 'from-orange-500 to-amber-600',
+                glow: 'rgba(249,115,22,0.18)',
+                image: '/chalkmate/ai-writing.png',
+                title: 'Cloud & Ecosystem Ready',
+                subtitle: 'Seamless Integration',
+                items: [
+                  'Native Google Drive & OneDrive Integration',
+                  'Multi-User Cloud Sync for Collaboration',
+                  'Share via QR Code, Email & WhatsApp',
+                  'Compatible with Thinkwise LMS & Content',
+                  'Remote Device Management Dashboard',
+                  'Centralized Content Push to All Panels',
+                ],
+              },
+              {
+                icon: '🛡️',
+                color: 'from-rose-500 to-pink-600',
+                glow: 'rgba(244,63,94,0.18)',
+                image: '/chalkmate/display.png',
+                title: 'Service & Support',
+                subtitle: 'Trusted Partnership',
+                items: [
+                  'Comprehensive 3-Year Hardware Warranty',
+                  'On-Site Prompt Technical Service',
+                  '7.5+ Years in K-12 EdTech Segment',
+                  'Tailored Solutions by Classroom Size',
+                  'Teacher Training & Onboarding Programme',
+                  'Dedicated Account Manager per Institution',
+                ],
+              },
+            ].map((feat) => (
+              <div
+                key={feat.title}
+                className="relative bg-white border border-slate-200 rounded-2xl hover:border-slate-300 hover:shadow-md transition-all duration-300 hover:-translate-y-1 group overflow-hidden"
+                style={{ boxShadow: `0 0 40px ${feat.glow}` }}
+              >
+                <div className="relative h-44 overflow-hidden rounded-t-2xl">
+                  <img src={feat.image} alt={feat.title} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+                  <div className="absolute bottom-3 left-4 text-2xl drop-shadow-lg">{feat.icon}</div>
+                </div>
+                <div className="relative p-6">
+                  <div className={`absolute inset-0 bg-gradient-to-br ${feat.color} opacity-5 group-hover:opacity-10 transition-opacity`} />
+                  <h3 className={`relative text-xl font-bold text-transparent bg-clip-text bg-gradient-to-r ${feat.color} mb-0.5`}>{feat.title}</h3>
+                  <p className="relative text-slate-500 text-xs font-medium uppercase tracking-wider mb-4">{feat.subtitle}</p>
+                  <ul className="relative space-y-2">
+                    {feat.items.map((item) => (
+                      <li key={item} className="flex items-start gap-2 text-sm text-slate-700">
+                        <span className="text-cyan-500 mt-0.5 flex-shrink-0">✓</span>
+                        {item}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              </div>
+            ))}
+          </div>
+
+          {/* Screen Size Options */}
+          <div className="bg-white border border-slate-200 rounded-3xl p-8 mb-16 shadow-sm">
+            <h3 className="text-slate-900 font-bold text-2xl mb-2 text-center">Tailored to Your Space</h3>
+            <p className="text-slate-500 text-center text-sm mb-8">Choose the right screen size for your classroom, lab, or auditorium</p>
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
+              {[
+                { size: '65"', use: 'Small Classrooms & Meeting Rooms', icon: '🏫' },
+                { size: '75"', use: 'Medium Classrooms & Labs', icon: '🏛️' },
+                { size: '86"', use: 'Large Classrooms & Lecture Halls', icon: '🎓' },
+                { size: '98"', use: 'Auditoriums & Large Venues', icon: '🏟️' },
+              ].map((s) => (
+                <div key={s.size} className="text-center p-6 rounded-2xl bg-slate-50 border border-slate-200 hover:border-cyan-300 hover:bg-cyan-50 transition-all group">
+                  <div className="text-3xl mb-3">{s.icon}</div>
+                  <div className="text-3xl font-black text-transparent bg-clip-text bg-gradient-to-r from-cyan-600 to-blue-600 mb-2">{s.size}</div>
+                  <p className="text-slate-600 text-sm">{s.use}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          {/* Testimonials */}
+          <div className="grid md:grid-cols-3 gap-6">
+            {[
+              { quote: 'ChalkMate has completely transformed our classrooms. The AI writing board is a game-changer for our teachers.', name: 'Dr. Rajesh Kumar', role: 'Principal, Global International School' },
+              { quote: 'The visual clarity and touch responsiveness are unmatched. It\'s the best investment we\'ve made for our students.', name: 'Mrs. Priya Sharma', role: 'Head of Dept, St. Xavier\'s College' },
+              { quote: 'Reliable, intuitive, and feature-rich. The wireless sharing makes collaboration so much easier during lectures.', name: 'Amit Patel', role: 'Director, Vidya Academy' },
+            ].map((t) => (
+              <div key={t.name} className="bg-white border border-slate-200 rounded-2xl p-6 shadow-sm">
+                <div className="flex gap-1 mb-4">
+                  {[...Array(5)].map((_, i) => <Star key={i} className="w-4 h-4 fill-amber-400 text-amber-400" />)}
+                </div>
+                <p className="text-slate-700 text-sm leading-relaxed mb-4 italic">"{t.quote}"</p>
+                <div>
+                  <p className="font-semibold text-slate-900 text-sm">{t.name}</p>
+                  <p className="text-slate-500 text-xs">{t.role}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* Why Choose Us */}
       <section className="py-24 relative overflow-hidden" style={{ background: 'linear-gradient(135deg, #eff6ff 0%, #f8fafc 45%, #ecfdf5 100%)' }}>
         {/* Decorative glows */}
