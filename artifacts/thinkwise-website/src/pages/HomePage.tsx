@@ -474,7 +474,7 @@ export default function HomePage() {
       {/* About Section */}
       <section id="about" className="py-24 bg-white relative">
         <div className="container mx-auto px-6 max-w-7xl">
-          <div className="grid lg:grid-cols-2 gap-10 lg:gap-16 items-center">
+          <div className="grid lg:grid-cols-2 gap-10 lg:gap-16 items-stretch">
             <div>
               <div className="text-[#2463eb] font-semibold tracking-wider uppercase text-sm mb-4">About ThinkWise</div>
               <h2 className="text-4xl md:text-5xl font-bold text-slate-900 mb-6 leading-tight">
@@ -500,10 +500,10 @@ export default function HomePage() {
               </ul>
             </div>
 
-            <div className="relative">
+            <div className="relative flex flex-col">
               <div className="absolute inset-0 bg-gradient-to-tr from-blue-200/40 to-emerald-200/40 rounded-3xl transform rotate-3 blur-xl"></div>
-              <div className="relative bg-white border border-slate-200 p-8 rounded-3xl shadow-xl">
-                <div className="aspect-video rounded-xl mb-6 overflow-hidden relative group">
+              <div className="relative flex flex-col flex-1 bg-white border border-slate-200 p-8 rounded-3xl shadow-xl">
+                <div className="flex-1 min-h-0 rounded-xl mb-6 overflow-hidden relative group" style={{ minHeight: '320px' }}>
                   <img
                     src="/about/global-impact.png"
                     alt="Global Impact"
