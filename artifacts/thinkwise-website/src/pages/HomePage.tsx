@@ -231,21 +231,11 @@ export default function HomePage() {
         }`}
       >
         <div className="container mx-auto px-4 sm:px-6 max-w-7xl flex items-center justify-between">
-          <a href="#home" className="flex items-center gap-0">
-            <img
-              src="/bulb-icon.png"
-              alt="ThinkWise Logo"
-              className="object-contain flex-shrink-0 w-12 h-12 lg:w-[92px] lg:h-[92px]"
-              style={{
-                filter: 'drop-shadow(0 0 8px rgba(59,130,246,0.4))',
-              }}
-            />
-            <div className="flex flex-col gap-0.5 -ml-1.5 lg:-ml-[14px]">
-              <span className="text-[29px] sm:text-2xl lg:text-5xl font-bold tracking-tight leading-none" style={{ fontFamily: "'Raleway', sans-serif", fontWeight: 700 }}>
-                <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-emerald-600">Think</span><span className="text-slate-900">Wise</span><sup className="text-blue-600 text-[11px] sm:text-[13px] lg:text-[24px] font-semibold" style={{ verticalAlign: '0.2em' }}>™</sup>
-              </span>
-              <span className="text-[8.9px] sm:text-xs lg:text-[15px] font-medium tracking-[0.2em] uppercase text-slate-500 pl-1">Make the difference</span>
-            </div>
+          <a href="#home" className="flex flex-col gap-0.5">
+            <span className="text-[29px] sm:text-2xl lg:text-5xl font-bold tracking-tight leading-none" style={{ fontFamily: "'Raleway', sans-serif", fontWeight: 700 }}>
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-emerald-600">Think</span><span className="text-slate-900">Wise</span><sup className="text-blue-600 text-[11px] sm:text-[13px] lg:text-[24px] font-semibold" style={{ verticalAlign: '0.2em' }}>™</sup>
+            </span>
+            <span className="text-[8.9px] sm:text-xs lg:text-[15px] font-medium tracking-[0.2em] uppercase text-slate-500 pl-1">Make the difference</span>
           </a>
 
           {/* Desktop Nav — only on large screens */}
@@ -984,23 +974,11 @@ export default function HomePage() {
       <footer className="bg-slate-100 py-12 border-t border-slate-200">
         <div className="container mx-auto px-6 max-w-7xl">
           <div className="flex flex-col md:flex-row justify-between items-center gap-6">
-            <a href="#home" className="flex items-center gap-0">
-              <img
-                src="/bulb-icon.png"
-                alt="ThinkWise Logo"
-                className="object-contain flex-shrink-0"
-                style={{
-                  width: '68px',
-                  height: '68px',
-                  filter: 'drop-shadow(0 0 8px rgba(59,130,246,0.4))',
-                }}
-              />
-              <div className="flex flex-col gap-0.5" style={{ marginLeft: '-9px' }}>
-                <span className="text-4xl font-bold tracking-tight leading-none" style={{ fontFamily: "'Raleway', sans-serif", fontWeight: 700 }}>
-                  <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-emerald-600">Think</span><span className="text-slate-900">Wise</span><sup className="text-blue-600 text-[18px] font-semibold" style={{ verticalAlign: '0.2em' }}>™</sup>
-                </span>
-                <span className="text-[11px] font-medium tracking-[0.2em] uppercase text-slate-500 pl-1">Make the difference</span>
-              </div>
+            <a href="#home" className="flex flex-col gap-0.5">
+              <span className="text-4xl font-bold tracking-tight leading-none" style={{ fontFamily: "'Raleway', sans-serif", fontWeight: 700 }}>
+                <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-emerald-600">Think</span><span className="text-slate-900">Wise</span><sup className="text-blue-600 text-[18px] font-semibold" style={{ verticalAlign: '0.2em' }}>™</sup>
+              </span>
+              <span className="text-[11px] font-medium tracking-[0.2em] uppercase text-slate-500 pl-1">Make the difference</span>
             </a>
             <p className="text-slate-500 text-sm text-center md:text-left">
               Catalyzing competence through information technology.
