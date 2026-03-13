@@ -477,8 +477,8 @@ export default function HomePage() {
           <div className="grid lg:grid-cols-2 gap-10 lg:gap-16 items-stretch">
             <div>
               <div className="text-[#2463eb] font-semibold tracking-wider uppercase text-sm mb-4">About ThinkWise</div>
-              <h2 className="text-4xl md:text-5xl font-bold text-slate-900 mb-6 leading-tight">
-                Innovation-Driven Professionals Delivering Excellence.
+              <h2 className="text-4xl md:text-5xl font-bold mb-6 leading-tight">
+                <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#2463eb] to-emerald-600">Innovation-Driven Professionals Delivering Excellence.</span>
               </h2>
               <p className="text-slate-600 text-lg leading-relaxed mb-8">
                 We are committed to catalyzing the competence and competitiveness of our clients through cutting-edge information technology. Our tech backbone for educational institutions enhances overall performance and operational efficiency.
