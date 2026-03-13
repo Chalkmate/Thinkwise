@@ -546,7 +546,7 @@ export default function HomePage() {
               },
               {
                 title: 'ChalkMate IFP',
-                desc: 'ChalkMate is our flagship Interactive Flat Panel — a premium classroom hardware solution engineered for modern education. Featuring a 4K touch display, ai integrated writing board, Android 14, and seamless integration with ThinkWise digital content, ChalkMate turns any classroom into a next-generation smart learning environment.',
+                desc: 'ChalkMate is our flagship Interactive Flat Panel — a premium classroom hardware solution engineered for modern education. Featuring a 4K touch display, AI integrated writing board, Android 14 and seamless integration with ThinkWise digital content, ChalkMate turns any classroom into a future smart learning environment.',
                 icon: (
                   <svg viewBox="0 0 40 26" fill="none" className="w-12 h-12" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
                     {/* Outer bezel — widescreen landscape */}
