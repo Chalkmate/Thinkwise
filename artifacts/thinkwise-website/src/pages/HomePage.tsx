@@ -959,7 +959,7 @@ export default function HomePage() {
               Interactive Flat Panels
             </div>
             <h2 className="text-4xl md:text-5xl font-extrabold text-slate-900 mb-5 tracking-tight">
-              <span style={{ color: '#2463eb' }}>Think</span><span className="text-slate-900">Wise</span><sup className="text-[#2463eb] font-semibold text-[20px] md:text-[24px]" style={{ verticalAlign: '0.2em' }}>™</sup> <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-600 to-blue-600">Interactive Flat Panels</span>
+              <span style={{ color: '#2463eb' }}>Chalk</span><span className="text-slate-900">Mate</span><sup className="text-[#2463eb] font-semibold text-[20px] md:text-[24px]" style={{ verticalAlign: '0.2em' }}>™</sup> <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-600 to-blue-600">Interactive Flat Panels</span>
             </h2>
             <p className="text-slate-600 text-lg max-w-2xl mx-auto leading-relaxed">
               Transform the conventional "Chalk and Talk" method into a dynamic, digital experience — next-generation smart classroom technology engineered for Indian schools, colleges, and institutions.
