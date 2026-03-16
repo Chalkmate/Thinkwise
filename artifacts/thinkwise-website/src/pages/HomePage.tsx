@@ -178,6 +178,7 @@ export default function HomePage() {
   const [mobileMenuOpen, setMobileMenuOpen] = React.useState(false);
   const [activeSlide, setActiveSlide] = React.useState(0);
   const [isTransitioning, setIsTransitioning] = React.useState(false);
+  const [activeAssessment, setActiveAssessment] = React.useState(0);
   const [formData, setFormData] = React.useState({
     name: '',
     email: '',
@@ -720,135 +721,80 @@ export default function HomePage() {
             ))}
           </div>
 
-          {/* 6 Assessment Feature Cards */}
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-16">
-            {[
-              {
-                icon: '📝',
-                color: 'from-blue-500 to-blue-700',
-                glow: 'rgba(59,130,246,0.18)',
-                image: '/assessment/online-tests.png',
-                title: 'Online Tests & Exams',
-                subtitle: 'Flexible Digital Assessment',
-                items: [
-                  'MCQ, True/False, Fill-in-the-blank & Subjective',
-                  'Timed & Proctored Online Examinations',
-                  'Chapter-wise & Cumulative Unit Tests',
-                  'Board-pattern Mock Exam Simulators',
-                  'Adaptive Difficulty Question Sequences',
-                  'Offline Exam Sync with Auto Upload',
-                ],
-              },
-              {
-                icon: '⚡',
-                color: 'from-emerald-500 to-teal-700',
-                glow: 'rgba(16,185,129,0.18)',
-                image: '/assessment/auto-grading.png',
-                title: 'Automated Grading',
-                subtitle: 'Instant & Accurate Evaluation',
-                items: [
-                  'One-click Auto-grade for Objective Questions',
-                  'Rubric-based Subjective Answer Evaluation',
-                  'Instant Score Display with Correct Answers',
-                  'Negative Marking & Partial Credit Options',
-                  'Bulk Paper Evaluation & Score Export',
-                  'Teacher Override & Manual Review Tools',
-                ],
-              },
-              {
-                icon: '📚',
-                color: 'from-violet-500 to-purple-700',
-                glow: 'rgba(139,92,246,0.18)',
-                image: '/assessment/question-bank.png',
-                title: 'Smart Question Bank',
-                subtitle: 'Curriculum-Mapped Repository',
-                items: [
-                  '50,000+ Curriculum-aligned Questions',
-                  'Tagged by Chapter, Topic & Difficulty',
-                  'CBSE, ICSE & State Board Coverage',
-                  'Teacher-contributed Custom Question Pools',
-                  'Bloom\'s Taxonomy Level Classification',
-                  'One-click Paper Generation from Bank',
-                ],
-              },
-              {
-                icon: '📊',
-                color: 'from-orange-500 to-amber-600',
-                glow: 'rgba(249,115,22,0.18)',
-                image: '/assessment/analytics.png',
-                title: 'Performance Analytics',
-                subtitle: 'Data-Driven Learning Insights',
-                items: [
-                  'Student-wise Score Trends & Progress Charts',
-                  'Class & Section Comparative Reports',
-                  'Weak Topic Identification & Remediation Alerts',
-                  'Teacher Dashboard with Cohort Analysis',
-                  'Subject & Chapter Mastery Heat Maps',
-                  'Exportable PDF & Excel Report Packs',
-                ],
-              },
-              {
-                icon: '📋',
-                color: 'from-cyan-500 to-sky-700',
-                glow: 'rgba(6,182,212,0.18)',
-                image: '/assessment/homework.png',
-                title: 'Homework Management',
-                subtitle: 'Assignment Tracking & Review',
-                items: [
-                  'Digital Homework Assignment & Submission',
-                  'Deadline Reminders & Late Submission Flags',
-                  'Teacher Feedback & Annotation Tools',
-                  'Photo Upload for Handwritten Work',
-                  'Parent Visibility into Assignment Status',
-                  'Auto-compile Pending Assignment Reports',
-                ],
-              },
-              {
-                icon: '📩',
-                color: 'from-pink-500 to-rose-700',
-                glow: 'rgba(236,72,153,0.18)',
-                image: '/assessment/reports.png',
-                title: 'Reports & Communication',
-                subtitle: 'Transparent Parent Engagement',
-                items: [
-                  'Auto-generated Student Report Cards',
-                  'WhatsApp & SMS Score Notifications',
-                  'Parent App with Real-time Score Access',
-                  'Attendance & Performance Combined Reports',
-                  'Teacher-to-Parent Direct Messaging',
-                  'Scheduled Term & Annual Progress Reports',
-                ],
-              },
-            ].map((feat) => (
-              <div
-                key={feat.title}
-                className={`relative bg-gradient-to-br ${feat.color} rounded-2xl p-7 overflow-hidden group hover:scale-[1.02] hover:shadow-2xl transition-all duration-300 shadow-lg`}
-              >
-                {/* Background orbs */}
-                <div className="absolute -top-12 -right-12 w-48 h-48 bg-white/10 rounded-full blur-3xl pointer-events-none" />
-                <div className="absolute -bottom-8 -left-8 w-32 h-32 bg-black/10 rounded-full blur-2xl pointer-events-none" />
-
-                {/* Icon */}
-                <div className="w-14 h-14 bg-white/15 backdrop-blur-sm rounded-2xl flex items-center justify-center text-3xl mb-5 border border-white/20 shadow-inner">
-                  {feat.icon}
+          {/* Interactive Feature Showcase */}
+          {(() => {
+            const features = [
+              { icon: '📝', color: 'from-blue-500 to-blue-700', accentBg: 'bg-blue-500', title: 'Online Tests & Exams', subtitle: 'Flexible Digital Assessment', items: ['MCQ, True/False, Fill-in-the-blank & Subjective', 'Timed & Proctored Online Examinations', 'Chapter-wise & Cumulative Unit Tests', 'Board-pattern Mock Exam Simulators', 'Adaptive Difficulty Question Sequences', 'Offline Exam Sync with Auto Upload'] },
+              { icon: '⚡', color: 'from-emerald-500 to-teal-700', accentBg: 'bg-emerald-500', title: 'Automated Grading', subtitle: 'Instant & Accurate Evaluation', items: ['One-click Auto-grade for Objective Questions', 'Rubric-based Subjective Answer Evaluation', 'Instant Score Display with Correct Answers', 'Negative Marking & Partial Credit Options', 'Bulk Paper Evaluation & Score Export', 'Teacher Override & Manual Review Tools'] },
+              { icon: '📚', color: 'from-violet-500 to-purple-700', accentBg: 'bg-violet-500', title: 'Smart Question Bank', subtitle: 'Curriculum-Mapped Repository', items: ['50,000+ Curriculum-aligned Questions', 'Tagged by Chapter, Topic & Difficulty', 'CBSE, ICSE & State Board Coverage', 'Teacher-contributed Custom Question Pools', "Bloom's Taxonomy Level Classification", 'One-click Paper Generation from Bank'] },
+              { icon: '📊', color: 'from-orange-500 to-amber-600', accentBg: 'bg-orange-500', title: 'Performance Analytics', subtitle: 'Data-Driven Learning Insights', items: ['Student-wise Score Trends & Progress Charts', 'Class & Section Comparative Reports', 'Weak Topic Identification & Remediation Alerts', 'Teacher Dashboard with Cohort Analysis', 'Subject & Chapter Mastery Heat Maps', 'Exportable PDF & Excel Report Packs'] },
+              { icon: '📋', color: 'from-cyan-500 to-sky-700', accentBg: 'bg-cyan-500', title: 'Homework Management', subtitle: 'Assignment Tracking & Review', items: ['Digital Homework Assignment & Submission', 'Deadline Reminders & Late Submission Flags', 'Teacher Feedback & Annotation Tools', 'Photo Upload for Handwritten Work', 'Parent Visibility into Assignment Status', 'Auto-compile Pending Assignment Reports'] },
+              { icon: '📩', color: 'from-pink-500 to-rose-700', accentBg: 'bg-pink-500', title: 'Reports & Communication', subtitle: 'Transparent Parent Engagement', items: ['Auto-generated Student Report Cards', 'WhatsApp & SMS Score Notifications', 'Parent App with Real-time Score Access', 'Attendance & Performance Combined Reports', 'Teacher-to-Parent Direct Messaging', 'Scheduled Term & Annual Progress Reports'] },
+            ];
+            const active = features[activeAssessment];
+            return (
+              <div className="bg-white border border-slate-200 rounded-3xl shadow-xl overflow-hidden mb-16">
+                {/* Mobile: horizontal scroll tabs */}
+                <div className="flex overflow-x-auto lg:hidden border-b border-slate-200">
+                  {features.map((f, i) => (
+                    <button key={f.title} onClick={() => setActiveAssessment(i)}
+                      className={`flex-shrink-0 flex flex-col items-center gap-1 px-5 py-3.5 text-xs font-semibold border-b-2 transition-all ${activeAssessment === i ? 'border-[#2463eb] text-[#2463eb] bg-blue-50/60' : 'border-transparent text-slate-400 hover:text-slate-700'}`}>
+                      <span className="text-xl">{f.icon}</span>
+                      <span className="whitespace-nowrap">{f.title.split(' ').slice(0, 2).join(' ')}</span>
+                    </button>
+                  ))}
                 </div>
 
-                {/* Title & subtitle */}
-                <h3 className="text-white text-xl font-bold mb-1 drop-shadow-sm">{feat.title}</h3>
-                <p className="text-white/60 text-xs uppercase tracking-wider font-semibold mb-5">{feat.subtitle}</p>
+                <div className="flex flex-col lg:flex-row">
+                  {/* Desktop sidebar */}
+                  <div className="hidden lg:flex flex-col w-72 shrink-0 bg-slate-50 border-r border-slate-200">
+                    {features.map((f, i) => (
+                      <button key={f.title} onClick={() => setActiveAssessment(i)}
+                        className={`relative w-full flex items-center gap-4 px-6 py-5 text-left border-b border-slate-100 transition-all duration-200 ${activeAssessment === i ? 'bg-white' : 'hover:bg-white/70'}`}>
+                        {activeAssessment === i && <div className={`absolute left-0 top-0 bottom-0 w-1 rounded-r-full bg-gradient-to-b ${f.color}`} />}
+                        <div className={`w-10 h-10 rounded-xl flex items-center justify-center text-xl shrink-0 transition-all ${activeAssessment === i ? `bg-gradient-to-br ${f.color} shadow-md` : 'bg-slate-200'}`}>
+                          {f.icon}
+                        </div>
+                        <div className="min-w-0">
+                          <div className={`font-semibold text-sm truncate transition-colors ${activeAssessment === i ? 'text-slate-900' : 'text-slate-500'}`}>{f.title}</div>
+                          <div className="text-xs text-slate-400 mt-0.5 truncate">{f.subtitle}</div>
+                        </div>
+                        {activeAssessment === i && <ChevronRight className="w-4 h-4 ml-auto shrink-0 text-[#2463eb]" />}
+                      </button>
+                    ))}
+                  </div>
 
-                {/* Feature list */}
-                <ul className="space-y-2.5">
-                  {feat.items.map((item) => (
-                    <li key={item} className="flex items-start gap-2.5 text-white/80 text-sm leading-snug">
-                      <span className="text-white/50 mt-0.5 shrink-0">▸</span>
-                      {item}
-                    </li>
-                  ))}
-                </ul>
+                  {/* Detail panel */}
+                  <div className="flex-1 p-8 md:p-12 relative overflow-hidden min-h-[420px]">
+                    <div className={`absolute top-0 right-0 w-96 h-96 bg-gradient-to-br ${active.color} opacity-[0.06] blur-3xl pointer-events-none rounded-full`} />
+
+                    {/* Header */}
+                    <div className="flex items-center gap-5 mb-10 relative z-10">
+                      <div className={`w-20 h-20 rounded-2xl bg-gradient-to-br ${active.color} flex items-center justify-center text-4xl shadow-xl shrink-0`}>
+                        {active.icon}
+                      </div>
+                      <div>
+                        <h3 className={`text-2xl md:text-3xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r ${active.color}`}>{active.title}</h3>
+                        <p className="text-slate-400 text-sm uppercase tracking-widest font-semibold mt-1">{active.subtitle}</p>
+                      </div>
+                    </div>
+
+                    {/* Feature items */}
+                    <div className="grid sm:grid-cols-2 gap-3 relative z-10">
+                      {active.items.map((item, j) => (
+                        <div key={item} className="flex items-start gap-3 p-4 bg-slate-50 rounded-xl border border-slate-100 hover:border-slate-200 hover:bg-white transition-all">
+                          <div className={`w-7 h-7 rounded-lg bg-gradient-to-br ${active.color} flex items-center justify-center shrink-0 mt-0.5 shadow-sm`}>
+                            <span className="text-white text-xs font-bold">{j + 1}</span>
+                          </div>
+                          <span className="text-sm text-slate-600 leading-relaxed">{item}</span>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                </div>
               </div>
-            ))}
-          </div>
+            );
+          })()}
         </div>
       </section>
 
