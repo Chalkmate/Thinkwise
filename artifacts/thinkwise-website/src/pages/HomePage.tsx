@@ -822,30 +822,30 @@ export default function HomePage() {
             ].map((feat) => (
               <div
                 key={feat.title}
-                className="relative bg-white border border-slate-200 rounded-2xl hover:border-slate-300 hover:shadow-md transition-all duration-300 hover:-translate-y-1 group overflow-hidden"
-                style={{ boxShadow: `0 0 40px ${feat.glow}` }}
+                className={`relative bg-gradient-to-br ${feat.color} rounded-2xl p-7 overflow-hidden group hover:scale-[1.02] hover:shadow-2xl transition-all duration-300 shadow-lg`}
               >
-                <div className="relative h-44 overflow-hidden rounded-t-2xl">
-                  <img
-                    src={feat.image}
-                    alt={feat.title}
-                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                  />
-                  <div className="absolute bottom-3 left-4 text-2xl drop-shadow-lg">{feat.icon}</div>
+                {/* Background orbs */}
+                <div className="absolute -top-12 -right-12 w-48 h-48 bg-white/10 rounded-full blur-3xl pointer-events-none" />
+                <div className="absolute -bottom-8 -left-8 w-32 h-32 bg-black/10 rounded-full blur-2xl pointer-events-none" />
+
+                {/* Icon */}
+                <div className="w-14 h-14 bg-white/15 backdrop-blur-sm rounded-2xl flex items-center justify-center text-3xl mb-5 border border-white/20 shadow-inner">
+                  {feat.icon}
                 </div>
-                <div className="relative p-6">
-                  <div className={`absolute inset-0 bg-gradient-to-br ${feat.color} opacity-5 group-hover:opacity-10 transition-opacity`} />
-                  <h3 className={`relative text-xl font-bold text-transparent bg-clip-text bg-gradient-to-r ${feat.color} mb-0.5`}>{feat.title}</h3>
-                  <p className="relative text-slate-500 text-xs font-medium uppercase tracking-wider mb-4">{feat.subtitle}</p>
-                  <ul className="relative space-y-2">
-                    {feat.items.map((item) => (
-                      <li key={item} className="flex items-start gap-2 text-sm text-slate-700">
-                        <span className="text-blue-500 mt-0.5 flex-shrink-0">✓</span>
-                        {item}
-                      </li>
-                    ))}
-                  </ul>
-                </div>
+
+                {/* Title & subtitle */}
+                <h3 className="text-white text-xl font-bold mb-1 drop-shadow-sm">{feat.title}</h3>
+                <p className="text-white/60 text-xs uppercase tracking-wider font-semibold mb-5">{feat.subtitle}</p>
+
+                {/* Feature list */}
+                <ul className="space-y-2.5">
+                  {feat.items.map((item) => (
+                    <li key={item} className="flex items-start gap-2.5 text-white/80 text-sm leading-snug">
+                      <span className="text-white/50 mt-0.5 shrink-0">▸</span>
+                      {item}
+                    </li>
+                  ))}
+                </ul>
               </div>
             ))}
           </div>
