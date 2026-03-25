@@ -3,6 +3,8 @@ import {
   MapPin, CreditCard, Smartphone, Award, Shield, Users,
   Star, CheckCircle, ChevronRight, ChevronDown, Mail, Phone, Globe, Menu, X, Brain, BookOpen, Monitor, Layers, Video, Package, ClipboardList
 } from 'lucide-react';
+import FeatureCarousel from '../components/FeatureCarousel';
+import VisualTechTabs from '../components/VisualTechTabs';
 
 function BulbBrainIcon({ className = '' }: { className?: string }) {
   return (
@@ -177,6 +179,7 @@ export default function HomePage() {
   const [isScrolled, setIsScrolled] = React.useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = React.useState(false);
   const [activeSlide, setActiveSlide] = React.useState(0);
+  const [activeTab, setActiveTab] = React.useState('podium');
   const [isTransitioning, setIsTransitioning] = React.useState(false);
   const [activeAssessment, setActiveAssessment] = React.useState(0);
   const [formData, setFormData] = React.useState({
@@ -186,6 +189,69 @@ export default function HomePage() {
     message: '',
   });
   const [formStatus, setFormStatus] = React.useState<'idle' | 'sending' | 'sent' | 'error'>('idle');
+
+  const interactiveSpecs = {
+    podium: {
+      title: 'Digital Podium',
+      image: '/visual-tech/digital-podium.png',
+      items: [
+        'Built-in 15" or 21" Capacitive Touchscreen',
+        'Integrated HD Web Camera & Document Camera',
+        'Wireless Lapel & Gooseneck Microphone',
+        'HDMI, USB & Network Pass-through Ports',
+        'Height-Adjustable Motorised Desk Option',
+        'Compatible with ChalkMate & Projectors',
+      ],
+    },
+    led: {
+      title: 'Active LED Wall',
+      image: '/visual-tech/led-wall.png',
+      items: [
+        'Ultra-Fine Pixel Pitch (P1.2 – P4) Options',
+        'High Brightness: 800–5000 nits for Daylight',
+        'Seamless Modular Panel Construction',
+        'Wide Colour Gamut & HDR Support',
+        'Low Latency Signal Processing',
+        'Remote Monitoring & Diagnostics System',
+      ],
+    },
+    conference: {
+      title: 'Conference Room Setup',
+      image: '/visual-tech/conference-room.png',
+      items: [
+        'Large Format Display or LED Video Bar',
+        'Ceiling Mic Array & Echo Cancellation',
+        'One-Touch Zoom / Teams / Meet Calling',
+        'Wireless Content Sharing (Any Device)',
+        'Room Booking & Occupancy Sensors',
+        'Professional Cable Management System',
+      ],
+    },
+    ptz: {
+      title: 'PTZ Cameras',
+      image: '/visual-tech/ptz-camera.png',
+      items: [
+        '4K 60fps Ultra HD Video Output',
+        'AI Auto-Tracking (Face & Body)',
+        'Pan ±170° / Tilt ±90° / 30× Optical Zoom',
+        'NDI, HDMI & USB-C Output Options',
+        'PoE Power — Zero Extra Cabling',
+        'Remote Control via App or IP Interface',
+      ],
+    },
+    studio: {
+      title: 'Studio Setup',
+      image: '/visual-tech/studio-setup.png',
+      items: [
+        'Professional LED Softbox & Ring Lighting Kit',
+        'Green Screen / Chromakey Backdrop System',
+        'Audio Mixer, Boom Arm & Condenser Mics',
+        'Multi-Camera Switcher & Live Stream Encoder',
+        'Teleprompter & Presenter Confidence Monitor',
+        'Full Acoustic Treatment & Soundproofing Kits',
+      ],
+    },
+  };
 
   React.useEffect(() => {
     const handleScroll = () => {
@@ -224,7 +290,7 @@ export default function HomePage() {
       name: 'Products', href: '#products', subLinks: [
         { name: 'LMS', href: '#assessment' },
         { name: 'Content', href: '#content' },
-        { name: 'IFP', href: '#chalkmate' },
+        { name: 'IFP', href: '#chalk' },
         { name: 'Visual', href: '#visual-tech' },
       ]
     },
@@ -616,7 +682,7 @@ export default function HomePage() {
         <div className="container mx-auto px-6 max-w-7xl relative z-10">
           <div className="text-center max-w-3xl mx-auto mb-16">
             <div className="text-[#2463eb] font-semibold tracking-wider uppercase text-sm mb-4">Our Ecosystem</div>
-            <h2 className="text-4xl md:text-5xl font-extrabold text-slate-900 mb-5 tracking-tight whitespace-nowrap"><span style={{ color: '#2463eb' }}>Think</span><span className="text-slate-900">Wise</span><sup className="text-[#2463eb] font-semibold text-[20px] md:text-[24px]" style={{ verticalAlign: '0.2em' }}>™</sup> <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#2463eb] to-emerald-600">Comprehensive EdTech Suite</span></h2>
+            <h2 className="text-4xl md:text-5xl font-extrabold text-slate-900 mb-5 tracking-tight md:whitespace-nowrap"><span style={{ color: '#2463eb' }}>Think</span><span className="text-slate-900">Wise</span><sup className="text-[#2463eb] font-semibold text-[20px] md:text-[24px]" style={{ verticalAlign: '0.2em' }}>™</sup> <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#2463eb] to-emerald-600">Comprehensive EdTech Suite</span></h2>
             <p className="text-slate-600 text-lg">
               Integrated platforms designed to modernize campus operations, enhance student outcomes, and streamline administration.
             </p>
@@ -975,7 +1041,7 @@ export default function HomePage() {
       </section>
 
       {/* ChalkMate IFP Section */}
-      <section id="chalkmate" className="py-24 bg-slate-50 relative overflow-hidden">
+      <section id="chalk" className="py-24 bg-slate-50 relative overflow-hidden">
         <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-cyan-100/50 rounded-full blur-[120px] pointer-events-none" />
         <div className="absolute bottom-0 left-0 w-[400px] h-[400px] bg-blue-100/50 rounded-full blur-[100px] pointer-events-none" />
 
@@ -1011,7 +1077,7 @@ export default function HomePage() {
 
           {/* Hero image */}
           <div className="relative rounded-3xl overflow-hidden mb-16 shadow-2xl">
-            <img src="/chalkmate/hero.png" alt="ChalkMate IFP" className="w-full h-72 md:h-96 object-cover" />
+            <img src="/chalk/hero.png" alt="ChalkMate IFP" className="w-full h-72 md:h-96 object-cover" />
             <div className="absolute inset-0 bg-gradient-to-r from-slate-900/60 via-transparent to-transparent flex items-center">
               <div className="p-8 md:p-14 text-white max-w-xl">
                 <p className="text-cyan-300 font-semibold tracking-widest uppercase text-sm mb-3">Next-Gen AI Integration</p>
@@ -1022,13 +1088,13 @@ export default function HomePage() {
           </div>
 
           {/* 6 Feature Cards */}
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-16">
-            {[
+          <FeatureCarousel
+            features={[
               {
                 icon: '🧠',
                 color: 'from-cyan-500 to-blue-600',
                 glow: 'rgba(6,182,212,0.18)',
-                image: '/chalkmate/ai-writing.png',
+                image: '/chalk/ai-writing.png',
                 title: 'AI Smart Writing Board',
                 subtitle: 'Intelligent Lesson Delivery',
                 items: [
@@ -1044,7 +1110,7 @@ export default function HomePage() {
                 icon: '✋',
                 color: 'from-blue-500 to-indigo-600',
                 glow: 'rgba(59,130,246,0.18)',
-                image: '/chalkmate/multitouch.png',
+                image: '/chalk/multitouch.png',
                 title: 'Feather Touch',
                 subtitle: 'Collaborative Classroom Interaction',
                 items: [
@@ -1060,7 +1126,7 @@ export default function HomePage() {
                 icon: '🖥️',
                 color: 'from-violet-500 to-purple-600',
                 glow: 'rgba(139,92,246,0.18)',
-                image: '/chalkmate/display.png',
+                image: '/chalk/display.png',
                 title: '4K Ultra HD Display',
                 subtitle: 'Visual Excellence at Every Angle',
                 items: [
@@ -1076,7 +1142,7 @@ export default function HomePage() {
                 icon: '⚡',
                 color: 'from-emerald-500 to-teal-600',
                 glow: 'rgba(16,185,129,0.18)',
-                image: '/chalkmate/connectivity.png',
+                image: '/chalk/connectivity.png',
                 title: 'Powerful Core & Connectivity',
                 subtitle: 'Android 14 + Windows Ready',
                 items: [
@@ -1092,7 +1158,7 @@ export default function HomePage() {
                 icon: '☁️',
                 color: 'from-orange-500 to-amber-600',
                 glow: 'rgba(249,115,22,0.18)',
-                image: '/chalkmate/ai-writing.png',
+                image: '/chalk/ai-writing.png',
                 title: 'Cloud & Ecosystem Ready',
                 subtitle: 'Seamless Integration',
                 items: [
@@ -1108,7 +1174,7 @@ export default function HomePage() {
                 icon: '🛡️',
                 color: 'from-rose-500 to-pink-600',
                 glow: 'rgba(244,63,94,0.18)',
-                image: '/chalkmate/support.png',
+                image: '/chalk/support.png',
                 title: 'Service & Support',
                 subtitle: 'Trusted Partnership',
                 items: [
@@ -1120,38 +1186,14 @@ export default function HomePage() {
                   'Dedicated Account Manager per Institution',
                 ],
               },
-            ].map((feat) => (
-              <div
-                key={feat.title}
-                className="relative bg-white border border-slate-200 rounded-2xl hover:border-slate-300 hover:shadow-md transition-all duration-300 hover:-translate-y-1 group overflow-hidden"
-                style={{ boxShadow: `0 0 40px ${feat.glow}` }}
-              >
-                <div className="relative h-44 overflow-hidden rounded-t-2xl">
-                  <img src={feat.image} alt={feat.title} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
-                  <div className="absolute bottom-3 left-4 text-2xl drop-shadow-lg">{feat.icon}</div>
-                </div>
-                <div className="relative p-6">
-                  <div className={`absolute inset-0 bg-gradient-to-br ${feat.color} opacity-5 group-hover:opacity-10 transition-opacity`} />
-                  <h3 className={`relative text-xl font-bold text-transparent bg-clip-text bg-gradient-to-r ${feat.color} mb-0.5`}>{feat.title}</h3>
-                  <p className="relative text-slate-500 text-xs font-medium uppercase tracking-wider mb-4">{feat.subtitle}</p>
-                  <ul className="relative space-y-2">
-                    {feat.items.map((item) => (
-                      <li key={item} className="flex items-start gap-2 text-sm text-slate-700">
-                        <span className="text-cyan-500 mt-0.5 flex-shrink-0">✓</span>
-                        {item}
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              </div>
-            ))}
-          </div>
+            ]}
+          />
 
         </div>
       </section>
 
       {/* Smart Visual Technologies Section */}
-      <section id="visual-tech" className="py-24 relative overflow-hidden" style={{ background: 'linear-gradient(135deg, #f5f3ff 0%, #f8fafc 45%, #eef2ff 100%)' }}>
+      <section id="visual-tech" className="py-10 relative overflow-hidden" style={{ background: 'linear-gradient(135deg, #f5f3ff 0%, #f8fafc 45%, #eef2ff 100%)' }}>
         <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-violet-300/60 to-transparent" />
         <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-indigo-300/50 to-transparent" />
         <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-violet-200/30 rounded-full blur-[120px] pointer-events-none" />
@@ -1187,156 +1229,12 @@ export default function HomePage() {
             ))}
           </div>
 
-          {/* Product Cards — 5 items, first two full-width row then 3 below */}
-          <div className="grid md:grid-cols-2 gap-6 mb-6">
-            {[
-              {
-                image: '/visual-tech/digital-podium.png',
-                icon: '🎙️',
-                color: 'from-violet-500 to-purple-600',
-                glow: 'rgba(139,92,246,0.15)',
-                border: 'border-violet-200',
-                title: 'Digital Podium',
-                subtitle: 'Command the Stage with Confidence',
-                desc: 'A fully integrated smart podium designed for educators, presenters, and keynote speakers. Combines a built-in touchscreen, HD camera, wireless mic, and HDMI connectivity into one sleek console — enabling seamless, professional presentations from any standing position.',
-                items: [
-                  'Built-in 15" or 21" Capacitive Touchscreen',
-                  'Integrated HD Web Camera & Document Camera',
-                  'Wireless Lapel & Gooseneck Microphone',
-                  'HDMI, USB & Network Pass-through Ports',
-                  'Height-Adjustable Motorised Desk Option',
-                  'Compatible with ChalkMate & Projectors',
-                ],
-              },
-              {
-                image: '/visual-tech/led-wall.png',
-                icon: '🖥️',
-                color: 'from-indigo-500 to-blue-600',
-                glow: 'rgba(99,102,241,0.15)',
-                border: 'border-indigo-200',
-                title: 'Active LED Wall',
-                subtitle: 'Immersive Visuals at Any Scale',
-                desc: 'Transform auditoriums, lecture theatres, and lobbies with strikingly vivid Active LED walls that deliver pixel-perfect clarity at any distance. Modular panel design means any size is achievable — creating unforgettable visual experiences for audiences of hundreds.',
-                items: [
-                  'Ultra-Fine Pixel Pitch (P1.2 – P4) Options',
-                  'High Brightness: 800–5000 nits for Daylight',
-                  'Seamless Modular Panel Construction',
-                  'Wide Colour Gamut & HDR Support',
-                  'Low Latency Signal Processing',
-                  'Remote Monitoring & Diagnostics System',
-                ],
-              },
-            ].map((prod) => (
-              <div
-                key={prod.title}
-                className={`relative bg-white border ${prod.border} rounded-2xl hover:shadow-md transition-all duration-300 hover:-translate-y-1 group overflow-hidden`}
-                style={{ boxShadow: `0 0 40px ${prod.glow}` }}
-              >
-                <div className="relative h-52 overflow-hidden rounded-t-2xl">
-                  <img src={prod.image} alt={prod.title} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
-                  <div className="absolute bottom-3 left-4 text-2xl drop-shadow-lg">{prod.icon}</div>
-                </div>
-                <div className="relative p-7">
-                  <div className={`absolute inset-0 bg-gradient-to-br ${prod.color} opacity-5 group-hover:opacity-10 transition-opacity`} />
-                  <h3 className={`relative text-xl font-bold text-transparent bg-clip-text bg-gradient-to-r ${prod.color} mb-0.5`}>{prod.title}</h3>
-                  <p className="relative text-slate-500 text-xs font-medium uppercase tracking-wider mb-3">{prod.subtitle}</p>
-                  <p className="relative text-slate-600 text-sm leading-relaxed mb-5">{prod.desc}</p>
-                  <ul className="relative space-y-2">
-                    {prod.items.map((item) => (
-                      <li key={item} className="flex items-start gap-2 text-sm text-slate-700">
-                        <span className="text-violet-500 mt-0.5 flex-shrink-0">✓</span>
-                        {item}
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              </div>
-            ))}
-          </div>
-
-          <div className="grid md:grid-cols-3 gap-6">
-            {[
-              {
-                image: '/visual-tech/conference-room.png',
-                icon: '🤝',
-                color: 'from-cyan-500 to-teal-600',
-                glow: 'rgba(6,182,212,0.15)',
-                border: 'border-cyan-200',
-                title: 'Conference Room Setup',
-                subtitle: 'Meeting Rooms Reimagined',
-                desc: 'Turn any meeting room into a world-class collaboration hub with an integrated AV system — large-format display, ceiling microphone array, speaker system, and one-touch video conferencing.',
-                items: [
-                  'Large Format Display or LED Video Bar',
-                  'Ceiling Mic Array & Echo Cancellation',
-                  'One-Touch Zoom / Teams / Meet Calling',
-                  'Wireless Content Sharing (Any Device)',
-                  'Room Booking & Occupancy Sensors',
-                  'Professional Cable Management System',
-                ],
-              },
-              {
-                image: '/visual-tech/ptz-camera.png',
-                icon: '📷',
-                color: 'from-emerald-500 to-green-600',
-                glow: 'rgba(16,185,129,0.15)',
-                border: 'border-emerald-200',
-                title: 'PTZ Cameras',
-                subtitle: 'Auto-Track Every Moment',
-                desc: 'High-definition pan-tilt-zoom cameras engineered for lecture capture, live streaming, and hybrid classrooms. AI-powered auto-tracking keeps the speaker perfectly framed at all times.',
-                items: [
-                  '4K 60fps Ultra HD Video Output',
-                  'AI Auto-Tracking (Face & Body)',
-                  'Pan ±170° / Tilt ±90° / 30× Optical Zoom',
-                  'NDI, HDMI & USB-C Output Options',
-                  'PoE Power — Zero Extra Cabling',
-                  'Remote Control via App or IP Interface',
-                ],
-              },
-              {
-                image: '/visual-tech/studio-setup.png',
-                icon: '🎬',
-                color: 'from-rose-500 to-orange-500',
-                glow: 'rgba(244,63,94,0.15)',
-                border: 'border-rose-200',
-                title: 'Studio Setup',
-                subtitle: 'Broadcast-Quality Content Creation',
-                desc: 'Fully kitted recording and streaming studios for educational content creation, institutional branding, and live broadcasting — everything from LED panels to audio mixers, professionally installed.',
-                items: [
-                  'Professional LED Softbox & Ring Lighting Kit',
-                  'Green Screen / Chromakey Backdrop System',
-                  'Audio Mixer, Boom Arm & Condenser Mics',
-                  'Multi-Camera Switcher & Live Stream Encoder',
-                  'Teleprompter & Presenter Confidence Monitor',
-                  'Full Acoustic Treatment & Soundproofing Kits',
-                ],
-              },
-            ].map((prod) => (
-              <div
-                key={prod.title}
-                className={`relative bg-white border ${prod.border} rounded-2xl hover:shadow-md transition-all duration-300 hover:-translate-y-1 group overflow-hidden`}
-                style={{ boxShadow: `0 0 40px ${prod.glow}` }}
-              >
-                <div className="relative h-44 overflow-hidden rounded-t-2xl">
-                  <img src={prod.image} alt={prod.title} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
-                  <div className="absolute bottom-3 left-4 text-2xl drop-shadow-lg">{prod.icon}</div>
-                </div>
-                <div className="relative p-6">
-                  <div className={`absolute inset-0 bg-gradient-to-br ${prod.color} opacity-5 group-hover:opacity-10 transition-opacity`} />
-                  <h3 className={`relative text-xl font-bold text-transparent bg-clip-text bg-gradient-to-r ${prod.color} mb-0.5`}>{prod.title}</h3>
-                  <p className="relative text-slate-500 text-xs font-medium uppercase tracking-wider mb-3">{prod.subtitle}</p>
-                  <p className="relative text-slate-600 text-sm leading-relaxed mb-4">{prod.desc}</p>
-                  <ul className="relative space-y-2">
-                    {prod.items.map((item) => (
-                      <li key={item} className="flex items-start gap-2 text-sm text-slate-700">
-                        <span className="text-violet-500 mt-0.5 flex-shrink-0">✓</span>
-                        {item}
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              </div>
-            ))}
-          </div>
+          {/* Product Cards — Interactive Tabbed Interface */}
+          <VisualTechTabs
+            activeTab={activeTab}
+            setActiveTab={setActiveTab}
+            interactiveSpecs={interactiveSpecs}
+          />
         </div>
       </section>
 
