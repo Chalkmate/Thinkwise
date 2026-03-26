@@ -47,44 +47,47 @@ export default function FeatureCarousel({ features }: FeatureCarouselProps) {
     [maxIndex]
   );
 
-  // Keep current in bounds if visible changes (e.g. resize)
   useEffect(() => {
     setCurrent((c) => Math.min(c, maxIndex));
   }, [maxIndex]);
 
-  // Card width: fill wrapper accounting for gaps between visible cards
   const cardWidthPercent = `calc((100% - ${GAP * (Math.ceil(visible) - 1)}px) / ${visible})`;
-
   const translateX = `calc(-${current} * (${cardWidthPercent} + ${GAP}px))`;
 
   return (
     <div className="w-full">
-      {/* Track wrapper — clips overflow */}
-      <div className="relative overflow-hidden" ref={wrapperRef}>
-
-        {/* Scrolling track */}
-        <div
-          className="flex"
-          style={{
-            gap: `${GAP}px`,
-            transform: `translateX(${translateX})`,
-            transition: "transform 0.48s cubic-bezier(0.4, 0, 0.2, 1)",
-            willChange: "transform",
-          }}
-        >
-          {features.map((feat) => (
-            <FeatureCard
-              key={feat.title}
-              feat={feat}
-              cardWidthPercent={cardWidthPercent}
-            />
-          ))}
+      {/* Outer div: used for width measurement via ref */}
+      <div ref={wrapperRef} className="relative">
+        {/*
+          overflow-hidden clips the track horizontally.
+          pb-3 / -mb-3: expands the clipping boundary downward so card
+          bottom rounded corners and hover shadows aren't cut off,
+          then the negative margin cancels the extra layout space.
+        */}
+        <div className="overflow-hidden pb-3 -mb-3">
+          {/* Scrolling track */}
+          <div
+            className="flex"
+            style={{
+              gap: `${GAP}px`,
+              transform: `translateX(${translateX})`,
+              transition: "transform 0.48s cubic-bezier(0.4, 0, 0.2, 1)",
+              willChange: "transform",
+            }}
+          >
+            {features.map((feat) => (
+              <FeatureCard
+                key={feat.title}
+                feat={feat}
+                cardWidthPercent={cardWidthPercent}
+              />
+            ))}
+          </div>
         </div>
       </div>
 
       {/* Controls row */}
       <div className="flex items-center justify-between mt-5">
-        {/* Prev / Next buttons — bottom left */}
         <div className="flex gap-2.5">
           <NavButton
             direction="prev"
@@ -98,7 +101,6 @@ export default function FeatureCarousel({ features }: FeatureCarouselProps) {
           />
         </div>
 
-        {/* Dot pagination — bottom right */}
         <div className="flex items-center gap-2">
           {Array.from({ length: maxIndex + 1 }).map((_, i) => (
             <button
@@ -119,7 +121,6 @@ export default function FeatureCarousel({ features }: FeatureCarouselProps) {
   );
 }
 
-/* ── Individual feature card ── */
 function FeatureCard({
   feat,
   cardWidthPercent,
@@ -129,11 +130,10 @@ function FeatureCard({
 }) {
   return (
     <div
-      className="flex-shrink-0 bg-white border border-slate-200 rounded-2xl hover:border-slate-300 hover:shadow-md transition-all duration-300 hover:-translate-y-1 group overflow-hidden"
+      className="flex-shrink-0 bg-white border border-slate-200 rounded-2xl hover:border-slate-300 hover:shadow-md transition-all duration-300 hover:-translate-y-1 group"
       style={{
         width: cardWidthPercent,
         minWidth: 0,
-        boxShadow: `0 0 40px ${feat.glow}`,
       }}
     >
       {/* Card Image */}
@@ -147,22 +147,17 @@ function FeatureCard({
       </div>
 
       {/* Card body */}
-      <div className="relative p-6">
-        {/* Subtle gradient tint behind content */}
-        <div
-          className={`absolute inset-0 bg-gradient-to-br ${feat.color} opacity-5 group-hover:opacity-10 transition-opacity`}
-        />
-
+      <div className={`p-6 bg-gradient-to-br from-${feat.color}-50 to-white rounded-b-2xl`}>
         <h3
-          className={`relative text-xl font-bold text-transparent bg-clip-text bg-gradient-to-r ${feat.color} mb-0.5`}
+          className={`text-xl font-bold text-transparent bg-clip-text bg-gradient-to-r ${feat.color} mb-0.5`}
         >
           {feat.title}
         </h3>
-        <p className="relative text-slate-500 text-xs font-medium uppercase tracking-wider mb-4">
+        <p className="text-slate-500 text-xs font-medium uppercase tracking-wider mb-4">
           {feat.subtitle}
         </p>
 
-        <ul className="relative space-y-2">
+        <ul className="space-y-2">
           {feat.items.map((item) => (
             <li
               key={item}
@@ -178,7 +173,6 @@ function FeatureCard({
   );
 }
 
-/* ── Prev / Next arrow button ── */
 function NavButton({
   direction,
   disabled,

@@ -142,7 +142,7 @@ const slides = [
   {
     image: '/banners/slide-content.png',
     tag: 'Digital Content Library',
-    title: 'Smartclass Content',
+    title: 'Digital Content',
     tagline: 'Curriculum that captivates.',
     subtitle: 'Curriculum-aligned 3D animations, virtual labs and multimedia lessons for Grades K–12, across all major Indian education boards.',
     cta: 'Explore Content',
