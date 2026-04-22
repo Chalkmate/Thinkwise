@@ -163,14 +163,14 @@ const slides = [
   },
   {
     image: '/banners/slide-display.png',
-    tag: 'AV Hardware & Accessories',
-    title: 'Smart Visual Technologies',
-    tagline: 'Display excellence, everywhere.',
-    subtitle: 'Digital Podiums, Active LED Walls, PTZ Cameras and premium AV accessories — a complete ecosystem for the smart campus.',
+    tag: 'Next gen LED Walls',
+    title: 'LEDBotz LED Walls',
+    tagline: 'Reality Redifined in Pixels.',
+    subtitle: 'Active LED Walls, Digital Podiums, PTZ Cameras and premium AV accessories — a complete ecosystem for the smart campus.',
     cta: 'Explore Products',
     ctaHref: '#products',
     accentColor: '#d97706',
-    tabLabel: 'Smart Visual Technologies',
+    tabLabel: 'Next Gen LED Walls',
   },
 ];
 
@@ -191,6 +191,19 @@ export default function HomePage() {
   const [formStatus, setFormStatus] = React.useState<'idle' | 'sending' | 'sent' | 'error'>('idle');
 
   const interactiveSpecs = {
+    
+    led: {
+      title: 'Next Gen LED Wall',
+      image: '/visual-tech/led-wall.png',
+      items: [
+        'Ultra-Fine Pixel Pitch (P0.8 – P8) Options',
+        'High Brightness: 800–10000 nits for Daylight',
+        'Seamless Modular Panel Construction',
+        'Wide Colour Gamut & HDR Support',
+        'Low Latency Signal Processing',
+        'Remote Monitoring & Diagnostics System',
+      ],
+    },
     podium: {
       title: 'Digital Podium',
       image: '/visual-tech/digital-podium.png',
@@ -201,18 +214,6 @@ export default function HomePage() {
         'HDMI, USB & Network Pass-through Ports',
         'Height-Adjustable Motorised Desk Option',
         'Compatible with ChalkMate & Projectors',
-      ],
-    },
-    led: {
-      title: 'Active LED Wall',
-      image: '/visual-tech/led-wall.png',
-      items: [
-        'Ultra-Fine Pixel Pitch (P1.2 – P4) Options',
-        'High Brightness: 800–5000 nits for Daylight',
-        'Seamless Modular Panel Construction',
-        'Wide Colour Gamut & HDR Support',
-        'Low Latency Signal Processing',
-        'Remote Monitoring & Diagnostics System',
       ],
     },
     conference: {
@@ -1204,10 +1205,10 @@ export default function HomePage() {
           <div className="text-center mb-16">
             <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-violet-50 border border-violet-200 text-violet-700 text-sm font-medium mb-6">
               <Layers className="w-4 h-4" />
-              AV & Display Solutions
+              Next Gen LED Walls
             </div>
             <h2 className="text-4xl md:text-5xl font-extrabold text-slate-900 mb-5 tracking-tight">
-              <span style={{ color: '#2463eb' }}>Think</span><span className="text-slate-900">Wise</span><sup className="text-[#2463eb] font-semibold text-[20px] md:text-[24px]" style={{ verticalAlign: '0.2em' }}>™</sup> <span className="text-transparent bg-clip-text bg-gradient-to-r from-violet-600 to-indigo-600">Smart Visual Technologies</span>
+              <span style={{ color: '#2463eb' }}>Think</span><span className="text-slate-900">Wise</span><sup className="text-[#2463eb] font-semibold text-[20px] md:text-[24px]" style={{ verticalAlign: '0.2em' }}>™</sup> <span className="text-transparent bg-clip-text bg-gradient-to-r from-violet-600 to-indigo-600">LED Wall Display Powered by LEDBotz</span>
             </h2>
             <p className="text-slate-600 text-lg max-w-2xl mx-auto leading-relaxed">
               End-to-end audiovisual solutions for modern educational institutions and corporate spaces — from digital podiums to fully equipped broadcast studios, designed to command every room.
